@@ -80003,7 +80003,7 @@ A.aez.prototype={
 $2(a,b){return A.bs(null,$.lz()*0.8,null)},
 $S:99}
 A.XO.prototype={
-$2(a,b){if(!B.b.n(A.b(["/","/lottery","/transaction-history","/transaction-detail"],t.s),b.e))return"/"},
+$2(a,b){if(!B.b.n(A.b(["/","/lottery","/transaction-history","/transaction-detail"],t.s),b.f))return"/"},
 $S:527}
 A.XK.prototype={
 $2(a,b){return B.CY},
