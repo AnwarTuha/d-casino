@@ -82701,7 +82701,7 @@ if(g==null)g=""
 f=$.jd
 f=(f==null?$.jd=new A.ny():f).gq0(0)
 e=$.jd
-n="id="+j.a.a+"&first_name="+i+"&last_name="+h+"&username="+g+"&photo_url=https://www.bgmfi.com/images/iipsHeader6.jpg&auth_date="+f.e+"&hash="+(e==null?$.jd=new A.ny():e).gq0(0).f
+n="id="+j.a.a+"&first_name="+i+"&last_name="+h+"&username="+g+"&auth_date="+f.e+"&hash="+(e==null?$.jd=new A.ny():e).gq0(0).f
 s=6
 return A.R(o.a.at.Af(n),$async$$2)
 case 6:m=a1
