@@ -165648,10 +165648,9 @@
   };
   A._PurchaseWidgetState_build__closure.prototype = {
     call$1(context) {
-      var t1 = type$.AuthBloc,
-        t2 = type$.PurchaseBloc;
-      t2 = A._setArrayType([A.BlocProvider$value(null, A.Provider_of(context, false, t1), t1), A.BlocProvider$value(null, A.Provider_of(context, false, t2), t2)], type$.JSArray_SingleChildWidget);
-      return A.MultiBlocProvider$(this.$this._buildHowManyDialog$0(), t2);
+      var t1 = type$.AuthBloc;
+      t1 = A._setArrayType([A.BlocProvider$value(null, A.Provider_of(context, false, t1), t1)], type$.JSArray_SingleChildWidget);
+      return A.MultiBlocProvider$(this.$this._buildHowManyDialog$0(), t1);
     },
     $signature: 600
   };
