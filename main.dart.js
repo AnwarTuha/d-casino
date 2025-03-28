@@ -165672,7 +165672,7 @@
       var t3, t4,
         t1 = this.$this,
         t2 = t1.countController._change_notifier$_value.text;
-      if (t2.length !== 0 && B.JSString_methods.trim$0(t2) === "0") {
+      if (t2.length !== 0 && B.JSString_methods.trim$0(t2) !== "0") {
         t3 = t1._widget.lotteryModel;
         t2 = A.int_parse(B.JSString_methods.trim$0(t2), null);
         t4 = t1._framework$_element;
