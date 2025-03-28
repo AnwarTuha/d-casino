@@ -85224,13 +85224,13 @@ q===$&&A.a()
 q=q.b
 q===$&&A.a()
 A.i6(">>>>>>>>>>>>>>>>>>>>> TOKEN ON REQUEST "+q.k(0))
-s=s.b
-if(s!=null){q=a.b
+q=a.b
 q===$&&A.a()
-q.m(0,"Authorization","Bearer "+s)
+q.m(0,"Authorization","Bearer "+A.m(s.b))
 r=r.l1$.b
 r===$&&A.a()
-A.i6(">>>>>>>>>>>>>>>>>>>>> TOKEN AS HEADER "+r.k(0))}return b.lc(0,a)},
+A.i6(">>>>>>>>>>>>>>>>>>>>> TOKEN AS HEADER "+r.k(0))
+return b.lc(0,a)},
 $S:69}
 A.aph.prototype={
 AQ(a){return this.apH(a)},
