@@ -165220,7 +165220,7 @@
       t2 = (t2 == null ? $.TelegramWebApp__instance = new A.TelegramWebAppImpl() : t2).get$initData(0).user.lastname;
       if (t2 == null)
         t2 = "";
-      return A.Column$(A._setArrayType([t3, t4, new A.Padding(new A.EdgeInsets(t6, 0, t6, 0), A.Row$(A._setArrayType([A.Column$(A._setArrayType([A.Text$("Welcome, " + t1 + " " + t2, _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_wst, 18 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_5), _null, _null), A.SizedBox$(_null, 10, _null), A.Row$(A._setArrayType([A.BlocBuilder$(new A.ProfileHeader_build_closure(this), type$.WalletBloc, type$.WalletState)], t9), B.CrossAxisAlignment_2, B.MainAxisAlignment_0, B.MainAxisSize_1, 0)], t9), B.CrossAxisAlignment_0, B.MainAxisAlignment_0, B.MainAxisSize_1), A.Row$(A._setArrayType([A.BlocBuilder$(new A.ProfileHeader_build_closure0(), type$.AuthBloc, type$.AuthState), A.SizedBox$(_null, _null, $.$get$AppSizes_hSize2()), A.GestureDetector$(_null, A.Container$(A.Center$(A.Icon$(B.IconData_58132_MaterialIcons_null_false, B.Color_wst, _null, 20), _null, _null), B.Clip_0, _null, new A.BoxDecoration(B.Color_Gcn, _null, _null, _null, _null, _null, B.BoxShape_1), _null, _null, _null, new A.EdgeInsets(10, 10, 10, 10), _null), B.DragStartBehavior_1, false, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, new A.ProfileHeader_build_closure1(context), _null, _null, _null, _null, _null, _null)], t9), B.CrossAxisAlignment_2, B.MainAxisAlignment_0, B.MainAxisSize_1, 0)], t9), B.CrossAxisAlignment_1, B.MainAxisAlignment_3, B.MainAxisSize_1, 0), _null)], t9), B.CrossAxisAlignment_0, B.MainAxisAlignment_0, B.MainAxisSize_0);
+      return A.Column$(A._setArrayType([t3, t4, new A.Padding(new A.EdgeInsets(t6, 0, t6, 0), A.Row$(A._setArrayType([A.Column$(A._setArrayType([A.Text$("Welcome, " + t1 + " " + t2, _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_wst, 18 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_5), _null, _null), A.SizedBox$(_null, 5, _null), A.Row$(A._setArrayType([A.BlocBuilder$(new A.ProfileHeader_build_closure(this), type$.WalletBloc, type$.WalletState)], t9), B.CrossAxisAlignment_2, B.MainAxisAlignment_0, B.MainAxisSize_1, 0)], t9), B.CrossAxisAlignment_0, B.MainAxisAlignment_0, B.MainAxisSize_1), A.Row$(A._setArrayType([A.BlocBuilder$(new A.ProfileHeader_build_closure0(), type$.AuthBloc, type$.AuthState), A.SizedBox$(_null, _null, $.$get$AppSizes_hSize2()), A.GestureDetector$(_null, A.Container$(A.Center$(A.Icon$(B.IconData_58132_MaterialIcons_null_false, B.Color_wst, _null, 20), _null, _null), B.Clip_0, _null, new A.BoxDecoration(B.Color_Gcn, _null, _null, _null, _null, _null, B.BoxShape_1), _null, _null, _null, new A.EdgeInsets(10, 10, 10, 10), _null), B.DragStartBehavior_1, false, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, new A.ProfileHeader_build_closure1(context), _null, _null, _null, _null, _null, _null)], t9), B.CrossAxisAlignment_2, B.MainAxisAlignment_0, B.MainAxisSize_1, 0)], t9), B.CrossAxisAlignment_0, B.MainAxisAlignment_3, B.MainAxisSize_1, 0), _null)], t9), B.CrossAxisAlignment_0, B.MainAxisAlignment_0, B.MainAxisSize_0);
     }
   };
   A.ProfileHeader_build_closure.prototype = {
@@ -165229,7 +165229,7 @@
       if (state instanceof A.WalletLoading)
         return A.Text$("Getting balance...", _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_wst, 16 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_3), _null, _null);
       if (state instanceof A.WalletLoaded)
-        return A.Text$("Balance: " + A.NumberFormat_NumberFormat("#,##0.##").format$1(state.walletResponseModel.balance) + " ETB", _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_wst, 16 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_3), _null, _null);
+        return A.Text$("Balance: " + A.NumberFormat_NumberFormat("#,##0.##").format$1(state.walletResponseModel.balance) + " ETB", _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_wst, 14 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_3), _null, _null);
       return A.SizedBox$(_null, _null, _null);
     },
     $signature: 593
@@ -165517,7 +165517,7 @@
   };
   A.LotteryItem.prototype = {
     build$1(context) {
-      var t11, days, hours, minutes, countdown, t12, t13, t14, t15, t16, t17, _null = null,
+      var t12, days, hours, minutes, countdown, t13, t14, t15, t16, t17, t18, _null = null,
         t1 = A.BorderRadius$circular(16),
         t2 = A._setArrayType([new A.BoxShadow(0, B.BlurStyle_0, A.Color$fromARGB(B.JSNumber_methods.round$0(25.5), B.Color_vnR.toARGB32$0() >>> 16 & 255, B.Color_vnR.toARGB32$0() >>> 8 & 255, B.Color_vnR.toARGB32$0() & 255), new A.Offset(0, 4), 8)], type$.JSArray_BoxShadow),
         t3 = A._setArrayType([B.Color_Gcn, B.Color_PBe, B.Color_Kln], type$.JSArray_Color),
@@ -165527,28 +165527,29 @@
         t7 = this.lotteryModel,
         t8 = A.Text$(t7.name, _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_wst, 16 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_5), _null, _null),
         t9 = A.Text$(t7.description, _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight($.$get$AppColors_white70(), 14 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_3), _null, _null),
-        t10 = A.SizedBox$(_null, $.$get$AppSizes_vSize2() * 0.8, _null);
+        t10 = $.$get$AppSizes_vSize2() * 0.8,
+        t11 = A.SizedBox$(_null, t10, _null);
       t7 = t7.drawTime.difference$1(new A.DateTime(Date.now(), 0, false))._duration;
-      t11 = t7 < 0;
-      days = t11 ? 0 : B.JSInt_methods._tdivFast$1(t7, 864e8);
-      hours = t11 ? 0 : B.JSInt_methods.$mod(B.JSInt_methods._tdivFast$1(t7, 3600000000), 24);
-      minutes = t11 ? 0 : B.JSInt_methods.$mod(B.JSInt_methods._tdivFast$1(t7, 60000000), 60);
-      countdown = t11 ? "0" : "" + days + "d " + hours + "h " + minutes + "m";
+      t12 = t7 < 0;
+      days = t12 ? 0 : B.JSInt_methods._tdivFast$1(t7, 864e8);
+      hours = t12 ? 0 : B.JSInt_methods.$mod(B.JSInt_methods._tdivFast$1(t7, 3600000000), 24);
+      minutes = t12 ? 0 : B.JSInt_methods.$mod(B.JSInt_methods._tdivFast$1(t7, 60000000), 60);
+      countdown = t12 ? "Draw Complete" : "" + days + "d " + hours + "h " + minutes + "m";
       t7 = B.JSNumber_methods.round$0(76.5);
-      t11 = A.Color$fromARGB(t7, B.Color_y2X.toARGB32$0() >>> 16 & 255, B.Color_y2X.toARGB32$0() >>> 8 & 255, B.Color_y2X.toARGB32$0() & 255);
-      t12 = A.BorderRadius$circular(8);
-      t13 = 2 * $.SizerUtil___width._readField$0() / 100;
-      t14 = $.SizerUtil___width._readField$0() / 100;
-      t15 = A.Text$(countdown, _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_wst, 12 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_5), _null, _null);
-      t16 = $.$get$AppSizes_hSize2();
-      t17 = type$.JSArray_Widget;
-      t14 = A.Container$(A.Row$(A._setArrayType([t15, A.SizedBox$(_null, _null, t16), A.Icon$(B.IconData_59087_MaterialIcons_null_false, B.Color_wst, _null, 18)], t17), B.CrossAxisAlignment_2, B.MainAxisAlignment_0, B.MainAxisSize_1, 0), B.Clip_0, _null, new A.BoxDecoration(t11, _null, _null, t12, _null, _null, B.BoxShape_0), _null, _null, _null, new A.EdgeInsets(t13, t14, t13, t14), _null);
-      t13 = A.SizedBox$(_null, _null, t16);
-      t7 = A.Color$fromARGB(t7, B.Color_y2X.toARGB32$0() >>> 16 & 255, B.Color_y2X.toARGB32$0() >>> 8 & 255, B.Color_y2X.toARGB32$0() & 255);
-      t12 = A.BorderRadius$circular(8);
-      t11 = 2 * $.SizerUtil___width._readField$0() / 100;
+      t12 = A.Color$fromARGB(t7, B.Color_y2X.toARGB32$0() >>> 16 & 255, B.Color_y2X.toARGB32$0() >>> 8 & 255, B.Color_y2X.toARGB32$0() & 255);
+      t13 = A.BorderRadius$circular(8);
+      t14 = 2 * $.SizerUtil___width._readField$0() / 100;
       t15 = $.SizerUtil___width._readField$0() / 100;
-      return A.GestureDetector$(_null, A.Container$(A.Stack$(B.AlignmentDirectional_m1_m1, A._setArrayType([t4, new A.Padding(new A.EdgeInsets(t5, t6, t5, t6), A.Column$(A._setArrayType([t8, t9, t10, A.Row$(A._setArrayType([t14, t13, A.Container$(A.Row$(A._setArrayType([A.Text$("32,786", _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_wst, 12 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_5), _null, _null), A.SizedBox$(_null, _null, t16), A.Icon$(B.IconData_60035_MaterialIcons_null_false, B.Color_wst, _null, 18)], t17), B.CrossAxisAlignment_2, B.MainAxisAlignment_0, B.MainAxisSize_1, 0), B.Clip_0, _null, new A.BoxDecoration(t7, _null, _null, t12, _null, _null, B.BoxShape_0), _null, _null, _null, new A.EdgeInsets(t11, t15, t11, t15), _null)], t17), B.CrossAxisAlignment_2, B.MainAxisAlignment_0, B.MainAxisSize_1, 0)], t17), B.CrossAxisAlignment_0, B.MainAxisAlignment_0, B.MainAxisSize_1), _null)], t17), B.Clip_1, B.StackFit_0), B.Clip_0, _null, new A.BoxDecoration(_null, _null, _null, t1, t2, new A.LinearGradient(B.Alignment_m1_m1, B.Alignment_1_1, B.TileMode_0, t3, _null, _null), B.BoxShape_0), _null, _null, _null, _null, _null), B.DragStartBehavior_1, false, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, new A.LotteryItem_build_closure(this, context), _null, _null, _null, _null, _null, _null);
+      t16 = A.Text$(countdown, _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_wst, 12 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_5), _null, _null);
+      t17 = $.$get$AppSizes_hSize2();
+      t18 = type$.JSArray_Widget;
+      t15 = A.Container$(A.Row$(A._setArrayType([t16, A.SizedBox$(_null, _null, t17), A.Icon$(B.IconData_59087_MaterialIcons_null_false, B.Color_wst, _null, 18)], t18), B.CrossAxisAlignment_2, B.MainAxisAlignment_0, B.MainAxisSize_1, 0), B.Clip_0, _null, new A.BoxDecoration(t12, _null, _null, t13, _null, _null, B.BoxShape_0), _null, _null, _null, new A.EdgeInsets(t14, t15, t14, t15), _null);
+      t14 = A.SizedBox$(_null, _null, t17);
+      t7 = A.Color$fromARGB(t7, B.Color_y2X.toARGB32$0() >>> 16 & 255, B.Color_y2X.toARGB32$0() >>> 8 & 255, B.Color_y2X.toARGB32$0() & 255);
+      t13 = A.BorderRadius$circular(8);
+      t12 = 2 * $.SizerUtil___width._readField$0() / 100;
+      t16 = $.SizerUtil___width._readField$0() / 100;
+      return A.GestureDetector$(_null, A.Container$(A.Stack$(B.AlignmentDirectional_m1_m1, A._setArrayType([t4, new A.Padding(new A.EdgeInsets(t5, t6, t5, t6), A.Column$(A._setArrayType([t8, t9, t11, A.Row$(A._setArrayType([t15, t14, A.Container$(A.Row$(A._setArrayType([A.Text$("32,786", _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_wst, 12 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_5), _null, _null), A.SizedBox$(_null, _null, t17), A.Icon$(B.IconData_60035_MaterialIcons_null_false, B.Color_wst, _null, 18)], t18), B.CrossAxisAlignment_2, B.MainAxisAlignment_0, B.MainAxisSize_1, 0), B.Clip_0, _null, new A.BoxDecoration(t7, _null, _null, t13, _null, _null, B.BoxShape_0), _null, _null, _null, new A.EdgeInsets(t12, t16, t12, t16), _null)], t18), B.CrossAxisAlignment_2, B.MainAxisAlignment_0, B.MainAxisSize_1, 0), A.SizedBox$(_null, t10, _null)], t18), B.CrossAxisAlignment_0, B.MainAxisAlignment_0, B.MainAxisSize_1), _null)], t18), B.Clip_1, B.StackFit_0), B.Clip_0, _null, new A.BoxDecoration(_null, _null, _null, t1, t2, new A.LinearGradient(B.Alignment_m1_m1, B.Alignment_1_1, B.TileMode_0, t3, _null, _null), B.BoxShape_0), _null, _null, _null, _null, _null), B.DragStartBehavior_1, false, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, new A.LotteryItem_build_closure(this, context), _null, _null, _null, _null, _null, _null);
     }
   };
   A.LotteryItem_build_closure.prototype = {
