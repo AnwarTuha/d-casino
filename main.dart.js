@@ -46532,7 +46532,14 @@
       _.hash = t5;
       _.raw = t6;
     },
-    TelegramUser: function TelegramUser() {
+    TelegramUser: function TelegramUser(t0, t1, t2, t3, t4, t5) {
+      var _ = this;
+      _.id = t0;
+      _.firstname = t1;
+      _.lastname = t2;
+      _.username = t3;
+      _.languageCode = t4;
+      _.allowsWriteToPm = t5;
     },
     TelegramWebApp: function TelegramWebApp() {
     },
@@ -166784,7 +166791,7 @@
     $call$body$AuthBloc_closure($event, emit) {
       var $async$goto = 0,
         $async$completer = A._makeAsyncAwaitCompleter(type$.void),
-        $async$handler = 1, $async$errorStack = [], $async$self = this, initData, response, token, e, s, t1, validationData, t2, userData, t3, exception, $async$exception;
+        $async$handler = 1, $async$errorStack = [], $async$self = this, initData, response, token, e, s, t1, t2, exception, $async$exception;
       var $async$call$2 = A._wrapJsFunctionForAsync(function($async$errorCode, $async$result) {
         if ($async$errorCode === 1) {
           $async$errorStack.push($async$result);
@@ -166797,36 +166804,8 @@
               if (!emit._isCanceled)
                 emit._emit.call$1(new A.AuthLoading());
               $async$handler = 3;
-              if ($.TelegramWebApp__instance == null)
-                $.TelegramWebApp__instance = new A.TelegramWebAppImpl();
-              t1 = self.Telegram.WebApp.initData;
-              validationData = A.DataParser_parseAmpersandSeparatedData(t1);
-              t2 = validationData.$index(0, "user");
-              userData = B.C_JsonCodec.decode$2$reviver(0, A._Uri__uriDecode(t2, 0, t2.length, B.C_Utf8Codec, false), null);
-              t2 = J.getInterceptor$asx(userData);
-              t2.$index(userData, "id");
-              t2.$index(userData, "first_name");
-              t3 = A._asStringQ(t2.$index(userData, "last_name"));
-              t3 = t3 == null ? null : t3.length !== 0;
-              if (t3 === true)
-                t2.$index(userData, "last_name");
-              t2.$index(userData, "username");
-              t2.$index(userData, "language_code");
-              t2.$index(userData, "allows_write_to_pm");
-              t2 = validationData.$index(0, "chat_instance");
-              t2 = t2 == null ? null : t2.length !== 0;
-              if (t2 === true) {
-                t2 = validationData.$index(0, "chat_instance");
-                t2.toString;
-                A.int_parse(t2, null);
-              }
-              validationData.$index(0, "chat_type");
-              validationData.$index(0, "query_id");
-              t2 = validationData.$index(0, "auth_date");
-              t2.toString;
-              A.int_parse(t2, null);
-              validationData.$index(0, "hash").toString;
-              initData = t1;
+              t1 = $.TelegramWebApp__instance;
+              initData = (t1 == null ? $.TelegramWebApp__instance = new A.TelegramWebAppImpl() : t1).get$initData(0).raw;
               $async$goto = 6;
               return A._asyncAwait($async$self.$this.homeApiServices.telegramAuth$1$initData(initData), $async$call$2);
             case 6:
@@ -167200,7 +167179,7 @@
   };
   A.ProfileHeader.prototype = {
     build$1(context) {
-      var t3, t4, t5, t6, t7, t8, _null = null,
+      var t3, t4, t5, t6, t7, t8, t9, _null = null,
         t1 = $.SizerUtil___height._readField$0(),
         t2 = type$.JSArray_Color;
       t1 = A.Container$(_null, B.Clip_0, _null, new A.BoxDecoration(_null, _null, _null, _null, _null, new A.LinearGradient(B.Alignment_m1_m1, B.Alignment_1_1, B.TileMode_0, A._setArrayType([B.Color_Kln, B.Color_Gcn, B.Color_PBe], t2), _null, _null), B.BoxShape_0), _null, 12 * t1 / 100, _null, _null, 1 / 0);
@@ -167210,11 +167189,13 @@
       t6 = $.SizerUtil___height._readField$0();
       t2 = A._setArrayType([B.Color_Gcn, B.Color_PBe, B.Color_Kln], t2);
       t7 = A.Border_Border$all(B.Color_Kln, 3);
-      t8 = type$.JSArray_Widget;
-      t3 = A.Stack$(B.AlignmentDirectional_m1_m1, A._setArrayType([t1, A.Positioned$(_null, A.Container$(A.Center$(A.Text$("0", _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_wst, 25 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_6), _null, _null), _null, _null), B.Clip_0, _null, new A.BoxDecoration(_null, _null, t7, _null, _null, new A.LinearGradient(B.Alignment_m1_m1, B.Alignment_1_1, B.TileMode_0, t2, _null, _null), B.BoxShape_1), _null, 12 * t5 / 100, _null, _null, 12 * t6 / 100), _null, _null, 4 * t4 / 100, _null, 6 * t3 / 100, _null)], t8), B.Clip_0, B.StackFit_0);
+      t8 = $.TelegramWebApp__instance;
+      t9 = type$.JSArray_Widget;
+      t3 = A.Stack$(B.AlignmentDirectional_m1_m1, A._setArrayType([t1, A.Positioned$(_null, A.Container$(A.Center$(A.Text$((t8 == null ? $.TelegramWebApp__instance = new A.TelegramWebAppImpl() : t8).get$initData(0).user.firstname[0], _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_wst, 25 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_6), _null, _null), _null, _null), B.Clip_0, _null, new A.BoxDecoration(_null, _null, t7, _null, _null, new A.LinearGradient(B.Alignment_m1_m1, B.Alignment_1_1, B.TileMode_0, t2, _null, _null), B.BoxShape_1), _null, 12 * t5 / 100, _null, _null, 12 * t6 / 100), _null, _null, 4 * t4 / 100, _null, 6 * t3 / 100, _null)], t9), B.Clip_0, B.StackFit_0);
       t4 = A.SizedBox$(_null, $.$get$AppSizes_vSize8(), _null);
       t6 = 6 * $.SizerUtil___width._readField$0() / 100;
-      return A.Column$(A._setArrayType([t3, t4, new A.Padding(new A.EdgeInsets(t6, 0, t6, 0), A.Row$(A._setArrayType([A.Column$(A._setArrayType([A.Text$("w", _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_wst, 18 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_5), _null, _null), A.SizedBox$(_null, 5, _null), A.Row$(A._setArrayType([A.BlocBuilder$(new A.ProfileHeader_build_closure(this), type$.WalletBloc, type$.WalletState)], t8), B.CrossAxisAlignment_2, B.MainAxisAlignment_0, B.MainAxisSize_1, 0)], t8), B.CrossAxisAlignment_0, B.MainAxisAlignment_0, B.MainAxisSize_1), A.Row$(A._setArrayType([A.BlocBuilder$(new A.ProfileHeader_build_closure0(), type$.AuthBloc, type$.AuthState), A.SizedBox$(_null, _null, $.$get$AppSizes_hSize2()), A.GestureDetector$(_null, A.Container$(A.Center$(A.Icon$(B.IconData_58132_MaterialIcons_null_false, B.Color_wst, _null, 20), _null, _null), B.Clip_0, _null, new A.BoxDecoration(B.Color_Gcn, _null, _null, _null, _null, _null, B.BoxShape_1), _null, _null, _null, new A.EdgeInsets(10, 10, 10, 10), _null), B.DragStartBehavior_1, false, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, new A.ProfileHeader_build_closure1(context), _null, _null, _null, _null, _null, _null)], t8), B.CrossAxisAlignment_2, B.MainAxisAlignment_0, B.MainAxisSize_1, 0)], t8), B.CrossAxisAlignment_0, B.MainAxisAlignment_3, B.MainAxisSize_1, 0), _null)], t8), B.CrossAxisAlignment_0, B.MainAxisAlignment_0, B.MainAxisSize_0);
+      t5 = $.TelegramWebApp__instance;
+      return A.Column$(A._setArrayType([t3, t4, new A.Padding(new A.EdgeInsets(t6, 0, t6, 0), A.Row$(A._setArrayType([A.Column$(A._setArrayType([A.Text$("Welcome, " + A.S((t5 == null ? $.TelegramWebApp__instance = new A.TelegramWebAppImpl() : t5).get$initData(0).user.firstname), _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_wst, 18 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_5), _null, _null), A.SizedBox$(_null, 5, _null), A.Row$(A._setArrayType([A.BlocBuilder$(new A.ProfileHeader_build_closure(this), type$.WalletBloc, type$.WalletState)], t9), B.CrossAxisAlignment_2, B.MainAxisAlignment_0, B.MainAxisSize_1, 0)], t9), B.CrossAxisAlignment_0, B.MainAxisAlignment_0, B.MainAxisSize_1), A.Row$(A._setArrayType([A.BlocBuilder$(new A.ProfileHeader_build_closure0(), type$.AuthBloc, type$.AuthState), A.SizedBox$(_null, _null, $.$get$AppSizes_hSize2()), A.GestureDetector$(_null, A.Container$(A.Center$(A.Icon$(B.IconData_58132_MaterialIcons_null_false, B.Color_wst, _null, 20), _null, _null), B.Clip_0, _null, new A.BoxDecoration(B.Color_Gcn, _null, _null, _null, _null, _null, B.BoxShape_1), _null, _null, _null, new A.EdgeInsets(10, 10, 10, 10), _null), B.DragStartBehavior_1, false, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, new A.ProfileHeader_build_closure1(context), _null, _null, _null, _null, _null, _null)], t9), B.CrossAxisAlignment_2, B.MainAxisAlignment_0, B.MainAxisSize_1, 0)], t9), B.CrossAxisAlignment_0, B.MainAxisAlignment_3, B.MainAxisSize_1, 0), _null)], t9), B.CrossAxisAlignment_0, B.MainAxisAlignment_0, B.MainAxisSize_0);
     }
   };
   A.ProfileHeader_build_closure.prototype = {
@@ -171687,9 +171668,63 @@
       return "TelegramInitData{user: " + _this.user.toString$0(0) + ", chatInstance: " + A.S(_this.chatInstance) + ", chatType: " + A.S(_this.chatType) + ", queryId: " + A.S(_this.queryId) + ", authDate: " + _this.authDate + ", hash: " + _this.hash + ", raw: " + _this.raw + "}";
     }
   };
-  A.TelegramUser.prototype = {};
+  A.TelegramUser.prototype = {
+    toString$0(_) {
+      var _this = this;
+      return "TelegramUser{id:" + _this.id + ", firstname: " + A.S(_this.firstname) + ", lastname: " + A.S(_this.lastname) + ", username: " + A.S(_this.username) + ", languageCode: " + A.S(_this.languageCode) + ", allowsWriteToPm: " + A.S(_this.allowsWriteToPm) + "}";
+    },
+    $eq(_, other) {
+      var t1, _this = this;
+      if (other == null)
+        return false;
+      if (_this !== other)
+        t1 = other instanceof A.TelegramUser && A.getRuntimeTypeOfDartObject(_this) === A.getRuntimeTypeOfDartObject(other) && _this.id === other.id && _this.firstname == other.firstname && _this.lastname == other.lastname && _this.username == other.username && _this.languageCode == other.languageCode && _this.allowsWriteToPm == other.allowsWriteToPm;
+      else
+        t1 = true;
+      return t1;
+    },
+    get$hashCode(_) {
+      var _this = this;
+      return (B.JSInt_methods.get$hashCode(_this.id) ^ J.get$hashCode$(_this.firstname) ^ J.get$hashCode$(_this.lastname) ^ J.get$hashCode$(_this.username) ^ J.get$hashCode$(_this.languageCode) ^ J.get$hashCode$(_this.allowsWriteToPm)) >>> 0;
+    }
+  };
   A.TelegramWebApp.prototype = {};
-  A.TelegramWebAppImpl.prototype = {};
+  A.TelegramWebAppImpl.prototype = {
+    get$initData(_) {
+      var t3, t4, t5, t6, t7, t8, chatInstance, chatType, queryId, authDate, _null = null,
+        _s9_ = "last_name",
+        _s13_ = "chat_instance",
+        t1 = self.Telegram.WebApp.initData,
+        validationData = A.DataParser_parseAmpersandSeparatedData(t1),
+        t2 = validationData.$index(0, "user"),
+        userData = B.C_JsonCodec.decode$2$reviver(0, A._Uri__uriDecode(t2, 0, t2.length, B.C_Utf8Codec, false), _null);
+      t2 = J.getInterceptor$asx(userData);
+      t3 = t2.$index(userData, "id");
+      t4 = t2.$index(userData, "first_name");
+      t5 = A._asStringQ(t2.$index(userData, _s9_));
+      t5 = t5 == null ? _null : t5.length !== 0;
+      t5 = t5 === true ? t2.$index(userData, _s9_) : _null;
+      t6 = t2.$index(userData, "username");
+      t7 = t2.$index(userData, "language_code");
+      t2 = t2.$index(userData, "allows_write_to_pm");
+      t8 = validationData.$index(0, _s13_);
+      t8 = t8 == null ? _null : t8.length !== 0;
+      if (t8 === true) {
+        t8 = validationData.$index(0, _s13_);
+        t8.toString;
+        chatInstance = A.int_parse(t8, _null);
+      } else
+        chatInstance = _null;
+      chatType = validationData.$index(0, "chat_type");
+      queryId = validationData.$index(0, "query_id");
+      t8 = validationData.$index(0, "auth_date");
+      t8.toString;
+      authDate = A.int_parse(t8, _null);
+      t8 = validationData.$index(0, "hash");
+      t8.toString;
+      return new A.TelegramInitData(new A.TelegramUser(t3, t4, t5, t6, t7, t2), chatInstance, chatType, queryId, authDate, t8, t1);
+    }
+  };
   A.TypedDataBuffer.prototype = {
     get$length(_) {
       return this._typed_buffer$_length;
