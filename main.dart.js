@@ -20219,9 +20219,9 @@
     },
     _MaterialAppState_build_closure: function _MaterialAppState_build_closure() {
     },
-    AppBar$(backgroundColor, bottom, title) {
+    AppBar$(automaticallyImplyLeading, backgroundColor, bottom, title) {
       var t1 = bottom == null ? null : bottom.get$preferredSize()._dy;
-      return new A.AppBar(title, bottom, backgroundColor, new A._PreferredAppBarSize(null, t1, 1 / 0, 56 + (t1 == null ? 0 : t1)), null);
+      return new A.AppBar(automaticallyImplyLeading, title, bottom, backgroundColor, new A._PreferredAppBarSize(null, t1, 1 / 0, 56 + (t1 == null ? 0 : t1)), null);
     },
     AppBar_preferredHeightFor(context, preferredSize) {
       var t2,
@@ -20241,13 +20241,14 @@
       _._dx = t2;
       _._dy = t3;
     },
-    AppBar: function AppBar(t0, t1, t2, t3, t4) {
+    AppBar: function AppBar(t0, t1, t2, t3, t4, t5) {
       var _ = this;
-      _.title = t0;
-      _.bottom = t1;
-      _.backgroundColor = t2;
-      _.preferredSize = t3;
-      _.key = t4;
+      _.automaticallyImplyLeading = t0;
+      _.title = t1;
+      _.bottom = t2;
+      _.backgroundColor = t3;
+      _.preferredSize = t4;
+      _.key = t5;
     },
     AppBar__getEffectiveCenterTitle_platformCenter: function AppBar__getEffectiveCenterTitle_platformCenter(t0, t1) {
       this.$this = t0;
@@ -25265,18 +25266,19 @@
     },
     _TabBarScrollPosition: function _TabBarScrollPosition() {
     },
-    TabBar: function TabBar(t0, t1, t2, t3, t4, t5, t6, t7, t8, t9) {
+    TabBar: function TabBar(t0, t1, t2, t3, t4, t5, t6, t7, t8, t9, t10) {
       var _ = this;
       _.tabs = t0;
       _.controller = t1;
       _.indicatorColor = t2;
       _.indicatorWeight = t3;
       _.indicatorSize = t4;
-      _.labelColor = t5;
-      _.unselectedLabelColor = t6;
-      _.labelStyle = t7;
-      _.unselectedLabelStyle = t8;
-      _.key = t9;
+      _.dividerColor = t5;
+      _.labelColor = t6;
+      _.unselectedLabelColor = t7;
+      _.labelStyle = t8;
+      _.unselectedLabelStyle = t9;
+      _.key = t10;
     },
     _TabBarState: function _TabBarState() {
       var _ = this;
@@ -91252,19 +91254,21 @@
         t1 = defaults.get$titleTextStyle();
         titleTextStyle = t1 == null ? _null : t1.copyWith$1$color(foregroundColor);
       }
-      _this._widget.toString;
+      t1 = _this._widget;
+      t1 = t1.automaticallyImplyLeading;
       leading = _null;
-      if (t3 === true) {
-        t1 = overallIconTheme0.size;
-        leading = new A.DrawerButton(B.StandardComponentType_3, _null, _null, B.DrawerButtonIcon_null, _null, _null, _null, _null, A.IconButton_styleFrom(_null, _null, _null, _null, _null, _null, _null, _null, _null, t1 == null ? 24 : t1, _null, _null, _null, _null), _null);
-      } else {
-        if (parentRoute == null)
-          t1 = _null;
-        else
-          t1 = parentRoute.get$hasActiveRouteBelow() || parentRoute.LocalHistoryRoute__entriesImpliesAppBarDismissal > 0;
-        if (t1 === true)
-          leading = B.BackButton_6Oi;
-      }
+      if (t1)
+        if (t3 === true) {
+          t1 = overallIconTheme0.size;
+          leading = new A.DrawerButton(B.StandardComponentType_3, _null, _null, B.DrawerButtonIcon_null, _null, _null, _null, _null, A.IconButton_styleFrom(_null, _null, _null, _null, _null, _null, _null, _null, _null, t1 == null ? 24 : t1, _null, _null, _null, _null), _null);
+        } else {
+          if (parentRoute == null)
+            t1 = _null;
+          else
+            t1 = parentRoute.get$hasActiveRouteBelow() || parentRoute.LocalHistoryRoute__entriesImpliesAppBarDismissal > 0;
+          if (t1 === true)
+            leading = B.BackButton_6Oi;
+        }
       if (leading != null) {
         if (overallIconTheme0.$eq(0, defaults.get$iconTheme()))
           effectiveIconButtonTheme = iconButtonTheme;
@@ -102498,13 +102502,13 @@
       _this._currentIndex = _this._tabs$_controller._tab_controller$_index;
     },
     _initIndicatorPainter$0() {
-      var tabBarTheme, indicatorSize, oldPainter, t2, t3, t4, t5, t6, t7, t8, _this = this,
+      var indicatorSize, oldPainter, t2, t3, t4, t5, t6, t7, t8, _this = this,
         t1 = _this._framework$_element;
       t1.toString;
       A.Theme_of(t1);
       t1 = _this._framework$_element;
       t1.toString;
-      tabBarTheme = A.TabBarTheme_of(t1);
+      A.TabBarTheme_of(t1);
       indicatorSize = _this._widget.indicatorSize;
       oldPainter = _this._indicatorPainter;
       switch (indicatorSize.index) {
@@ -102523,22 +102527,20 @@
         t2 = _this._tabs$_controller;
         t2.toString;
         t3 = _this._getIndicator$1(indicatorSize);
-        _this._widget.toString;
-        t4 = _this.___TabBarState__tabKeys_A;
-        t4 === $ && A.throwUnnamedLateFieldNI();
-        t5 = _this.___TabBarState__labelPaddings_A;
+        t4 = _this._widget;
+        t4.toString;
+        t5 = _this.___TabBarState__tabKeys_A;
         t5 === $ && A.throwUnnamedLateFieldNI();
-        t6 = tabBarTheme.dividerColor;
-        if (t6 == null)
-          t6 = _this.get$_tabs$_defaults().get$dividerColor();
-        _this._widget.toString;
+        t6 = _this.___TabBarState__labelPaddings_A;
+        t6 === $ && A.throwUnnamedLateFieldNI();
+        t4 = t4.dividerColor;
         t7 = _this.get$_tabs$_defaults().get$dividerHeight();
         _this._widget.toString;
         t8 = _this._framework$_element;
         t8.toString;
         t8 = A.InheritedModel_inheritFrom(t8, B._MediaQueryAspect_2, type$.MediaQuery).data;
         _this._widget.toString;
-        t1 = new A._IndicatorPainter(t2, t3, indicatorSize, B.EdgeInsets_0_0_0_0, t4, t5, t6, t7, true, t8.devicePixelRatio, t1, _this._framework$_element.dependOnInheritedWidgetOfExactType$1$0(type$.Directionality).textDirection, t2.get$animation(0));
+        t1 = new A._IndicatorPainter(t2, t3, indicatorSize, B.EdgeInsets_0_0_0_0, t5, t6, t4, t7, true, t8.devicePixelRatio, t1, _this._framework$_element.dependOnInheritedWidgetOfExactType$1$0(type$.Directionality).textDirection, t2.get$animation(0));
         if (oldPainter != null) {
           t2 = oldPainter._currentTabOffsets;
           t3 = oldPainter._currentTextDirection;
@@ -102573,12 +102575,16 @@
         if (t1.indicatorColor.$eq(0, oldWidget.indicatorColor)) {
           t1 = _this._widget;
           if (t1.indicatorWeight === oldWidget.indicatorWeight)
-            if (t1.indicatorSize === oldWidget.indicatorSize) {
-              t1 = B.EdgeInsets_0_0_0_0.$eq(0, B.EdgeInsets_0_0_0_0);
-              if (t1)
-                _this._widget.toString;
-              t1 = !t1;
-            } else
+            if (t1.indicatorSize === oldWidget.indicatorSize)
+              if (B.EdgeInsets_0_0_0_0.$eq(0, B.EdgeInsets_0_0_0_0)) {
+                t1 = _this._widget;
+                t1 = t1.dividerColor.$eq(0, oldWidget.dividerColor);
+                if (t1)
+                  _this._widget.toString;
+                t1 = !t1;
+              } else
+                t1 = t2;
+            else
               t1 = t2;
           else
             t1 = t2;
@@ -166016,7 +166022,7 @@
   A.MaterialErrorScreen.prototype = {
     build$1(context) {
       var _null = null,
-        t1 = A.AppBar$(_null, _null, B.Text_uCK),
+        t1 = A.AppBar$(true, _null, _null, B.Text_uCK),
         t2 = this.error;
       t2 = t2 == null ? _null : "GoException: " + t2.message;
       if (t2 == null)
@@ -169388,7 +169394,7 @@
         t5 = A.part_r_PartR_roboto$closure().call$2$fontSize$fontWeight(16 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_3),
         t6 = this.___MyTicketsViewState_tabController_A;
       t6 === $ && A.throwUnnamedLateFieldNI();
-      return A.AnnotatedRegion$(A.Scaffold$(A.AppBar$(B.Color_Kln, new A.TabBar(t2, t6, B.Color_wst, 3, B.TabBarIndicatorSize_0, B.Color_wst, t3, t4, t5, _null), t1), B.Color_Kln, _null), B.SystemUiOverlayStyle_iGj, type$.SystemUiOverlayStyle);
+      return A.AnnotatedRegion$(A.Scaffold$(A.AppBar$(false, B.Color_Kln, new A.TabBar(t2, t6, B.Color_wst, 3, B.TabBarIndicatorSize_0, B.Color_Edl, B.Color_wst, t3, t4, t5, _null), t1), B.Color_Kln, _null), B.SystemUiOverlayStyle_iGj, type$.SystemUiOverlayStyle);
     }
   };
   A._MyTicketsViewState_initState_closure.prototype = {
