@@ -20219,9 +20219,9 @@
     },
     _MaterialAppState_build_closure: function _MaterialAppState_build_closure() {
     },
-    AppBar$(bottom, title) {
+    AppBar$(backgroundColor, bottom, title) {
       var t1 = bottom == null ? null : bottom.get$preferredSize()._dy;
-      return new A.AppBar(title, bottom, new A._PreferredAppBarSize(null, t1, 1 / 0, 56 + (t1 == null ? 0 : t1)), null);
+      return new A.AppBar(title, bottom, backgroundColor, new A._PreferredAppBarSize(null, t1, 1 / 0, 56 + (t1 == null ? 0 : t1)), null);
     },
     AppBar_preferredHeightFor(context, preferredSize) {
       var t2,
@@ -20241,12 +20241,13 @@
       _._dx = t2;
       _._dy = t3;
     },
-    AppBar: function AppBar(t0, t1, t2, t3) {
+    AppBar: function AppBar(t0, t1, t2, t3, t4) {
       var _ = this;
       _.title = t0;
       _.bottom = t1;
-      _.preferredSize = t2;
-      _.key = t3;
+      _.backgroundColor = t2;
+      _.preferredSize = t3;
+      _.key = t4;
     },
     AppBar__getEffectiveCenterTitle_platformCenter: function AppBar__getEffectiveCenterTitle_platformCenter(t0, t1) {
       this.$this = t0;
@@ -91163,7 +91164,7 @@
       return t1 == null ? A.WidgetStateProperty_resolveAs(defaultColor, states, type$.Color) : t1;
     },
     build$1(context) {
-      var t1, t2, t3, toolbarHeight, t4, backgroundColor, t5, t6, scrolledUnderBackground, effectiveBackgroundColor, actionForegroundColor, foregroundColor, elevation, effectiveElevation, overallIconTheme, overallIconTheme0, actionsIconTheme, toolbarTextStyle, titleTextStyle, leading, effectiveIconButtonTheme, leadingIconButtonStyle, title, title0, _0_0, actions, effectiveActionsIconButtonTheme, actionsIconButtonStyle, appBar, style, overlayStyle, _this = this, _null = null,
+      var t1, t2, t3, t4, toolbarHeight, t5, backgroundColor, t6, t7, scrolledUnderBackground, effectiveBackgroundColor, actionForegroundColor, foregroundColor, elevation, effectiveElevation, overallIconTheme, overallIconTheme0, actionsIconTheme, toolbarTextStyle, titleTextStyle, leading, effectiveIconButtonTheme, leadingIconButtonStyle, title, title0, _0_0, actions, effectiveActionsIconButtonTheme, actionsIconButtonStyle, appBar, style, overlayStyle, _this = this, _null = null,
         theme = A.Theme_of(context),
         iconButtonTheme = A.IconButtonTheme_of(context),
         appBarTheme = A.Theme_of(context).appBarTheme,
@@ -91190,16 +91191,17 @@
       }
       if (parentRoute instanceof A.PageRoute)
         parentRoute.get$fullscreenDialog();
-      _this._widget.toString;
+      t4 = _this._widget;
+      t4.toString;
       toolbarHeight = appBarTheme.toolbarHeight;
       if (toolbarHeight == null)
         toolbarHeight = 56;
-      t4 = appBarTheme.backgroundColor;
-      backgroundColor = _this._resolveColor$4(t1, _null, t4, defaults.get$backgroundColor(0));
-      _this._widget.toString;
-      t5 = A.Theme_of(context).colorScheme;
-      t6 = t5._surfaceContainer;
-      scrolledUnderBackground = _this._resolveColor$4(t1, _null, t4, t6 == null ? t5.surface : t6);
+      t5 = appBarTheme.backgroundColor;
+      backgroundColor = _this._resolveColor$4(t1, t4.backgroundColor, t5, defaults.get$backgroundColor(0));
+      t4 = _this._widget.backgroundColor;
+      t6 = A.Theme_of(context).colorScheme;
+      t7 = t6._surfaceContainer;
+      scrolledUnderBackground = _this._resolveColor$4(t1, t4, t5, t7 == null ? t6.surface : t7);
       effectiveBackgroundColor = t1.contains$1(0, B.WidgetState_5) ? scrolledUnderBackground : backgroundColor;
       _this._widget.toString;
       actionForegroundColor = appBarTheme.foregroundColor;
@@ -166014,7 +166016,7 @@
   A.MaterialErrorScreen.prototype = {
     build$1(context) {
       var _null = null,
-        t1 = A.AppBar$(_null, B.Text_uCK),
+        t1 = A.AppBar$(_null, _null, B.Text_uCK),
         t2 = this.error;
       t2 = t2 == null ? _null : "GoException: " + t2.message;
       if (t2 == null)
@@ -169386,7 +169388,7 @@
         t5 = A.part_r_PartR_roboto$closure().call$2$fontSize$fontWeight(16 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_3),
         t6 = this.___MyTicketsViewState_tabController_A;
       t6 === $ && A.throwUnnamedLateFieldNI();
-      return A.AnnotatedRegion$(A.Scaffold$(A.AppBar$(new A.TabBar(t2, t6, B.Color_wst, 3, B.TabBarIndicatorSize_0, B.Color_wst, t3, t4, t5, _null), t1), B.Color_Kln, _null), B.SystemUiOverlayStyle_iGj, type$.SystemUiOverlayStyle);
+      return A.AnnotatedRegion$(A.Scaffold$(A.AppBar$(B.Color_Kln, new A.TabBar(t2, t6, B.Color_wst, 3, B.TabBarIndicatorSize_0, B.Color_wst, t3, t4, t5, _null), t1), B.Color_Kln, _null), B.SystemUiOverlayStyle_iGj, type$.SystemUiOverlayStyle);
     }
   };
   A._MyTicketsViewState_initState_closure.prototype = {
