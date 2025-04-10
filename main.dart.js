@@ -25115,8 +25115,8 @@
       this.borderRadius = t1;
       this.onChanged = t2;
     },
-    Tab$(text) {
-      return new A.Tab(text, null);
+    Tab$(child) {
+      return new A.Tab(child, null);
     },
     _TabStyle$(animation, child, defaults, isPrimary, isSelected, labelColor, labelStyle, unselectedLabelColor, unselectedLabelStyle) {
       return new A._TabStyle(labelStyle, unselectedLabelStyle, isSelected, labelColor, unselectedLabelColor, defaults, child, animation, null);
@@ -25169,7 +25169,7 @@
       this._name = t1;
     },
     Tab: function Tab(t0, t1) {
-      this.text = t0;
+      this.child = t0;
       this.key = t1;
     },
     _TabStyle: function _TabStyle(t0, t1, t2, t3, t4, t5, t6, t7, t8) {
@@ -101995,9 +101995,7 @@
   };
   A.Tab.prototype = {
     _buildLabelText$0() {
-      var _null = null,
-        t1 = A.Text$(this.text, _null, B.TextOverflow_1, _null, false, _null, _null, _null);
-      return t1;
+      return this.child;
     },
     build$1(context) {
       var _null = null,
@@ -169388,7 +169386,7 @@
     build$1(context) {
       var _null = null,
         t1 = A.Text$("My Tickets", _null, _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_wst, 20 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_5), _null, _null),
-        t2 = A._setArrayType([A.Tab$("Active"), A.Tab$("Closed")], type$.JSArray_Widget),
+        t2 = A._setArrayType([A.Tab$(A.Text$("Active", _null, _null, _null, _null, A.part_r_PartR_roboto$closure().call$2$fontSize$fontWeight(18 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_5), _null, _null)), A.Tab$(A.Text$("Closed", _null, _null, _null, _null, A.part_r_PartR_roboto$closure().call$2$fontSize$fontWeight(18 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_5), _null, _null))], type$.JSArray_Widget),
         t3 = $.$get$AppColors_white70(),
         t4 = A.part_r_PartR_roboto$closure().call$2$fontSize$fontWeight(16 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_5),
         t5 = A.part_r_PartR_roboto$closure().call$2$fontSize$fontWeight(16 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_3),
@@ -180170,7 +180168,6 @@
     B.TextInputType_2_false_false = new A.TextInputType(2, false, false);
     B.TextLeadingDistribution_1 = new A.TextLeadingDistribution(1, "even");
     B.TextMagnifierConfiguration_null_true = new A.TextMagnifierConfiguration(null, true);
-    B.TextOverflow_1 = new A.TextOverflow(1, "fade");
     B.TextOverflow_2 = new A.TextOverflow(2, "ellipsis");
     B.TextOverflow_3 = new A.TextOverflow(3, "visible");
     B.TextPosition_0_TextAffinity_1 = new A.TextPosition(0, B.TextAffinity_1);
