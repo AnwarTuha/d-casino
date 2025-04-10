@@ -169386,7 +169386,7 @@
     build$1(context) {
       var _null = null,
         t1 = A.Text$("My Tickets", _null, _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_wst, 20 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_5), _null, _null),
-        t2 = A._setArrayType([A.Tab$(A.Text$("Active", _null, _null, _null, _null, A.part_r_PartR_roboto$closure().call$2$fontSize$fontWeight(18 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_5), _null, _null)), A.Tab$(A.Text$("Closed", _null, _null, _null, _null, A.part_r_PartR_roboto$closure().call$2$fontSize$fontWeight(18 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_5), _null, _null))], type$.JSArray_Widget),
+        t2 = A._setArrayType([A.Tab$(A.Text$("Active", _null, _null, _null, _null, A.part_r_PartR_roboto$closure().call$2$fontSize$fontWeight(14 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_5), _null, _null)), A.Tab$(A.Text$("Closed", _null, _null, _null, _null, A.part_r_PartR_roboto$closure().call$2$fontSize$fontWeight(14 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_5), _null, _null))], type$.JSArray_Widget),
         t3 = $.$get$AppColors_white70(),
         t4 = A.part_r_PartR_roboto$closure().call$2$fontSize$fontWeight(16 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_5),
         t5 = A.part_r_PartR_roboto$closure().call$2$fontSize$fontWeight(16 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_3),
