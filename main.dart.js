@@ -168442,7 +168442,7 @@
     call$0() {
       var t1 = this.$this._framework$_element;
       t1.toString;
-      A.GoRouter_maybeOf(t1).push$1$2$extra("/lottery", null, type$.nullable_Object);
+      A.GoRouter_maybeOf(t1).push$1$2$extra("/my-tickets", null, type$.nullable_Object);
     },
     $signature: 0
   };
