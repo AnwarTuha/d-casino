@@ -46506,9 +46506,10 @@
       this.valueType = t0;
       this.widgetType = t1;
     },
-    HttpResponse: function HttpResponse(t0, t1) {
+    HttpResponse: function HttpResponse(t0, t1, t2) {
       this.data = t0;
-      this.$ti = t1;
+      this.response = t1;
+      this.$ti = t2;
     },
     SizerExt_get_h(_this) {
       return _this * $.SizerUtil___height._readField$0() / 100;
@@ -168199,7 +168200,7 @@
     telegramAuth$body$_HomeApiServices(initData) {
       var $async$goto = 0,
         $async$completer = A._makeAsyncAwaitCompleter(type$.HttpResponse_dynamic),
-        $async$returnValue, $async$self = this, t3, t4, t5, t1, t2, queryParameters, $async$temp1;
+        $async$returnValue, $async$self = this, t3, t4, t5, _result, t1, t2, queryParameters;
       var $async$telegramAuth$1$initData = A._wrapJsFunctionForAsync(function($async$errorCode, $async$result) {
         if ($async$errorCode === 1)
           return A._asyncRethrow($async$result, $async$completer);
@@ -168218,12 +168219,12 @@
               t1 = t3.DioMixin___DioMixin_options_A.OptionsMixin___OptionsMixin__baseUrl_A;
               t1 === $ && A.throwUnnamedLateFieldNI();
               t5 = type$.HttpResponse_dynamic;
-              $async$temp1 = A;
               $async$goto = 3;
               return A._asyncAwait(t3.fetch$1$1(0, $async$self._setStreamType$1$1(t4.copyWith$1$baseUrl($async$self._home_api_services$_combineBaseUrls$2(t1, $async$self.baseUrl)), t5), t2), $async$telegramAuth$1$initData);
             case 3:
               // returning from await.
-              $async$returnValue = new $async$temp1.HttpResponse($async$result.data, t5);
+              _result = $async$result;
+              $async$returnValue = new A.HttpResponse(_result.data, _result, t5);
               // goto return
               $async$goto = 1;
               break;
@@ -168240,7 +168241,7 @@
     deposit$body$_HomeApiServices(accessToken, body) {
       var $async$goto = 0,
         $async$completer = A._makeAsyncAwaitCompleter(type$.HttpResponse_dynamic),
-        $async$returnValue, $async$self = this, _data, t3, t4, t5, t1, t2, _headers, $async$temp1;
+        $async$returnValue, $async$self = this, _data, t3, t4, t5, _result, t1, t2, _headers;
       var $async$deposit$2$accessToken$body = A._wrapJsFunctionForAsync(function($async$errorCode, $async$result) {
         if ($async$errorCode === 1)
           return A._asyncRethrow($async$result, $async$completer);
@@ -168262,12 +168263,12 @@
               t5 = t4.DioMixin___DioMixin_options_A.OptionsMixin___OptionsMixin__baseUrl_A;
               t5 === $ && A.throwUnnamedLateFieldNI();
               t3 = type$.HttpResponse_dynamic;
-              $async$temp1 = A;
               $async$goto = 3;
               return A._asyncAwait(t4.fetch$1$1(0, $async$self._setStreamType$1$1(t1.copyWith$1$baseUrl($async$self._home_api_services$_combineBaseUrls$2(t5, $async$self.baseUrl)), t3), t2), $async$deposit$2$accessToken$body);
             case 3:
               // returning from await.
-              $async$returnValue = new $async$temp1.HttpResponse($async$result.data, t3);
+              _result = $async$result;
+              $async$returnValue = new A.HttpResponse(_result.data, _result, t3);
               // goto return
               $async$goto = 1;
               break;
@@ -168326,7 +168327,7 @@
                 s = A.getTraceFromException(exception);
                 throw exception;
               }
-              $async$returnValue = new A.HttpResponse(_value._readLocal$0(), t5);
+              $async$returnValue = new A.HttpResponse(_value._readLocal$0(), _result, t5);
               // goto return
               $async$goto = 1;
               break;
@@ -168839,7 +168840,7 @@
     getLotteries$body$_LotteriesApiServices(page, pageSize) {
       var $async$goto = 0,
         $async$completer = A._makeAsyncAwaitCompleter(type$.HttpResponse_dynamic),
-        $async$returnValue, $async$self = this, t3, t4, _options, t1, t2, queryParameters, $async$temp1;
+        $async$returnValue, $async$self = this, t3, t4, _options, _result, t1, t2, queryParameters;
       var $async$getLotteries$2$page$pageSize = A._wrapJsFunctionForAsync(function($async$errorCode, $async$result) {
         if ($async$errorCode === 1)
           return A._asyncRethrow($async$result, $async$completer);
@@ -168870,12 +168871,12 @@
                   _options.___RequestConfig_responseType_A = B.ResponseType_2;
                 else
                   _options.___RequestConfig_responseType_A = B.ResponseType_0;
-              $async$temp1 = A;
               $async$goto = 3;
               return A._asyncAwait(t3.fetch$1$1(0, _options, t2), $async$getLotteries$2$page$pageSize);
             case 3:
               // returning from await.
-              $async$returnValue = new $async$temp1.HttpResponse($async$result.data, t1);
+              _result = $async$result;
+              $async$returnValue = new A.HttpResponse(_result.data, _result, t1);
               // goto return
               $async$goto = 1;
               break;
@@ -168928,7 +168929,8 @@
             case 6:
               // returning from await.
               response = $async$result;
-              A.print(">>>>>>>>>>>>>>>>>>>RESPONSE BLOC: " + A.S(response));
+              A.print(">>>>>>>>>>>>>>>>>>>RESPONSE BLOC: " + response.response.toString$0(0));
+              A.print(">>>>>>>>>>>>>>>>>>>RESPONSE DATA BLOC: " + A.S(response.response.data));
               t4 = t4._bloc$_state;
               if (t4 instanceof A.LotteryLoaded) {
                 currentState = t4;
@@ -169124,7 +169126,7 @@
     purchaseTicket$body$_LotteryDetailApiServices(accessToken, body) {
       var $async$goto = 0,
         $async$completer = A._makeAsyncAwaitCompleter(type$.HttpResponse_dynamic),
-        $async$returnValue, $async$self = this, _data, t3, t4, t5, _options, t1, t2, _headers, $async$temp1;
+        $async$returnValue, $async$self = this, _data, t3, t4, t5, _options, _result, t1, t2, _headers;
       var $async$purchaseTicket$2$accessToken$body = A._wrapJsFunctionForAsync(function($async$errorCode, $async$result) {
         if ($async$errorCode === 1)
           return A._asyncRethrow($async$result, $async$completer);
@@ -169158,12 +169160,12 @@
                   _options.___RequestConfig_responseType_A = B.ResponseType_2;
                 else
                   _options.___RequestConfig_responseType_A = B.ResponseType_0;
-              $async$temp1 = A;
               $async$goto = 3;
               return A._asyncAwait(t4.fetch$1$1(0, _options, t2), $async$purchaseTicket$2$accessToken$body);
             case 3:
               // returning from await.
-              $async$returnValue = new $async$temp1.HttpResponse($async$result.data, t5);
+              _result = $async$result;
+              $async$returnValue = new A.HttpResponse(_result.data, _result, t5);
               // goto return
               $async$goto = 1;
               break;
