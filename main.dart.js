@@ -44977,6 +44977,7 @@
     _LotteriesApiServices_getLotteries_closure: function _LotteriesApiServices_getLotteries_closure() {
     },
     PaginatedLotteryCategories_PaginatedLotteryCategories$fromJson(json) {
+      A.print(">>>>>>>>>>>>>>>>>> " + A.S(json));
       return new A.PaginatedLotteryCategories(J.toList$0$ax(J.map$1$ax(json, new A.PaginatedLotteryCategories_PaginatedLotteryCategories$fromJson_closure())));
     },
     PaginatedLotteryCategories: function PaginatedLotteryCategories(t0) {
@@ -168718,6 +168719,7 @@
   A.PaginatedLotteryCategories_PaginatedLotteryCategories$fromJson_closure.prototype = {
     call$1(e) {
       var t1;
+      A.print(">>>>>>>>>>>>>>>>>>>>>> E: " + A.S(e));
       type$.Map_String_dynamic._as(e);
       t1 = J.getInterceptor$asx(e);
       return new A.LotteryCategoryModel(t1.$index(e, "id"), t1.$index(e, "name"), t1.$index(e, "description"));
