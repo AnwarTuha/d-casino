@@ -723,6 +723,9 @@
     listener$1$z(receiver, a0) {
       return J.getInterceptor$z(receiver).listener$1(receiver, a0);
     },
+    map$1$ax(receiver, a0) {
+      return J.getInterceptor$ax(receiver).map$1(receiver, a0);
+    },
     map$1$1$ax(receiver, a0, $T1) {
       return J.getInterceptor$ax(receiver).map$1$1(receiver, a0, $T1);
     },
@@ -44974,11 +44977,7 @@
     _LotteriesApiServices_getLotteries_closure: function _LotteriesApiServices_getLotteries_closure() {
     },
     PaginatedLotteryCategories_PaginatedLotteryCategories$fromJson(json) {
-      var t1,
-        ticketListJson = J.$index$asx(json, 0);
-      A.print(">>>>>>>>>>>>>>>>>>>>>>> " + A.S(ticketListJson));
-      t1 = J.map$1$1$ax(ticketListJson, new A.PaginatedLotteryCategories_PaginatedLotteryCategories$fromJson_closure(), type$.LotteryCategoryModel);
-      return new A.PaginatedLotteryCategories(A.List_List$of(t1, true, t1.$ti._eval$1("ListIterable.E")));
+      return new A.PaginatedLotteryCategories(J.toList$0$ax(J.map$1$ax(json, new A.PaginatedLotteryCategories_PaginatedLotteryCategories$fromJson_closure())));
     },
     PaginatedLotteryCategories: function PaginatedLotteryCategories(t0) {
       this.data = t0;
@@ -62873,6 +62872,9 @@
     map$1$1(receiver, f, $T) {
       return new A.MappedListIterable(receiver, f, A._arrayInstanceType(receiver)._eval$1("@<1>")._bind$1($T)._eval$1("MappedListIterable<1,2>"));
     },
+    map$1(receiver, f) {
+      return this.map$1$1(receiver, f, type$.dynamic);
+    },
     join$1(receiver, separator) {
       var i,
         list = A.List_List$filled(receiver.length, "", false, type$.String);
@@ -64159,6 +64161,9 @@
     map$1$1(_, toElement, $T) {
       return new A.MappedListIterable(this, toElement, A._instanceType(this)._eval$1("@<ListIterable.E>")._bind$1($T)._eval$1("MappedListIterable<1,2>"));
     },
+    map$1(_, toElement) {
+      return this.map$1$1(0, toElement, type$.dynamic);
+    },
     reduce$1(_, combine) {
       var value, i, _this = this,
         $length = _this.get$length(_this);
@@ -64361,6 +64366,9 @@
     },
     map$1$1(_, toElement, $T) {
       return new A.MappedIterable(this, toElement, this.$ti._eval$1("@<1>")._bind$1($T)._eval$1("MappedIterable<1,2>"));
+    },
+    map$1(_, toElement) {
+      return this.map$1$1(0, toElement, type$.dynamic);
     }
   };
   A.WhereIterator.prototype = {
@@ -64530,6 +64538,9 @@
     },
     map$1$1(_, toElement, $T) {
       return new A.EmptyIterable($T._eval$1("EmptyIterable<0>"));
+    },
+    map$1(_, toElement) {
+      return this.map$1$1(0, toElement, type$.dynamic);
     },
     skip$1(_, count) {
       A.RangeError_checkNotNegative(count, "count");
@@ -64941,6 +64952,10 @@
       var result = A.LinkedHashMap_LinkedHashMap$_empty(K2, V2);
       this.forEach$1(0, new A.ConstantMap_map_closure(this, transform, result));
       return result;
+    },
+    map$1(_, transform) {
+      var t1 = type$.dynamic;
+      return this.map$2$1(0, transform, t1, t1);
     },
     $isMap: 1
   };
@@ -67573,6 +67588,12 @@
   };
   A._AsyncCallbackEntry.prototype = {};
   A.Stream.prototype = {
+    map$1$1(_, convert, $S) {
+      return new A._MapStream(convert, this, A._instanceType(this)._eval$1("@<Stream.T>")._bind$1($S)._eval$1("_MapStream<1,2>"));
+    },
+    map$1(_, convert) {
+      return this.map$1$1(0, convert, type$.dynamic);
+    },
     get$length(_) {
       var t1 = {},
         future = new A._Future($.Zone__current, type$._Future_int);
@@ -69925,6 +69946,9 @@
     map$1$1(receiver, f, $T) {
       return new A.MappedListIterable(receiver, f, A.instanceType(receiver)._eval$1("@<ListBase.E>")._bind$1($T)._eval$1("MappedListIterable<1,2>"));
     },
+    map$1(receiver, f) {
+      return this.map$1$1(receiver, f, type$.dynamic);
+    },
     skip$1(receiver, count) {
       return A.SubListIterable$(receiver, count, null, A.instanceType(receiver)._eval$1("ListBase.E"));
     },
@@ -70128,6 +70152,10 @@
       }
       return result;
     },
+    map$1(receiver, transform) {
+      var t1 = type$.dynamic;
+      return this.map$2$1(receiver, transform, t1, t1);
+    },
     addEntries$1(receiver, newEntries) {
       var t1, t2;
       for (t1 = newEntries.get$iterator(newEntries); t1.moveNext$0();) {
@@ -70301,6 +70329,10 @@
     },
     map$2$1(_, transform, K2, V2) {
       return J.map$2$1$ax(this._collection$_map, transform, K2, V2);
+    },
+    map$1(_, transform) {
+      var t1 = type$.dynamic;
+      return this.map$2$1(0, transform, t1, t1);
     },
     $isMap: 1
   };
@@ -70710,6 +70742,9 @@
     },
     map$1$1(_, f, $T) {
       return new A.EfficientLengthMappedIterable(this, f, A._instanceType(this)._eval$1("@<1>")._bind$1($T)._eval$1("EfficientLengthMappedIterable<1,2>"));
+    },
+    map$1(_, f) {
+      return this.map$1$1(0, f, type$.dynamic);
     },
     get$single(_) {
       var it, _this = this;
@@ -73051,6 +73086,9 @@
     map$1$1(_, toElement, $T) {
       return A.MappedIterable_MappedIterable(this, toElement, A.instanceType(this)._eval$1("Iterable.E"), $T);
     },
+    map$1(_, toElement) {
+      return this.map$1$1(0, toElement, type$.dynamic);
+    },
     where$1(_, test) {
       return new A.WhereIterable(this, test, A.instanceType(this)._eval$1("WhereIterable<Iterable.E>"));
     },
@@ -73815,6 +73853,12 @@
     },
     $index($receiver, $0) {
       return this.noSuchMethod$1($receiver, A.createInvocationMirror("[]", "$index", 0, [$0], [], 0));
+    },
+    toList$0($receiver) {
+      return this.noSuchMethod$1($receiver, A.createInvocationMirror("toList", "toList$0", 0, [], [], 0));
+    },
+    map$1($receiver, $0) {
+      return this.noSuchMethod$1($receiver, A.createInvocationMirror("map", "map$1", 0, [$0], [], 0));
     },
     _yieldStar$1($0) {
       return this.noSuchMethod$1(this, A.createInvocationMirror("_yieldStar", "_yieldStar$1", 0, [$0], [], 0));
@@ -79563,6 +79607,10 @@
       var t1 = this._base;
       return t1.map$2$1(t1, new A.CanonicalizedMap_map_closure(this, transform, K2, V2), K2, V2);
     },
+    map$1(_, transform) {
+      var t1 = type$.dynamic;
+      return this.map$2$1(0, transform, t1, t1);
+    },
     putIfAbsent$2(_, key, ifAbsent) {
       return this._base.putIfAbsent$2(0, this._canonicalize.call$1(key), new A.CanonicalizedMap_putIfAbsent_closure(this, key, ifAbsent)).value;
     },
@@ -79853,6 +79901,23 @@
     },
     get$length(_) {
       return this._priority_queue$_length;
+    },
+    toList$0(_) {
+      var t1 = this._toUnorderedList$0();
+      B.JSArray_methods.sort$1(t1, this.comparison);
+      return t1;
+    },
+    _toUnorderedList$0() {
+      var t3, i, t4,
+        t1 = this.$ti,
+        t2 = A._setArrayType([], t1._eval$1("JSArray<1>"));
+      for (t3 = this._priority_queue$_queue, t1 = t1._precomputed1, i = 0; i < this._priority_queue$_length; ++i) {
+        t4 = t3[i];
+        t1._as(null);
+        t4 = null;
+        t2.push(t4);
+      }
+      return t2;
     },
     toString$0(_) {
       var t1 = this._priority_queue$_queue;
@@ -80716,6 +80781,9 @@
   };
   A._InterceptorsWrapper_Interceptor__InterceptorWrapperMixin.prototype = {};
   A.Headers.prototype = {
+    get$map(_) {
+      return this._headers$_map;
+    },
     $index(_, $name) {
       return this._headers$_map.$index(0, B.JSString_methods.trim$0($name));
     },
@@ -80725,6 +80793,9 @@
       this._headers$_map.forEach$1(0, new A.Headers_toString_closure(stringBuffer));
       t1 = stringBuffer._contents;
       return t1.charCodeAt(0) == 0 ? t1 : t1;
+    },
+    map$1($receiver, arg0) {
+      return this.get$map(this).call$1(arg0);
     }
   };
   A.Headers$fromMap_closure.prototype = {
