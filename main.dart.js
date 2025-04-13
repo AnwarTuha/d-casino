@@ -168639,7 +168639,7 @@
   };
   A._LotteriesApiServices_getLotteries_closure.prototype = {
     call$1(i) {
-      return A.PaginatedLotteryCategories_PaginatedLotteryCategories$fromJson(type$.Map_String_dynamic._as(i));
+      return A.PaginatedLotteryCategories_PaginatedLotteryCategories$fromJson(i);
     },
     $signature: 605
   };
