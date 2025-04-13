@@ -168928,11 +168928,12 @@
             case 6:
               // returning from await.
               response = $async$result;
+              A.print(">>>>>>>>>>>>>>>>>>>RESPONSE BLOC: " + A.S(response));
               t4 = t4._bloc$_state;
               if (t4 instanceof A.LotteryLoaded) {
                 currentState = t4;
                 t1 = A.List_List$of(currentState.lotteries, true, type$.LotteryCategoryModel);
-                for (t4 = J.get$iterator$ax(J.get$data$x(J.get$first$ax(response.data))); t4.moveNext$0();) {
+                for (t4 = J.get$iterator$ax(response.data); t4.moveNext$0();) {
                   t2 = t4.get$current(t4);
                   t3 = t2;
                   J.add$1$ax(t1, t3);
