@@ -44974,14 +44974,9 @@
     _LotteriesApiServices_getLotteries_closure: function _LotteriesApiServices_getLotteries_closure() {
     },
     PaginatedLotteryCategories_PaginatedLotteryCategories$fromJson(json) {
-      var t1, ticketListJson, totalPages,
-        _s24_ = ">>>>>>>>>>>>>>>>>>>>>>> ";
-      A.print(_s24_ + A.S(json));
-      t1 = J.getInterceptor$asx(json);
-      ticketListJson = t1.$index(json, 0);
-      totalPages = t1.$index(json, 1);
-      A.print(_s24_ + A.S(ticketListJson));
-      A.print(_s24_ + A.S(totalPages));
+      var t1,
+        ticketListJson = J.$index$asx(json, 0);
+      A.print(">>>>>>>>>>>>>>>>>>>>>>> " + A.S(ticketListJson));
       t1 = J.map$1$1$ax(ticketListJson, new A.PaginatedLotteryCategories_PaginatedLotteryCategories$fromJson_closure(), type$.LotteryCategoryModel);
       return new A.PaginatedLotteryCategories(A.List_List$of(t1, true, t1.$ti._eval$1("ListIterable.E")));
     },
