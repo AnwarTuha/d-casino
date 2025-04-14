@@ -169245,6 +169245,7 @@
             case 6:
               // returning from await.
               response = $async$result;
+              A.print(">>>>>>>>>>>>>>>>>>>>>>> " + A.S(response.data));
               t2 = t2._bloc$_state;
               if (t2 instanceof A.LotteryLoaded) {
                 currentState = t2;
