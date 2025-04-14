@@ -169120,7 +169120,7 @@
               // Function start
               t1 = type$.String;
               t2 = type$.dynamic;
-              queryParameters = A.LinkedHashMap_LinkedHashMap$_literal(["status", "OPEN", "page", page, "limit", pageSize, "categoryId", categoryId], t1, t2);
+              queryParameters = A.LinkedHashMap_LinkedHashMap$_literal(["status", "OPEN", "page", page, "limit", pageSize, "categoryId", categoryId, "typeId", ""], t1, t2);
               t2 = A.Options$(A.LinkedHashMap_LinkedHashMap$_empty(t1, t2), A.LinkedHashMap_LinkedHashMap$_empty(t1, t2), "GET");
               t1 = $async$self._lottery_detail_api_services$_dio;
               t3 = t1.DioMixin___DioMixin_options_A;
@@ -169135,7 +169135,6 @@
             case 3:
               // returning from await.
               _result = $async$result;
-              A.S(_result.data);
               _value = A._Cell$named("_value");
               try {
                 t1 = _result.data;
