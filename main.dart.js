@@ -169135,6 +169135,7 @@
             case 3:
               // returning from await.
               _result = $async$result;
+              J.toString$0$(_result.data);
               _value = A._Cell$named("_value");
               try {
                 t1 = _result.data;
@@ -169245,7 +169246,6 @@
             case 6:
               // returning from await.
               response = $async$result;
-              A.print(">>>>>>>>>>>>>>>>>>>>>>> " + A.S(response.data));
               t2 = t2._bloc$_state;
               if (t2 instanceof A.LotteryLoaded) {
                 currentState = t2;
