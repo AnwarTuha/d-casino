@@ -169537,6 +169537,7 @@
   A._TicketPurchaseDialogState_build_closure.prototype = {
     call$2(context, state) {
       var t1, _null = null;
+      A.print(">>>>>>>>>>>>>>>>>>>>>>>>>>> " + state.toString$0(0));
       if (state instanceof A.LotteryLoading) {
         t1 = $.$get$AppSizes_hSize6();
         return A.Center$(A.SizedBox$(A.CircularProgressIndicator$(B.Color_wst, B.StrokeCap_1, 2), t1, t1), _null, _null);
