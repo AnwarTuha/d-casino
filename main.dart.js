@@ -169225,7 +169225,7 @@
     $call$body$LotteryBloc_closure($event, emit) {
       var $async$goto = 0,
         $async$completer = A._makeAsyncAwaitCompleter(type$.void),
-        $async$handler = 1, $async$errorStack = [], $async$self = this, response, currentState, t1, e, t2, t3, exception, $async$exception;
+        $async$handler = 1, $async$errorStack = [], $async$self = this, response, currentState, t1, e, s, t2, t3, exception, $async$exception;
       var $async$call$2 = A._wrapJsFunctionForAsync(function($async$errorCode, $async$result) {
         if ($async$errorCode === 1) {
           $async$errorStack.push($async$result);
@@ -169238,7 +169238,6 @@
               if (!emit._isCanceled)
                 emit._emit.call$1(new A.LotteryLoading());
               $async$handler = 3;
-              A.print(">>>>>>>>>>> GETTING LOTTERIES");
               t2 = $async$self.$this;
               t3 = $event.page;
               $async$goto = 6;
@@ -169246,7 +169245,6 @@
             case 6:
               // returning from await.
               response = $async$result;
-              A.print(">>>>>>>>>>> LOTTERIES: " + A.S(response.data.data));
               t2 = t2._bloc$_state;
               if (t2 instanceof A.LotteryLoaded) {
                 currentState = t2;
@@ -169268,6 +169266,8 @@
               $async$handler = 2;
               $async$exception = $async$errorStack.pop();
               e = A.unwrapException($async$exception);
+              s = A.getTraceFromException($async$exception);
+              A.print(">>>>>>>>>>>>>>>>>>>>>> " + A.S(e) + " " + A.S(s));
               t1 = J.toString$0$(e);
               if (!emit._isCanceled)
                 emit._emit.call$1(new A.LotteryError(t1));
