@@ -32698,14 +32698,14 @@
       _._viewport$_center = null;
       _.__RenderViewport__maxScrollExtent_A = _.__RenderViewport__minScrollExtent_A = $;
       _._viewport$_hasVisualOverflow = false;
-      _._axisDirection = t1;
+      _._viewport$_axisDirection = t1;
       _._crossAxisDirection = t2;
       _._viewport$_offset = t3;
       _._cacheExtent = t4;
       _._calculatedCacheExtent = null;
       _._cacheExtentStyle = t5;
       _._viewport$_clipBehavior = t6;
-      _._viewport$_clipRectLayer = t7;
+      _._clipRectLayer = t7;
       _.ContainerRenderObjectMixin__childCount = t8;
       _.ContainerRenderObjectMixin__firstChild = t9;
       _.ContainerRenderObjectMixin__lastChild = t10;
@@ -32731,14 +32731,14 @@
       var _ = this;
       _.__RenderShrinkWrappingViewport__shrinkWrapExtent_A = _.__RenderShrinkWrappingViewport__maxScrollExtent_A = $;
       _._viewport$_hasVisualOverflow = false;
-      _._axisDirection = t0;
+      _._viewport$_axisDirection = t0;
       _._crossAxisDirection = t1;
       _._viewport$_offset = t2;
       _._cacheExtent = t3;
       _._calculatedCacheExtent = null;
       _._cacheExtentStyle = t4;
       _._viewport$_clipBehavior = t5;
-      _._viewport$_clipRectLayer = t6;
+      _._clipRectLayer = t6;
       _.ContainerRenderObjectMixin__childCount = t7;
       _.ContainerRenderObjectMixin__firstChild = t8;
       _.ContainerRenderObjectMixin__lastChild = t9;
@@ -39831,7 +39831,7 @@
       this._this = t0;
     },
     PrimaryScrollController$none(child) {
-      return new A.PrimaryScrollController(null, null, B.Set_empty1, child, null);
+      return new A.PrimaryScrollController(null, null, B.Set_empty0, child, null);
     },
     PrimaryScrollController_shouldInherit(context, scrollDirection) {
       var platform,
@@ -41310,10 +41310,10 @@
     },
     _RenderSingleChildViewport: function _RenderSingleChildViewport(t0, t1, t2, t3, t4, t5, t6) {
       var _ = this;
-      _._single_child_scroll_view$_axisDirection = t0;
+      _._axisDirection = t0;
       _._single_child_scroll_view$_offset = t1;
       _._single_child_scroll_view$_clipBehavior = t2;
-      _._clipRectLayer = t3;
+      _._single_child_scroll_view$_clipRectLayer = t3;
       _.RenderObjectWithChildMixin__child = t4;
       _._layoutCacheStorage = t5;
       _.parentData = _._box$_size = null;
@@ -73852,11 +73852,11 @@
     call$3$composing$selection$text($0, $1, $2) {
       return this.noSuchMethod$1(this, A.createInvocationMirror("call", "call$3$composing$selection$text", 0, [$0, $1, $2], ["composing", "selection", "text"], 0));
     },
-    call$3$dragDevices$overscroll$scrollbars($0, $1, $2) {
-      return this.noSuchMethod$1(this, A.createInvocationMirror("call", "call$3$dragDevices$overscroll$scrollbars", 0, [$0, $1, $2], ["dragDevices", "overscroll", "scrollbars"], 0));
-    },
     call$3$rect($0, $1, $2) {
       return this.noSuchMethod$1(this, A.createInvocationMirror("call", "call$3$rect", 0, [$0, $1, $2], ["rect"], 0));
+    },
+    call$3$dragDevices$overscroll$scrollbars($0, $1, $2) {
+      return this.noSuchMethod$1(this, A.createInvocationMirror("call", "call$3$dragDevices$overscroll$scrollbars", 0, [$0, $1, $2], ["dragDevices", "overscroll", "scrollbars"], 0));
     },
     call$2$hitTest$paintTransform($0, $1) {
       return this.noSuchMethod$1(this, A.createInvocationMirror("call", "call$2$hitTest$paintTransform", 0, [$0, $1], ["hitTest", "paintTransform"], 0));
@@ -73942,17 +73942,17 @@
     call$3$offset$oldLayer($0, $1, $2) {
       return this.noSuchMethod$1(this, A.createInvocationMirror("call", "call$3$offset$oldLayer", 0, [$0, $1, $2], ["offset", "oldLayer"], 0));
     },
-    call$3$clipBehavior$oldLayer($0, $1, $2) {
-      return this.noSuchMethod$1(this, A.createInvocationMirror("call", "call$3$clipBehavior$oldLayer", 0, [$0, $1, $2], ["clipBehavior", "oldLayer"], 0));
+    call$4$height$offset$width($0, $1, $2, $3) {
+      return this.noSuchMethod$1(this, A.createInvocationMirror("call", "call$4$height$offset$width", 0, [$0, $1, $2, $3], ["height", "offset", "width"], 0));
     },
     call$4$isComplexHint$willChangeHint($0, $1, $2, $3) {
       return this.noSuchMethod$1(this, A.createInvocationMirror("call", "call$4$isComplexHint$willChangeHint", 0, [$0, $1, $2, $3], ["isComplexHint", "willChangeHint"], 0));
     },
+    call$3$clipBehavior$oldLayer($0, $1, $2) {
+      return this.noSuchMethod$1(this, A.createInvocationMirror("call", "call$3$clipBehavior$oldLayer", 0, [$0, $1, $2], ["clipBehavior", "oldLayer"], 0));
+    },
     call$2$doAntiAlias($0, $1) {
       return this.noSuchMethod$1(this, A.createInvocationMirror("call", "call$2$doAntiAlias", 0, [$0, $1], ["doAntiAlias"], 0));
-    },
-    call$4$height$offset$width($0, $1, $2, $3) {
-      return this.noSuchMethod$1(this, A.createInvocationMirror("call", "call$4$height$offset$width", 0, [$0, $1, $2, $3], ["height", "offset", "width"], 0));
     },
     call$4$backdropId$blendMode$oldLayer($0, $1, $2, $3) {
       return this.noSuchMethod$1(this, A.createInvocationMirror("call", "call$4$backdropId$blendMode$oldLayer", 0, [$0, $1, $2, $3], ["backdropId", "blendMode", "oldLayer"], 0));
@@ -125020,9 +125020,9 @@
       new A.WhereIterable(t1, new A.RenderViewportBase_visitChildrenForSemantics_closure(), A._arrayInstanceType(t1)._eval$1("WhereIterable<1>")).forEach$1(0, visitor);
     },
     set$axisDirection(value) {
-      if (value === this._axisDirection)
+      if (value === this._viewport$_axisDirection)
         return;
-      this._axisDirection = value;
+      this._viewport$_axisDirection = value;
       this.markNeedsLayout$0();
     },
     set$crossAxisDirection(value) {
@@ -125096,7 +125096,7 @@
         sliverScrollOffset = scrollOffset <= 0 ? 0 : scrollOffset;
         correctedCacheOrigin = Math.max(cacheOrigin, -sliverScrollOffset);
         cacheExtentCorrection = cacheOrigin - correctedCacheOrigin;
-        child.layout$2$parentUsesSize(new A.SliverConstraints(_this._axisDirection, growthDirection, adjustedUserScrollDirection, sliverScrollOffset, precedingScrollExtent, maxPaintOffset - layoutOffset0, Math.max(0, remainingPaintExtent - layoutOffset0 + layoutOffset), crossAxisExtent, _this._crossAxisDirection, mainAxisExtent, correctedCacheOrigin, Math.max(0, remainingCacheExtent + cacheExtentCorrection)), true);
+        child.layout$2$parentUsesSize(new A.SliverConstraints(_this._viewport$_axisDirection, growthDirection, adjustedUserScrollDirection, sliverScrollOffset, precedingScrollExtent, maxPaintOffset - layoutOffset0, Math.max(0, remainingPaintExtent - layoutOffset0 + layoutOffset), crossAxisExtent, _this._crossAxisDirection, mainAxisExtent, correctedCacheOrigin, Math.max(0, remainingCacheExtent + cacheExtentCorrection)), true);
         childLayoutGeometry = child._geometry;
         t1 = childLayoutGeometry.scrollOffsetCorrection;
         if (t1 != null)
@@ -125140,7 +125140,7 @@
       overlapCorrection = t1._as(A.RenderObject.prototype.get$constraints.call(child)).viewportMainAxisExtent - t1._as(A.RenderObject.prototype.get$constraints.call(child)).remainingPaintExtent + t1._as(A.RenderObject.prototype.get$constraints.call(child)).overlap;
       left = 0;
       $top = 0;
-      switch (A.applyGrowthDirectionToAxisDirection(this._axisDirection, t1._as(A.RenderObject.prototype.get$constraints.call(child)).growthDirection).index) {
+      switch (A.applyGrowthDirectionToAxisDirection(this._viewport$_axisDirection, t1._as(A.RenderObject.prototype.get$constraints.call(child)).growthDirection).index) {
         case 2:
           $top = 0 + overlapCorrection;
           break;
@@ -125162,7 +125162,7 @@
         t1 = _this.get$size(0);
         return new A.Rect(0, 0, 0 + t1._dx, 0 + t1._dy);
       }
-      switch (A.axisDirectionToAxis(_this._axisDirection).index) {
+      switch (A.axisDirectionToAxis(_this._viewport$_axisDirection).index) {
         case 1:
           _this.get$size(0);
           _this.get$size(0);
@@ -125189,7 +125189,7 @@
       if (_this.ContainerRenderObjectMixin__firstChild == null)
         return;
       t1 = _this.get$hasVisualOverflow() && _this._viewport$_clipBehavior !== B.Clip_0;
-      t2 = _this._viewport$_clipRectLayer;
+      t2 = _this._clipRectLayer;
       if (t1) {
         t1 = _this.__RenderObject__needsCompositing_A;
         t1 === $ && A.throwUnnamedLateFieldNI();
@@ -125201,7 +125201,7 @@
       }
     },
     dispose$0() {
-      this._viewport$_clipRectLayer.set$layer(0, null);
+      this._clipRectLayer.set$layer(0, null);
       this.super$RenderObject$dispose();
     },
     _paintContents$2(context, offset) {
@@ -125217,7 +125217,7 @@
     hitTestChildren$2$position(result, position) {
       var _0_1, _0_2, sliverResult, t2, _i, child, transform, _this = this, _box_0 = {},
         t1 = _box_0.crossAxisPosition = _box_0.mainAxisPosition = null;
-      switch (A.axisDirectionToAxis(_this._axisDirection).index) {
+      switch (A.axisDirectionToAxis(_this._viewport$_axisDirection).index) {
         case 1:
           t1 = new A._Record_2(position._dy, position._dx);
           break;
@@ -125244,7 +125244,7 @@
     },
     getOffsetToReveal$4$axis$rect(target, alignment, axis, rect) {
       var onlySlivers, pivot, child, leadingScrollOffset, t1, t2, growthDirection, rectLocal, pivotExtent, isPinned, targetRect, extentOfPinnedSlivers, targetOffset, offsetDifference, _this = this, _null = null;
-      axis = A.axisDirectionToAxis(_this._axisDirection);
+      axis = A.axisDirectionToAxis(_this._viewport$_axisDirection);
       onlySlivers = target instanceof A.RenderSliver;
       for (pivot = _null, child = target, leadingScrollOffset = 0; child.get$parent(child) !== _this; child = t1) {
         t1 = child.get$parent(child);
@@ -125303,7 +125303,7 @@
         rectLocal = rect;
       }
       type$.RenderSliver._as(child);
-      switch (A.applyGrowthDirectionToAxisDirection(_this._axisDirection, growthDirection).index) {
+      switch (A.applyGrowthDirectionToAxisDirection(_this._viewport$_axisDirection, growthDirection).index) {
         case 0:
           t1 = pivotExtent - rectLocal.bottom;
           break;
@@ -125360,7 +125360,7 @@
       t1 = _this._viewport$_offset._pixels;
       t1.toString;
       offsetDifference = t1 - targetOffset;
-      switch (_this._axisDirection.index) {
+      switch (_this._viewport$_axisDirection.index) {
         case 0:
           t1 = targetRect.translate$2(0, 0, -offsetDifference);
           break;
@@ -125383,7 +125383,7 @@
     },
     computeAbsolutePaintOffset$3(child, layoutOffset, growthDirection) {
       var t1;
-      switch (A.applyGrowthDirectionToAxisDirection(this._axisDirection, growthDirection).index) {
+      switch (A.applyGrowthDirectionToAxisDirection(this._viewport$_axisDirection, growthDirection).index) {
         case 0:
           t1 = new A.Offset(0, this.get$size(0)._dy - layoutOffset - child._geometry.paintExtent);
           break;
@@ -125482,7 +125482,7 @@
     },
     performLayout$0() {
       var t1, _0_1, crossAxisExtent, _0_2, mainAxisExtent, maxLayoutCycles, count, correction, t2, t3, t4, _this = this;
-      switch (A.axisDirectionToAxis(_this._axisDirection).index) {
+      switch (A.axisDirectionToAxis(_this._viewport$_axisDirection).index) {
         case 1:
           _this._viewport$_offset.applyViewportDimension$1(_this.get$size(0)._dy);
           break;
@@ -125496,7 +125496,7 @@
         _this._viewport$_offset.applyContentDimensions$2(0, 0);
         return;
       }
-      switch (A.axisDirectionToAxis(_this._axisDirection).index) {
+      switch (A.axisDirectionToAxis(_this._viewport$_axisDirection).index) {
         case 1:
           t1 = new A._Record_2(_this.get$size(0)._dy, _this.get$size(0)._dx);
           break;
@@ -125762,7 +125762,7 @@
       var t1, _0_1, crossAxisExtent, _0_2, mainAxisExtent, t2, t3, t4, effectiveExtent, t5, correction, t6, didAcceptViewportDimension, t7, didAcceptContentDimension, _this = this, _null = null,
         constraints = type$.BoxConstraints._as(A.RenderObject.prototype.get$constraints.call(_this));
       if (_this.ContainerRenderObjectMixin__firstChild == null) {
-        switch (A.axisDirectionToAxis(_this._axisDirection).index) {
+        switch (A.axisDirectionToAxis(_this._viewport$_axisDirection).index) {
           case 1:
             t1 = new A.Size(constraints.maxWidth, constraints.minHeight);
             break;
@@ -125779,7 +125779,7 @@
         _this._viewport$_offset.applyContentDimensions$2(0, 0);
         return;
       }
-      switch (A.axisDirectionToAxis(_this._axisDirection).index) {
+      switch (A.axisDirectionToAxis(_this._viewport$_axisDirection).index) {
         case 1:
           t1 = new A._Record_2(constraints.maxHeight, constraints.maxWidth);
           break;
@@ -125805,7 +125805,7 @@
           t5._pixels = t6 + correction;
           t5._didChangeViewportDimensionOrReceiveCorrection = true;
         } else {
-          switch (A.axisDirectionToAxis(_this._axisDirection).index) {
+          switch (A.axisDirectionToAxis(_this._viewport$_axisDirection).index) {
             case 1:
               t5 = _this.__RenderShrinkWrappingViewport__shrinkWrapExtent_A;
               t5 === $ && A.throwUnnamedLateFieldNI();
@@ -125831,7 +125831,7 @@
           effectiveExtent = t5;
         }
       }
-      switch (A.axisDirectionToAxis(_this._axisDirection).index) {
+      switch (A.axisDirectionToAxis(_this._viewport$_axisDirection).index) {
         case 1:
           t1 = new A.Size(A.clampDouble(crossAxisExtent, t1, t2), A.clampDouble(effectiveExtent, t3, t4));
           break;
@@ -132326,7 +132326,7 @@
   A.UndoManagerClient.prototype = {};
   A.HtmlElementViewImpl_buildImpl_closure.prototype = {
     call$2(context, controller) {
-      return new A.PlatformViewSurface(controller, B.Set_empty0, B.PlatformViewHitTestBehavior_0, null);
+      return new A.PlatformViewSurface(controller, B.Set_empty1, B.PlatformViewHitTestBehavior_0, null);
     },
     $signature: 386
   };
@@ -159287,9 +159287,9 @@
   A._SingleChildViewportElement.prototype = {};
   A._RenderSingleChildViewport.prototype = {
     set$axisDirection(value) {
-      if (value === this._single_child_scroll_view$_axisDirection)
+      if (value === this._axisDirection)
         return;
-      this._single_child_scroll_view$_axisDirection = value;
+      this._axisDirection = value;
       this.markNeedsLayout$0();
     },
     set$offset(_, value) {
@@ -159324,7 +159324,7 @@
       return true;
     },
     get$_viewportExtent() {
-      switch (A.axisDirectionToAxis(this._single_child_scroll_view$_axisDirection).index) {
+      switch (A.axisDirectionToAxis(this._axisDirection).index) {
         case 0:
           var t1 = this.get$size(0)._dx;
           break;
@@ -159341,7 +159341,7 @@
         t1 = _this.RenderObjectWithChildMixin__child;
       if (t1 == null)
         return 0;
-      switch (A.axisDirectionToAxis(_this._single_child_scroll_view$_axisDirection).index) {
+      switch (A.axisDirectionToAxis(_this._axisDirection).index) {
         case 0:
           t1 = t1.get$size(0)._dx - _this.get$size(0)._dx;
           break;
@@ -159355,7 +159355,7 @@
     },
     _getInnerConstraints$1(constraints) {
       var t1;
-      switch (A.axisDirectionToAxis(this._single_child_scroll_view$_axisDirection).index) {
+      switch (A.axisDirectionToAxis(this._axisDirection).index) {
         case 0:
           t1 = new A.BoxConstraints(0, 1 / 0, constraints.minHeight, constraints.maxHeight);
           break;
@@ -159423,7 +159423,7 @@
     },
     _paintOffsetForPosition$1(position) {
       var t1, _this = this;
-      switch (_this._single_child_scroll_view$_axisDirection.index) {
+      switch (_this._axisDirection.index) {
         case 0:
           t1 = new A.Offset(0, position - _this.RenderObjectWithChildMixin__child.get$size(0)._dy + _this.get$size(0)._dy);
           break;
@@ -159465,7 +159465,7 @@
         t1.toString;
         paintOffset = _this._paintOffsetForPosition$1(t1);
         t1 = new A._RenderSingleChildViewport_paint_paintContents(_this, paintOffset);
-        t2 = _this._clipRectLayer;
+        t2 = _this._single_child_scroll_view$_clipRectLayer;
         if (_this._shouldClipAtPaintOffset$1(paintOffset)) {
           t3 = _this.__RenderObject__needsCompositing_A;
           t3 === $ && A.throwUnnamedLateFieldNI();
@@ -159478,7 +159478,7 @@
       }
     },
     dispose$0() {
-      this._clipRectLayer.set$layer(0, null);
+      this._single_child_scroll_view$_clipRectLayer.set$layer(0, null);
       this.super$RenderObject$dispose();
     },
     applyPaintTransform$2(child, transform) {
@@ -159510,7 +159510,7 @@
     },
     getOffsetToReveal$4$axis$rect(target, alignment, axis, rect) {
       var t1, bounds, contentSize, _0_1, leadingScrollOffset, targetMainAxisExtent, _0_2, _0_3, mainAxisExtent, targetOffset, _this = this, _null = null;
-      A.axisDirectionToAxis(_this._single_child_scroll_view$_axisDirection);
+      A.axisDirectionToAxis(_this._axisDirection);
       if (rect == null)
         rect = target.get$paintBounds();
       if (!(target instanceof A.RenderBox)) {
@@ -159520,7 +159520,7 @@
       }
       bounds = A.MatrixUtils_transformRect(target.getTransformTo$1(0, _this.RenderObjectWithChildMixin__child), rect);
       contentSize = _this.RenderObjectWithChildMixin__child.get$size(0);
-      switch (_this._single_child_scroll_view$_axisDirection.index) {
+      switch (_this._axisDirection.index) {
         case 0:
           t1 = bounds.bottom;
           t1 = new A._Record_3(_this.get$size(0)._dy, contentSize._dy - t1, t1 - bounds.top);
@@ -159578,7 +159578,7 @@
         t2 = _this._single_child_scroll_view$_offset._pixels;
       t2.toString;
       remainingOffset = t1 - t2;
-      switch (_this._single_child_scroll_view$_axisDirection.index) {
+      switch (_this._axisDirection.index) {
         case 0:
           _this.get$size(0);
           _this.get$size(0);
@@ -169537,7 +169537,7 @@
         t1 = $.$get$AppSizes_hSize2();
         t2 = state.lotteries;
         t3 = A._arrayInstanceType(t2)._eval$1("MappedListIterable<1,Widget>");
-        return A.Row$(A.List_List$of(new A.MappedListIterable(t2, new A._TicketPurchaseDialogState_build__closure(this.$this), t3), true, t3._eval$1("ListIterable.E")), B.CrossAxisAlignment_2, B.MainAxisAlignment_0, B.MainAxisSize_0, t1);
+        return A.SingleChildScrollView$(A.Row$(A.List_List$of(new A.MappedListIterable(t2, new A._TicketPurchaseDialogState_build__closure(this.$this), t3), true, t3._eval$1("ListIterable.E")), B.CrossAxisAlignment_2, B.MainAxisAlignment_0, B.MainAxisSize_0, t1), _null, B.DragStartBehavior_1, _null, _null, B.Axis_0);
       }
       return A.SizedBox$(_null, _null, _null);
     },
@@ -180243,8 +180243,8 @@
     B.Object_qD1 = {click: 0, keyup: 1, keydown: 2, mouseup: 3, mousedown: 4, pointerdown: 5, pointerup: 6};
     B.Set_YLrVv = new A.ConstantStringSet(B.Object_qD1, 7, type$.ConstantStringSet_String);
     B.Set_cWSfo = new A.GeneralConstantSet([B.TargetPlatform_0, B.TargetPlatform_2, B.TargetPlatform_1], A.findType("GeneralConstantSet<TargetPlatform>"));
-    B.Set_empty0 = new A.ConstantStringSet(B.Object_empty, 0, A.findType("ConstantStringSet<Factory<OneSequenceGestureRecognizer>>"));
-    B.Set_empty1 = new A.ConstantStringSet(B.Object_empty, 0, A.findType("ConstantStringSet<TargetPlatform>"));
+    B.Set_empty1 = new A.ConstantStringSet(B.Object_empty, 0, A.findType("ConstantStringSet<Factory<OneSequenceGestureRecognizer>>"));
+    B.Set_empty0 = new A.ConstantStringSet(B.Object_empty, 0, A.findType("ConstantStringSet<TargetPlatform>"));
     B.Set_empty = new A.ConstantStringSet(B.Object_empty, 0, A.findType("ConstantStringSet<WidgetState>"));
     B.Set_iVT0d = new A.GeneralConstantSet([32, 8203], type$.GeneralConstantSet_int);
     B.WidgetState_1 = new A.WidgetState(1, "focused");
