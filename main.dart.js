@@ -40518,10 +40518,10 @@
       _.__ClampingScrollSimulation__distance_A = _.__ClampingScrollSimulation__duration_A = $;
       _.tolerance = t2;
     },
-    ListView$separated(itemBuilder, itemCount, padding, physics, scrollDirection, separatorBuilder, shrinkWrap) {
+    ListView$separated(itemBuilder, itemCount, padding, physics, separatorBuilder, shrinkWrap) {
       var _null = null,
         t1 = Math.max(0, itemCount * 2 - 1);
-      return new A.ListView(new A.SliverChildBuilderDelegate(new A.ListView$separated_closure(itemBuilder, separatorBuilder), t1, true, true, true, new A.ListView$separated_closure0(), _null), padding, scrollDirection, false, _null, _null, physics, true, _null, itemCount, B.DragStartBehavior_1, B.ScrollViewKeyboardDismissBehavior_0, _null, B.Clip_1, B.HitTestBehavior_1, _null);
+      return new A.ListView(new A.SliverChildBuilderDelegate(new A.ListView$separated_closure(itemBuilder, separatorBuilder), t1, true, true, true, new A.ListView$separated_closure0(), _null), padding, B.Axis_1, false, _null, _null, physics, true, _null, itemCount, B.DragStartBehavior_1, B.ScrollViewKeyboardDismissBehavior_0, _null, B.Clip_1, B.HitTestBehavior_1, _null);
     },
     ScrollViewKeyboardDismissBehavior: function ScrollViewKeyboardDismissBehavior(t0, t1) {
       this.index = t0;
@@ -45144,11 +45144,11 @@
       return new A.PaginatedLotteryModel(t2);
     },
     LotteryModel_LotteryModel$fromJson(json) {
-      var t2, t3,
+      var t3, t4,
         _s11_ = "description",
         _s9_ = "createdAt",
-        t1 = J.getInterceptor$asx(json);
-      t1.$index(json, "id");
+        t1 = J.getInterceptor$asx(json),
+        t2 = t1.$index(json, "id");
       t1.$index(json, "name");
       t1.$index(json, _s11_);
       t1.$index(json, "ticketPrice");
@@ -45157,22 +45157,23 @@
       t1.$index(json, "winnerId");
       A.DateTime_parse(t1.$index(json, _s9_));
       t1 = t1.$index(json, "type");
-      t2 = J.getInterceptor$asx(t1);
-      t2.$index(t1, "id");
-      t3 = t2.$index(t1, "name");
-      t2.$index(t1, "value");
-      t2.$index(t1, _s11_);
-      A.DateTime_parse(t2.$index(t1, _s9_));
-      A.DateTime_parse(t2.$index(t1, "updatedAt"));
-      return new A.LotteryModel(new A.LotteryTypeModel(t3));
+      t3 = J.getInterceptor$asx(t1);
+      t3.$index(t1, "id");
+      t4 = t3.$index(t1, "name");
+      t3.$index(t1, "value");
+      t3.$index(t1, _s11_);
+      A.DateTime_parse(t3.$index(t1, _s9_));
+      A.DateTime_parse(t3.$index(t1, "updatedAt"));
+      return new A.LotteryModel(t2, new A.LotteryTypeModel(t4));
     },
     PaginatedLotteryModel: function PaginatedLotteryModel(t0) {
       this.data = t0;
     },
     PaginatedLotteryModel_PaginatedLotteryModel$fromJson_closure: function PaginatedLotteryModel_PaginatedLotteryModel$fromJson_closure() {
     },
-    LotteryModel: function LotteryModel(t0) {
-      this.lotteryTypeModel = t0;
+    LotteryModel: function LotteryModel(t0, t1) {
+      this.id = t0;
+      this.lotteryTypeModel = t1;
     },
     LotteryModel_LotteryModel$fromJson_closure: function LotteryModel_LotteryModel$fromJson_closure(t0) {
       this.json = t0;
@@ -45341,11 +45342,11 @@
     _TicketPurchaseDialogState_build_closure0: function _TicketPurchaseDialogState_build_closure0() {
     },
     _TicketPurchaseDialogState__buildPriceButton_closure: function _TicketPurchaseDialogState__buildPriceButton_closure(t0) {
-      this.price = t0;
+      this.lotteryModel = t0;
     },
     _TicketPurchaseDialogState__buildPriceButton__closure: function _TicketPurchaseDialogState__buildPriceButton__closure(t0, t1) {
       this.context = t0;
-      this.price = t1;
+      this.lotteryModel = t1;
     },
     _TicketPurchaseDialogState__buildHowManyOrders_closure1: function _TicketPurchaseDialogState__buildHowManyOrders_closure1(t0) {
       this.$this = t0;
@@ -168679,7 +168680,7 @@
     build$1(context) {
       var t1 = this.games.length,
         t2 = 5 * $.SizerUtil___width._readField$0() / 100;
-      return A.ListView$separated(new A.GamesList_build_closure(), t1, new A.EdgeInsets(t2, 0, t2, 0), new A.NeverScrollableScrollPhysics(null), B.Axis_1, new A.GamesList_build_closure0(), true);
+      return A.ListView$separated(new A.GamesList_build_closure(), t1, new A.EdgeInsets(t2, 0, t2, 0), new A.NeverScrollableScrollPhysics(null), new A.GamesList_build_closure0(), true);
     }
   };
   A.GamesList_build_closure0.prototype = {
@@ -169482,8 +169483,8 @@
       t19 = type$.PurchaseState;
       return A.BlocListener$(_null, A.Dialog$(_null, A.Container$(A.Column$(A._setArrayType([t5, t7, A.BlocListener$(_null, A.Column$(A._setArrayType([t8, t9, t12, t13, t14, t6, t15, t16, A.Row$(A._setArrayType([A.Expanded$(A.ElevatedButton$(false, A.BlocBuilder$(new A._TicketPurchaseDialogState_build_closure0(), t18, t19), _null, _null, _null, _null, _null, _null, new A._TicketPurchaseDialogState_build_closure1(_this, context), _null, t17))], t4), B.CrossAxisAlignment_2, B.MainAxisAlignment_0, B.MainAxisSize_1, 0)], t4), B.CrossAxisAlignment_0, B.MainAxisAlignment_0, B.MainAxisSize_0), _null, new A._TicketPurchaseDialogState_build_closure2(_this), t10, t11)], t4), B.CrossAxisAlignment_0, B.MainAxisAlignment_0, B.MainAxisSize_0), B.Clip_0, _null, new A.BoxDecoration(B.Color_Kln, _null, _null, t2, _null, _null, B.BoxShape_0), _null, _null, _null, new A.EdgeInsets(t1, t3, t1, t3), _null), new A.EdgeInsets(t1, 0, t1, 0)), _null, new A._TicketPurchaseDialogState_build_closure3(_this), t18, t19);
     },
-    _buildPriceButton$1$price(price) {
-      return A.BlocBuilder$(new A._TicketPurchaseDialogState__buildPriceButton_closure(price), type$.ChoosePriceCubit, type$.nullable_String);
+    _buildPriceButton$1$lotteryModel(lotteryModel) {
+      return A.BlocBuilder$(new A._TicketPurchaseDialogState__buildPriceButton_closure(lotteryModel), type$.ChoosePriceCubit, type$.nullable_String);
     },
     _buildHowManyOrders$0() {
       var _this = this, _null = null,
@@ -169545,20 +169546,24 @@
   };
   A._TicketPurchaseDialogState_build__closure.prototype = {
     call$1(e) {
-      return this.$this._buildPriceButton$1$price(e.lotteryTypeModel.name);
+      return this.$this._buildPriceButton$1$lotteryModel(e);
     },
     $signature: 620
   };
   A._TicketPurchaseDialogState_build_closure1.prototype = {
     call$0() {
-      var t3,
-        t1 = this.$this,
-        t2 = t1.countController._change_notifier$_value.text;
-      if (t2.length !== 0 && B.JSString_methods.trim$0(t2) !== "0") {
-        t1 = t1._widget.lotteryCategoryModel;
-        t2 = A.int_parse(B.JSString_methods.trim$0(t2), null);
-        t3 = this.context;
-        J.add$1$ax(A.Provider_of(t3, false, type$.PurchaseBloc), new A.Purchase(new A.PurchaseRequestModel(t1.id, t2), J.$index$asx(type$.AuthDone._as(A.Provider_of(t3, false, type$.AuthBloc)._bloc$_state).token, "token")));
+      var t3, t4,
+        t1 = this.context,
+        t2 = type$.ChoosePriceCubit;
+      if (A.Provider_of(t1, false, t2)._bloc$_state != null) {
+        t3 = this.$this.countController;
+        t4 = t3._change_notifier$_value.text;
+        if (t4.length !== 0 && B.JSString_methods.trim$0(t4) !== "0") {
+          t2 = A.Provider_of(t1, false, t2)._bloc$_state;
+          t2.toString;
+          t3 = A.int_parse(B.JSString_methods.trim$0(t3._change_notifier$_value.text), null);
+          J.add$1$ax(A.Provider_of(t1, false, type$.PurchaseBloc), new A.Purchase(new A.PurchaseRequestModel(t2, t3), J.$index$asx(type$.AuthDone._as(A.Provider_of(t1, false, type$.AuthBloc)._bloc$_state).token, "token")));
+        }
       }
     },
     $signature: 0
@@ -169579,19 +169584,19 @@
   A._TicketPurchaseDialogState__buildPriceButton_closure.prototype = {
     call$2(context, state) {
       var _null = null,
-        t1 = this.price,
+        t1 = this.lotteryModel,
         t2 = $.$get$AppSizes_hSize4() * 0.8,
         t3 = $.$get$AppSizes_vSize1(),
         t4 = A.Color$fromARGB(B.JSNumber_methods.round$0(76.5), B.Color_PBe.toARGB32$0() >>> 16 & 255, B.Color_PBe.toARGB32$0() >>> 8 & 255, B.Color_PBe.toARGB32$0() & 255),
         t5 = A.BorderRadius$circular(1000),
-        t6 = A.Border_Border$all(state === t1 ? B.Color_wst : B.Color_Edl, 1);
-      return A.GestureDetector$(_null, A.Container$(A.Text$(t1, _null, _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_wst, 13 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_4), _null, _null), B.Clip_0, _null, new A.BoxDecoration(t4, _null, t6, t5, _null, _null, B.BoxShape_0), _null, _null, _null, new A.EdgeInsets(t2, t3, t2, t3), _null), B.DragStartBehavior_1, false, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, new A._TicketPurchaseDialogState__buildPriceButton__closure(context, t1), _null, _null, _null, _null, _null, _null);
+        t6 = A.Border_Border$all(state === t1.id ? B.Color_wst : B.Color_Edl, 1);
+      return A.GestureDetector$(_null, A.Container$(A.Text$(t1.lotteryTypeModel.name, _null, _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_wst, 13 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_4), _null, _null), B.Clip_0, _null, new A.BoxDecoration(t4, _null, t6, t5, _null, _null, B.BoxShape_0), _null, _null, _null, new A.EdgeInsets(t2, t3, t2, t3), _null), B.DragStartBehavior_1, false, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, new A._TicketPurchaseDialogState__buildPriceButton__closure(context, t1), _null, _null, _null, _null, _null, _null);
     },
     $signature: 622
   };
   A._TicketPurchaseDialogState__buildPriceButton__closure.prototype = {
     call$0() {
-      A.Provider_of(this.context, false, type$.ChoosePriceCubit).emit$1(this.price);
+      A.Provider_of(this.context, false, type$.ChoosePriceCubit).emit$1(this.lotteryModel.id);
     },
     $signature: 0
   };
@@ -169750,7 +169755,7 @@
   };
   A.TransactionList.prototype = {
     build$1(context) {
-      return A.ListView$separated(new A.TransactionList_build_closure(), 6, B.EdgeInsets_0_0_0_0, new A.NeverScrollableScrollPhysics(null), B.Axis_1, new A.TransactionList_build_closure0(), true);
+      return A.ListView$separated(new A.TransactionList_build_closure(), 6, B.EdgeInsets_0_0_0_0, new A.NeverScrollableScrollPhysics(null), new A.TransactionList_build_closure0(), true);
     }
   };
   A.TransactionList_build_closure.prototype = {
