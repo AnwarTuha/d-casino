@@ -169130,9 +169130,9 @@
               t2 === $ && A.throwUnnamedLateFieldNI();
               t4 = type$.HttpResponse_PaginatedLotteryModel;
               _options = $async$self._setStreamType$1$1(t3.copyWith$1$baseUrl($async$self._lottery_detail_api_services$_combineBaseUrls$2(t2, $async$self.baseUrl)), t4);
-              t2 = _options.___RequestConfig__headers_A;
+              t2 = _options.OptionsMixin___OptionsMixin_queryParameters_A;
               t2 === $ && A.throwUnnamedLateFieldNI();
-              A.print(">>>>>>>>>>>>>>>>>>>>>>>>> " + t2.toString$0(0));
+              A.print("=====================> " + t2.toString$0(0));
               $async$goto = 3;
               return A._asyncAwait(t1.fetch$1$1(0, _options, type$.Map_String_dynamic), $async$getPaginatedLotteries$3$categoryId$page$pageSize);
             case 3:
