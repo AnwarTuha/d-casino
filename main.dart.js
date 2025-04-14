@@ -169236,6 +169236,7 @@
               if (!emit._isCanceled)
                 emit._emit.call$1(new A.LotteryLoading());
               $async$handler = 3;
+              A.print(">>>>>>>>>>> GETTING LOTTERIES");
               t2 = $async$self.$this;
               t3 = $event.page;
               $async$goto = 6;
@@ -169243,6 +169244,7 @@
             case 6:
               // returning from await.
               response = $async$result;
+              A.print(">>>>>>>>>>> LOTTERIES: " + A.S(response.data.data));
               t2 = t2._bloc$_state;
               if (t2 instanceof A.LotteryLoaded) {
                 currentState = t2;
