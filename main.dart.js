@@ -45165,7 +45165,7 @@
       A.DateTime_parse(t1.$index(json, "drawTime"));
       t1.$index(json, "winnerId");
       A.DateTime_parse(t1.$index(json, _s9_));
-      t1 = t1.$index(json, "lotteryTypeModel");
+      t1 = t1.$index(json, "type");
       t2 = J.getInterceptor$asx(t1);
       t2.$index(t1, "id");
       t3 = t2.$index(t1, "name");
@@ -169186,7 +169186,7 @@
   A.LotteryModel.prototype = {};
   A.LotteryModel_LotteryModel$fromJson_closure.prototype = {
     call$1(e) {
-      return e._enumToString$0() === "LotteryStatus." + A.S(J.$index$asx(this.json, "lotteryStatus"));
+      return e._enumToString$0() === "LotteryStatus." + A.S(J.$index$asx(this.json, "status"));
     },
     $signature: 612
   };
