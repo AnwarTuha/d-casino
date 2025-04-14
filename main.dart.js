@@ -168573,14 +168573,14 @@
     $signature: 0
   };
   A._LotteriesApiServices.prototype = {
-    getLotteries$2$page$pageSize(page, pageSize) {
-      return this.getLotteries$body$_LotteriesApiServices(page, pageSize);
+    getLotteryCategories$2$page$pageSize(page, pageSize) {
+      return this.getLotteryCategories$body$_LotteriesApiServices(page, pageSize);
     },
-    getLotteries$body$_LotteriesApiServices(page, pageSize) {
+    getLotteryCategories$body$_LotteriesApiServices(page, pageSize) {
       var $async$goto = 0,
         $async$completer = A._makeAsyncAwaitCompleter(type$.HttpResponse_dynamic),
         $async$returnValue, $async$self = this, t3, t4, _options, t1, t2, queryParameters, $async$temp1;
-      var $async$getLotteries$2$page$pageSize = A._wrapJsFunctionForAsync(function($async$errorCode, $async$result) {
+      var $async$getLotteryCategories$2$page$pageSize = A._wrapJsFunctionForAsync(function($async$errorCode, $async$result) {
         if ($async$errorCode === 1)
           return A._asyncRethrow($async$result, $async$completer);
         while (true)
@@ -168594,7 +168594,7 @@
               t3 = $async$self._dio;
               t4 = t3.DioMixin___DioMixin_options_A;
               t4 === $ && A.throwUnnamedLateFieldNI();
-              t4 = t1.compose$4$data$queryParameters(t4, "/api/lottery_category-category", null, queryParameters);
+              t4 = t1.compose$4$data$queryParameters(t4, "/api/lottery-category", null, queryParameters);
               t1 = t3.DioMixin___DioMixin_options_A.OptionsMixin___OptionsMixin__baseUrl_A;
               t1 === $ && A.throwUnnamedLateFieldNI();
               _options = t4.copyWith$1$baseUrl($async$self._combineBaseUrls$2(t1, $async$self.baseUrl));
@@ -168612,7 +168612,7 @@
                   _options.___RequestConfig_responseType_A = B.ResponseType_0;
               $async$temp1 = A;
               $async$goto = 3;
-              return A._asyncAwait(t3.fetch$1$1(0, _options, t2), $async$getLotteries$2$page$pageSize);
+              return A._asyncAwait(t3.fetch$1$1(0, _options, t2), $async$getLotteryCategories$2$page$pageSize);
             case 3:
               // returning from await.
               $async$returnValue = new $async$temp1.HttpResponse($async$result.data, t1);
@@ -168624,7 +168624,7 @@
               return A._asyncReturn($async$returnValue, $async$completer);
           }
       });
-      return A._asyncStartSync($async$getLotteries$2$page$pageSize, $async$completer);
+      return A._asyncStartSync($async$getLotteryCategories$2$page$pageSize, $async$completer);
     },
     _combineBaseUrls$2(dioBaseUrl, baseUrl) {
       var url;
@@ -168673,7 +168673,7 @@
               t2 = $async$self.$this;
               t3 = $event.page;
               $async$goto = 6;
-              return A._asyncAwait(t2.lotteriesApiServices.getLotteries$2$page$pageSize(t3, 10), $async$call$2);
+              return A._asyncAwait(t2.lotteriesApiServices.getLotteryCategories$2$page$pageSize(t3, 10), $async$call$2);
             case 6:
               // returning from await.
               response = $async$result;
