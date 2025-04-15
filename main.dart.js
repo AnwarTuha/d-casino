@@ -168925,7 +168925,6 @@
             case 6:
               // returning from await.
               response = $async$result;
-              A.print("((((((((((((((((((((((((((((((((((((((( " + J.toString$0$(response.data));
               token = J.$index$asx(response.data, "token");
               t1 = new A.DioClient(A.DioForBrowser$(null));
               t1._authToken = token;
@@ -170387,9 +170386,13 @@
   };
   A._ActiveTicketsState_initState_closure.prototype = {
     call$1(page) {
-      var t1 = this.$this._framework$_element;
+      var t1 = this.$this,
+        t2 = t1._framework$_element;
+      t2.toString;
+      t2 = A.Provider_of(t2, false, type$.MyTicketsBloc);
+      t1 = t1._framework$_element;
       t1.toString;
-      J.add$1$ax(A.Provider_of(t1, false, type$.MyTicketsBloc), new A.GetMyTickets("", page));
+      J.add$1$ax(t2, new A.GetMyTickets(J.$index$asx(type$.AuthDone._as(A.Provider_of(t1, false, type$.AuthBloc)._bloc$_state).token, "token"), page));
     },
     $signature: 19
   };
