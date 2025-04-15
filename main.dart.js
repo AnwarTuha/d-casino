@@ -170290,8 +170290,10 @@
   };
   A.MyTicketsBloc__closure0.prototype = {
     call$2(error, s) {
-      var t1 = this.emit,
-        t2 = J.toString$0$(error);
+      var t1, t2;
+      A.print(">>>>>>>>>>>>>>>>>> " + A.S(error) + " " + A.S(s));
+      t1 = this.emit;
+      t2 = J.toString$0$(error);
       if (!t1._isCanceled)
         t1._emit.call$1(new A.MyTicketsError(t2));
     },
