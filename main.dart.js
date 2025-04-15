@@ -168697,19 +168697,9 @@
   };
   A.DioClient__updateInterceptors_closure.prototype = {
     call$2(options, handler) {
-      var t1 = this.$this,
-        t2 = t1._dio_client$_dio,
-        t3 = t2.DioMixin___DioMixin_options_A;
-      t3 === $ && A.throwUnnamedLateFieldNI();
-      t3 = t3.___RequestConfig__headers_A;
-      t3 === $ && A.throwUnnamedLateFieldNI();
-      A.print(">>>>>>>>>>>>>>>>>>>>> TOKEN ON REQUEST " + t3.toString$0(0));
-      t3 = options.___RequestConfig__headers_A;
-      t3 === $ && A.throwUnnamedLateFieldNI();
-      t3.$indexSet(0, "Authorization", "Bearer " + A.S(t1._authToken));
-      t2 = t2.DioMixin___DioMixin_options_A.___RequestConfig__headers_A;
-      t2 === $ && A.throwUnnamedLateFieldNI();
-      A.print(">>>>>>>>>>>>>>>>>>>>> TOKEN AS HEADER " + t2.toString$0(0));
+      var t1 = options.___RequestConfig__headers_A;
+      t1 === $ && A.throwUnnamedLateFieldNI();
+      t1.$indexSet(0, "Authorization", "Bearer " + A.S(this.$this._authToken));
       return handler.next$1(0, options);
     },
     $signature: 78
@@ -168915,7 +168905,7 @@
     $call$body$AuthBloc_closure($event, emit) {
       var $async$goto = 0,
         $async$completer = A._makeAsyncAwaitCompleter(type$.void),
-        $async$handler = 1, $async$errorStack = [], $async$self = this, initData, response, token, e, s, t1, t2, exception, $async$exception;
+        $async$handler = 1, $async$errorStack = [], $async$self = this, initData, response, token, e, s, t1, exception, $async$exception;
       var $async$call$2 = A._wrapJsFunctionForAsync(function($async$errorCode, $async$result) {
         if ($async$errorCode === 1) {
           $async$errorStack.push($async$result);
@@ -168935,12 +168925,10 @@
             case 6:
               // returning from await.
               response = $async$result;
-              A.Primitives_objectTypeName(response);
+              J.toString$0$(response.data);
               token = J.$index$asx(response.data, "token");
               t1 = new A.DioClient(A.DioForBrowser$(null));
-              t2 = token;
-              A.print(">>>>>>>>>>>>>>>>>>>> TOKEN FROM BLOC: " + t2);
-              t1._authToken = t2;
+              t1._authToken = token;
               t1._updateInterceptors$0();
               t1 = response.data;
               if (!emit._isCanceled)
