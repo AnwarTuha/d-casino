@@ -170281,7 +170281,8 @@
   };
   A.MyTicketsBloc___closure.prototype = {
     call$1(ticket) {
-      var t1 = J.getInterceptor$asx(ticket);
+      var t1 = J.getInterceptor$(ticket);
+      t1.toString$0(ticket);
       A._asString(t1.$index(ticket, "id"));
       A.DateTime_parse(A._asString(t1.$index(ticket, "purchasedAt")));
       return new A.MyTicketsResponse(A.LotteryModel_LotteryModel$fromJson(type$.Map_String_dynamic._as(t1.$index(ticket, "lottery"))));
