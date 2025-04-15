@@ -44927,7 +44927,7 @@
     AuthLoading: function AuthLoading() {
     },
     AuthDone: function AuthDone(t0) {
-      this.token = t0;
+      this.userData = t0;
     },
     AuthError: function AuthError(t0) {
       this.message = t0;
@@ -169191,7 +169191,7 @@
       if (state instanceof A.AuthError)
         return new A.CommonErrorWidget("Failed to authenticate", state.message, new A._HomeViewState_build__closure(context), _null);
       if (state instanceof A.AuthDone) {
-        J.add$1$ax(A.Provider_of(context, false, type$.WalletBloc), new A.GetWalletInfo(J.$index$asx(state.token, "token")));
+        J.add$1$ax(A.Provider_of(context, false, type$.WalletBloc), new A.GetWalletInfo(J.$index$asx(state.userData, "token")));
         t1 = $.$get$AppSizes_vSize4();
         t2 = A.SizedBox$(_null, t1 * 0.7, _null);
         t3 = this.$this.games;
@@ -170124,7 +170124,7 @@
           t2 = A.Provider_of(t1, false, t2)._bloc$_state;
           t2.toString;
           t3 = A.int_parse(B.JSString_methods.trim$0(t3._change_notifier$_value.text), null);
-          J.add$1$ax(A.Provider_of(t1, false, type$.PurchaseBloc), new A.Purchase(new A.PurchaseRequestModel(t2, t3), J.$index$asx(type$.AuthDone._as(A.Provider_of(t1, false, type$.AuthBloc)._bloc$_state).token, "token")));
+          J.add$1$ax(A.Provider_of(t1, false, type$.PurchaseBloc), new A.Purchase(new A.PurchaseRequestModel(t2, t3), J.$index$asx(type$.AuthDone._as(A.Provider_of(t1, false, type$.AuthBloc)._bloc$_state).userData, "token")));
         }
       }
     },
@@ -170273,7 +170273,6 @@
     call$1(response) {
       var t1 = J.map$1$1$ax(type$.List_dynamic._as(response.data), new A.MyTicketsBloc___closure(), type$.MyTicketsResponse),
         myTickets = A.List_List$of(t1, true, t1.$ti._eval$1("ListIterable.E"));
-      A.print(">>>>>>>>>>>>> " + A.Iterable_iterableToFullString(myTickets, "[", "]"));
       t1 = this.emit;
       if (!t1._isCanceled)
         t1._emit.call$1(new A.MyTicketsLoaded(myTickets));
@@ -170291,10 +170290,8 @@
   };
   A.MyTicketsBloc__closure0.prototype = {
     call$2(error, s) {
-      var t1, t2;
-      A.print(">>>>>>>>>>>>> ERROR: " + A.S(error) + " " + A.S(s));
-      t1 = this.emit;
-      t2 = J.toString$0$(error);
+      var t1 = this.emit,
+        t2 = J.toString$0$(error);
       if (!t1._isCanceled)
         t1._emit.call$1(new A.MyTicketsError(t2));
     },
@@ -170384,7 +170381,7 @@
       t1 = A.Provider_of(t1, false, type$.MyTicketsBloc);
       t2 = this._framework$_element;
       t2.toString;
-      J.add$1$ax(t1, new A.GetMyTickets(J.$index$asx(J.$index$asx(type$.AuthDone._as(A.Provider_of(t2, false, type$.AuthBloc)._bloc$_state).token, "user"), "id"), 1));
+      J.add$1$ax(t1, new A.GetMyTickets(J.$index$asx(J.$index$asx(type$.AuthDone._as(A.Provider_of(t2, false, type$.AuthBloc)._bloc$_state).userData, "user"), "id"), 1));
     },
     build$1(context) {
       return A.BlocBuilder$(new A._ActiveTicketsState_build_closure(), type$.MyTicketsBloc, type$.MyTicketsState);
@@ -170678,7 +170675,7 @@
         t1 = t1.amountController._change_notifier$_value.text;
         t1 = A.double_parse(A.stringReplaceAllUnchecked(t1, ",", ""));
         t3 = this.context;
-        J.add$1$ax(A.Provider_of(t3, false, type$.DepositBloc), new A.Deposit(new A.DepositRequestModel(t1, t2), J.$index$asx(type$.AuthDone._as(A.Provider_of(t3, false, type$.AuthBloc)._bloc$_state).token, "token")));
+        J.add$1$ax(A.Provider_of(t3, false, type$.DepositBloc), new A.Deposit(new A.DepositRequestModel(t1, t2), J.$index$asx(type$.AuthDone._as(A.Provider_of(t3, false, type$.AuthBloc)._bloc$_state).userData, "token")));
       }
     },
     $signature: 0
