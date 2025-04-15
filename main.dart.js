@@ -168935,6 +168935,7 @@
             case 6:
               // returning from await.
               response = $async$result;
+              A.Primitives_objectTypeName(response);
               token = J.$index$asx(response.data, "token");
               t1 = new A.DioClient(A.DioForBrowser$(null));
               t2 = token;
