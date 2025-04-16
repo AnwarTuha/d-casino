@@ -20272,9 +20272,9 @@
     },
     _MaterialAppState_build_closure: function _MaterialAppState_build_closure() {
     },
-    AppBar$(automaticallyImplyLeading, backgroundColor, bottom, title) {
+    AppBar$(automaticallyImplyLeading, backgroundColor, bottom, iconTheme, title) {
       var t1 = bottom == null ? null : bottom.get$preferredSize()._dy;
-      return new A.AppBar(automaticallyImplyLeading, title, bottom, backgroundColor, new A._PreferredAppBarSize(null, t1, 1 / 0, 56 + (t1 == null ? 0 : t1)), null);
+      return new A.AppBar(automaticallyImplyLeading, title, bottom, backgroundColor, iconTheme, new A._PreferredAppBarSize(null, t1, 1 / 0, 56 + (t1 == null ? 0 : t1)), null);
     },
     AppBar_preferredHeightFor(context, preferredSize) {
       var t2,
@@ -20294,14 +20294,15 @@
       _._dx = t2;
       _._dy = t3;
     },
-    AppBar: function AppBar(t0, t1, t2, t3, t4, t5) {
+    AppBar: function AppBar(t0, t1, t2, t3, t4, t5, t6) {
       var _ = this;
       _.automaticallyImplyLeading = t0;
       _.title = t1;
       _.bottom = t2;
       _.backgroundColor = t3;
-      _.preferredSize = t4;
-      _.key = t5;
+      _.iconTheme = t4;
+      _.preferredSize = t5;
+      _.key = t6;
     },
     AppBar__getEffectiveCenterTitle_platformCenter: function AppBar__getEffectiveCenterTitle_platformCenter(t0, t1) {
       this.$this = t0;
@@ -20964,16 +20965,20 @@
     },
     _ButtonThemeData_Object_Diagnosticable: function _ButtonThemeData_Object_Diagnosticable() {
     },
+    Card$(child, color, elevation, shape) {
+      return new A.Card(color, elevation, shape, child, null);
+    },
     _CardVariant: function _CardVariant(t0, t1) {
       this.index = t0;
       this._name = t1;
     },
-    Card: function Card(t0, t1, t2, t3) {
+    Card: function Card(t0, t1, t2, t3, t4) {
       var _ = this;
-      _.elevation = t0;
-      _.shape = t1;
-      _.child = t2;
-      _.key = t3;
+      _.color = t0;
+      _.elevation = t1;
+      _.shape = t2;
+      _.child = t3;
+      _.key = t4;
     },
     _CardDefaultsM3: function _CardDefaultsM3(t0, t1, t2, t3, t4, t5, t6, t7) {
       var _ = this;
@@ -74152,8 +74157,11 @@
     call$3$foregroundColor$iconSize$overlayColor($0, $1, $2) {
       return this.noSuchMethod$1(this, A.createInvocationMirror("call", "call$3$foregroundColor$iconSize$overlayColor", 0, [$0, $1, $2], ["foregroundColor", "iconSize", "overlayColor"], 0));
     },
-    call$2$fontSize$fontWeight($0, $1) {
-      return this.noSuchMethod$1(this, A.createInvocationMirror("call", "call$2$fontSize$fontWeight", 0, [$0, $1], ["fontSize", "fontWeight"], 0));
+    call$2$color$fontWeight($0, $1) {
+      return this.noSuchMethod$1(this, A.createInvocationMirror("call", "call$2$color$fontWeight", 0, [$0, $1], ["color", "fontWeight"], 0));
+    },
+    call$3$color$fontSize$fontWeight($0, $1, $2) {
+      return this.noSuchMethod$1(this, A.createInvocationMirror("call", "call$3$color$fontSize$fontWeight", 0, [$0, $1, $2], ["color", "fontSize", "fontWeight"], 0));
     },
     call$18$background$backgroundColor$color$decoration$decorationColor$decorationStyle$decorationThickness$fontFeatures$fontSize$fontStyle$fontWeight$foreground$height$letterSpacing$locale$shadows$textBaseline$wordSpacing($0, $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17) {
       return this.noSuchMethod$1(this, A.createInvocationMirror("call", "call$18$background$backgroundColor$color$decoration$decorationColor$decorationStyle$decorationThickness$fontFeatures$fontSize$fontStyle$fontWeight$foreground$height$letterSpacing$locale$shadows$textBaseline$wordSpacing", 0, [$0, $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17], ["background", "backgroundColor", "color", "decoration", "decorationColor", "decorationStyle", "decorationThickness", "fontFeatures", "fontSize", "fontStyle", "fontWeight", "foreground", "height", "letterSpacing", "locale", "shadows", "textBaseline", "wordSpacing"], 0));
@@ -74167,8 +74175,8 @@
     call$3$rect($0, $1, $2) {
       return this.noSuchMethod$1(this, A.createInvocationMirror("call", "call$3$rect", 0, [$0, $1, $2], ["rect"], 0));
     },
-    call$3$color$fontSize$fontWeight($0, $1, $2) {
-      return this.noSuchMethod$1(this, A.createInvocationMirror("call", "call$3$color$fontSize$fontWeight", 0, [$0, $1, $2], ["color", "fontSize", "fontWeight"], 0));
+    call$2$fontSize$fontWeight($0, $1) {
+      return this.noSuchMethod$1(this, A.createInvocationMirror("call", "call$2$fontSize$fontWeight", 0, [$0, $1], ["fontSize", "fontWeight"], 0));
     },
     call$1$scrollbars($0) {
       return this.noSuchMethod$1(this, A.createInvocationMirror("call", "call$1$scrollbars", 0, [$0], ["scrollbars"], 0));
@@ -91657,7 +91665,7 @@
       return t1 == null ? A.WidgetStateProperty_resolveAs(defaultColor, states, type$.Color) : t1;
     },
     build$1(context) {
-      var t1, t2, t3, t4, toolbarHeight, t5, backgroundColor, t6, t7, scrolledUnderBackground, effectiveBackgroundColor, actionForegroundColor, foregroundColor, elevation, effectiveElevation, overallIconTheme, overallIconTheme0, actionsIconTheme, toolbarTextStyle, titleTextStyle, leading, effectiveIconButtonTheme, leadingIconButtonStyle, title, title0, _0_0, actions, effectiveActionsIconButtonTheme, actionsIconButtonStyle, appBar, style, overlayStyle, _this = this, _null = null,
+      var t1, t2, t3, t4, toolbarHeight, t5, backgroundColor, t6, t7, scrolledUnderBackground, effectiveBackgroundColor, actionForegroundColor, foregroundColor, elevation, effectiveElevation, overallIconTheme, actionsIconTheme, toolbarTextStyle, titleTextStyle, leading, effectiveIconButtonTheme, leadingIconButtonStyle, title, title0, _0_0, actions, effectiveActionsIconButtonTheme, actionsIconButtonStyle, appBar, style, overlayStyle, _this = this, _null = null,
         theme = A.Theme_of(context),
         iconButtonTheme = A.IconButtonTheme_of(context),
         appBarTheme = A.Theme_of(context).appBarTheme,
@@ -91714,22 +91722,23 @@
         effectiveElevation = t1 == null ? elevation : t1;
       } else
         effectiveElevation = elevation;
-      _this._widget.toString;
-      overallIconTheme = appBarTheme.iconTheme;
-      overallIconTheme0 = overallIconTheme == null ? defaults.get$iconTheme().copyWith$1$color(foregroundColor) : overallIconTheme;
-      _this._widget.toString;
-      t1 = appBarTheme.actionsIconTheme;
+      t1 = _this._widget.iconTheme;
+      overallIconTheme = t1 == null ? appBarTheme.iconTheme : t1;
+      if (overallIconTheme == null)
+        overallIconTheme = defaults.get$iconTheme().copyWith$1$color(foregroundColor);
+      t1 = _this._widget;
+      t1.toString;
+      t4 = appBarTheme.actionsIconTheme;
+      t1 = t4 == null ? t1.iconTheme : t4;
       if (t1 == null)
-        t1 = _null;
-      if (t1 == null)
-        t1 = overallIconTheme;
+        t1 = appBarTheme.iconTheme;
       if (t1 == null) {
         t1 = defaults.get$actionsIconTheme().copyWith$1$color(actionForegroundColor);
         actionsIconTheme = t1;
       } else
         actionsIconTheme = t1;
       if (actionsIconTheme == null)
-        actionsIconTheme = overallIconTheme0;
+        actionsIconTheme = overallIconTheme;
       _this._widget.toString;
       if (appBarTheme.actionsPadding == null)
         defaults.get$actionsPadding();
@@ -91750,7 +91759,7 @@
       leading = _null;
       if (t1)
         if (t3 === true) {
-          t1 = overallIconTheme0.size;
+          t1 = overallIconTheme.size;
           leading = new A.DrawerButton(B.StandardComponentType_3, _null, _null, B.DrawerButtonIcon_null, _null, _null, _null, _null, A.IconButton_styleFrom(_null, _null, _null, _null, _null, _null, _null, _null, _null, t1 == null ? 24 : t1, _null, _null, _null, _null), _null);
         } else {
           if (parentRoute == null)
@@ -91761,10 +91770,10 @@
             leading = B.BackButton_6Oi;
         }
       if (leading != null) {
-        if (overallIconTheme0.$eq(0, defaults.get$iconTheme()))
+        if (overallIconTheme.$eq(0, defaults.get$iconTheme()))
           effectiveIconButtonTheme = iconButtonTheme;
         else {
-          leadingIconButtonStyle = A.IconButton_styleFrom(_null, _null, _null, _null, _null, _null, overallIconTheme0.color, _null, _null, overallIconTheme0.size, _null, _null, _null, _null);
+          leadingIconButtonStyle = A.IconButton_styleFrom(_null, _null, _null, _null, _null, _null, overallIconTheme.color, _null, _null, overallIconTheme.size, _null, _null, _null, _null);
           t1 = iconButtonTheme.style;
           effectiveIconButtonTheme = new A.IconButtonThemeData(t1 == null ? _null : t1.copyWith$3$foregroundColor$iconSize$overlayColor(leadingIconButtonStyle.foregroundColor, leadingIconButtonStyle.iconSize, leadingIconButtonStyle.overlayColor));
         }
@@ -91789,7 +91798,7 @@
       titleTextStyle.toString;
       title = A.MediaQuery_withClampedTextScaling(A.DefaultTextStyle$(title, _null, _null, B.TextOverflow_2, false, titleTextStyle, _null, _null, B.TextWidthBasis_0), 1.34);
       if (t2 === true) {
-        t1 = overallIconTheme0.size;
+        t1 = overallIconTheme.size;
         actions = new A.EndDrawerButton(_null, _null, _null, B.EndDrawerButtonIcon_null, _null, _null, _null, _null, A.IconButton_styleFrom(_null, _null, _null, _null, _null, _null, _null, _null, _null, t1 == null ? 24 : t1, _null, _null, _null, _null), _null);
       } else
         actions = _null;
@@ -91810,7 +91819,7 @@
       if (t3 == null)
         t3 = 16;
       toolbarTextStyle.toString;
-      appBar = A.ClipRect$(new A.CustomSingleChildLayout(new A._ToolbarContainerLayout(toolbarHeight), A.IconTheme_merge(A.DefaultTextStyle$(new A.NavigationToolbar(leading, title, actions, t1, t3, _null), _null, _null, B.TextOverflow_0, true, toolbarTextStyle, _null, _null, B.TextWidthBasis_0), overallIconTheme0), _null), B.Clip_1, _null);
+      appBar = A.ClipRect$(new A.CustomSingleChildLayout(new A._ToolbarContainerLayout(toolbarHeight), A.IconTheme_merge(A.DefaultTextStyle$(new A.NavigationToolbar(leading, title, actions, t1, t3, _null), _null, _null, B.TextOverflow_0, true, toolbarTextStyle, _null, _null, B.TextWidthBasis_0), overallIconTheme), _null), B.Clip_1, _null);
       if (t2.bottom != null) {
         t1 = A._setArrayType([new A.Flexible(1, B.FlexFit_1, new A.ConstrainedBox(new A.BoxConstraints(0, 1 / 0, 0, toolbarHeight), appBar, _null), _null)], type$.JSArray_Widget);
         t2 = _this._widget.bottom;
@@ -93181,7 +93190,7 @@
   };
   A.Card.prototype = {
     build$1(context) {
-      var cardTheme, t1, defaults, t2, t3, t4, t5, t6, t7, _null = null;
+      var cardTheme, t1, defaults, t2, t3, t4, t5, t6, t7, _this = this, _null = null;
       context.dependOnInheritedWidgetOfExactType$1$0(type$.CardTheme);
       cardTheme = A.Theme_of(context).cardTheme;
       A.Theme_of(context);
@@ -93196,23 +93205,21 @@
         t1 = defaults.margin;
         t1.toString;
       }
-      t2 = cardTheme.color;
-      if (t2 == null)
-        t2 = defaults.get$color(0);
+      t2 = _this.color;
       t3 = cardTheme.shadowColor;
       if (t3 == null)
         t3 = defaults.get$shadowColor(0);
       t4 = cardTheme.surfaceTintColor;
       if (t4 == null)
         t4 = defaults.get$surfaceTintColor();
-      t5 = this.elevation;
-      t6 = this.shape;
+      t5 = _this.elevation;
+      t6 = _this.shape;
       t7 = cardTheme.clipBehavior;
       if (t7 == null) {
         t7 = defaults.clipBehavior;
         t7.toString;
       }
-      return A.Semantics$(_null, new A.Padding(t1, A.Material$(B.Duration_200000, true, _null, A.Semantics$(_null, this.child, false, _null, _null, false, false, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null), t7, t2, t5, _null, t3, t6, t4, _null, B.MaterialType_1), _null), true, _null, _null, false, false, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null);
+      return A.Semantics$(_null, new A.Padding(t1, A.Material$(B.Duration_200000, true, _null, A.Semantics$(_null, _this.child, false, _null, _null, false, false, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null), t7, t2, t5, _null, t3, t6, t4, _null, B.MaterialType_1), _null), true, _null, _null, false, false, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null);
     }
   };
   A._CardDefaultsM3.prototype = {
@@ -167093,7 +167100,7 @@
   A.MaterialErrorScreen.prototype = {
     build$1(context) {
       var _null = null,
-        t1 = A.AppBar$(true, _null, _null, B.Text_uCK),
+        t1 = A.AppBar$(true, _null, _null, _null, B.Text_uCK),
         t2 = this.error;
       t2 = t2 == null ? _null : "GoException: " + t2.message;
       if (t2 == null)
@@ -170692,7 +170699,7 @@
         t6 = A.part_r_PartR_roboto$closure().call$2$fontSize$fontWeight(16 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_3),
         t7 = this.___MyTicketsViewState_tabController_A;
       t7 === $ && A.throwUnnamedLateFieldNI();
-      return A.AnnotatedRegion$(A.Scaffold$(A.AppBar$(false, B.Color_Kln, new A.TabBar(t3, t7, B.Color_wst, 3, B.TabBarIndicatorSize_0, B.Color_Edl, B.Color_wst, t4, t5, t6, _null), t1), B.Color_Kln, new A.TabBarView(this.___MyTicketsViewState_tabController_A, A._setArrayType([new A.ActiveTickets(_null), new A.ClosedTickets(_null)], t2), _null)), B.SystemUiOverlayStyle_iGj, type$.SystemUiOverlayStyle);
+      return A.AnnotatedRegion$(A.Scaffold$(A.AppBar$(false, B.Color_Kln, new A.TabBar(t3, t7, B.Color_wst, 3, B.TabBarIndicatorSize_0, B.Color_Edl, B.Color_wst, t4, t5, t6, _null), _null, t1), B.Color_Kln, new A.TabBarView(this.___MyTicketsViewState_tabController_A, A._setArrayType([new A.ActiveTickets(_null), new A.ClosedTickets(_null)], t2), _null)), B.SystemUiOverlayStyle_iGj, type$.SystemUiOverlayStyle);
     }
   };
   A._MyTicketsViewState_initState_closure.prototype = {
@@ -170840,21 +170847,23 @@
       return A.DateTime_parse(J.$index$asx(this._widget.ticketData, "drawTime")).isBefore$1(new A.DateTime(Date.now(), 0, false));
     },
     build$1(context) {
-      var t7, t8, _this = this, _null = null,
+      var t9, t10, _this = this, _null = null,
         drawTime = A.DateTime_parse(J.$index$asx(_this._widget.ticketData, "drawTime")),
         purchaseDate = A.DateTime_parse(J.$index$asx(_this._widget.ticketData, "purchaseDate")),
-        t1 = A.AppBar$(true, _null, _null, A.Text$("Ticket Information", _null, _null, _null, _null, A.part_p_PartP_poppins$closure().call$0(), _null, _null)),
+        t1 = A.AppBar$(true, B.Color_Kln, _null, B.IconThemeData_diR, A.Text$("Ticket Information", _null, _null, _null, _null, A.part_p_PartP_poppins$closure().call$2$color$fontWeight(B.Color_wst, B.FontWeight_4), _null, _null)),
         t2 = 4 * $.SizerUtil___width._readField$0() / 100,
         t3 = _this._buildTicketCard$2(drawTime, purchaseDate),
         t4 = A.SizedBox$(_null, 4 * $.SizerUtil___height._readField$0() / 100, _null),
-        t5 = type$.JSArray_Widget,
-        t6 = A._setArrayType([A.Text$("Ticket Details", _null, _null, _null, _null, A.part_p_PartP_poppins$closure().call$2$fontSize$fontWeight(16 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_6), _null, _null), A.SizedBox$(_null, 2 * $.SizerUtil___height._readField$0() / 100, _null), _this._buildInfoRow$2("Lottery Type", J.$index$asx(_this._widget.ticketData, "lotteryType")), _this._buildInfoRow$2("Numbers", J.join$1$ax(J.$index$asx(_this._widget.ticketData, "numbers"), ", ")), _this._buildInfoRow$2("Price", "$" + J.toStringAsFixed$1$n(J.$index$asx(_this._widget.ticketData, "price"), 2))], t5);
+        t5 = A.BorderRadius$circular(15),
+        t6 = 4 * $.SizerUtil___width._readField$0() / 100,
+        t7 = type$.JSArray_Widget,
+        t8 = A._setArrayType([A.Text$("Ticket Details", _null, _null, _null, _null, A.part_p_PartP_poppins$closure().call$3$color$fontSize$fontWeight(B.Color_Kln, 16 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_6), _null, _null), A.SizedBox$(_null, 2 * $.SizerUtil___height._readField$0() / 100, _null), _this._buildInfoRow$2("Lottery Type", J.$index$asx(_this._widget.ticketData, "lotteryType")), _this._buildInfoRow$2("Numbers", J.join$1$ax(J.$index$asx(_this._widget.ticketData, "numbers"), ", ")), _this._buildInfoRow$2("Price", "$" + J.toStringAsFixed$1$n(J.$index$asx(_this._widget.ticketData, "price"), 2))], t7);
       if (_this.get$isDrawTimePassed()) {
-        t7 = A.SizedBox$(_null, 2 * $.SizerUtil___height._readField$0() / 100, _null);
-        t8 = J.$index$asx(_this._widget.ticketData, "status");
-        B.JSArray_methods.addAll$1(t6, A._setArrayType([t7, _this._buildInfoRow$2("Status", t8 == null ? "Draw Complete" : t8)], t5));
+        t9 = A.SizedBox$(_null, 2 * $.SizerUtil___height._readField$0() / 100, _null);
+        t10 = J.$index$asx(_this._widget.ticketData, "status");
+        B.JSArray_methods.addAll$1(t8, A._setArrayType([t9, _this._buildInfoRow$2("Status", t10 == null ? "Draw Complete" : t10)], t7));
       }
-      return A.Scaffold$(t1, _null, A.SingleChildScrollView$(new A.Padding(new A.EdgeInsets(t2, t2, t2, t2), A.Column$(A._setArrayType([t3, t4, A.Column$(t6, B.CrossAxisAlignment_0, B.MainAxisAlignment_0, B.MainAxisSize_1)], t5), B.CrossAxisAlignment_0, B.MainAxisAlignment_0, B.MainAxisSize_1), _null), _null, B.DragStartBehavior_1, _null, _null, B.Axis_1));
+      return A.Scaffold$(t1, B.Color_35F, A.SingleChildScrollView$(new A.Padding(new A.EdgeInsets(t2, t2, t2, t2), A.Column$(A._setArrayType([t3, t4, A.Card$(new A.Padding(new A.EdgeInsets(t6, t6, t6, t6), A.Column$(t8, B.CrossAxisAlignment_0, B.MainAxisAlignment_0, B.MainAxisSize_1), _null), B.Color_wst, 4, new A.RoundedRectangleBorder(t5, B.BorderSide_Ah5))], t7), B.CrossAxisAlignment_0, B.MainAxisAlignment_0, B.MainAxisSize_1), _null), _null, B.DragStartBehavior_1, _null, _null, B.Axis_1));
     },
     _buildTicketCard$2(drawTime, purchaseDate) {
       var t1 = this.___TicketInfoPageState__controller_A;
@@ -170864,12 +170873,12 @@
     _buildInfoRow$2(label, value) {
       var _null = null,
         t1 = $.SizerUtil___height._readField$0() / 100;
-      return new A.Padding(new A.EdgeInsets(0, t1, 0, t1), A.Row$(A._setArrayType([A.Text$(label, _null, _null, _null, _null, A.part_p_PartP_poppins$closure().call$2$color$fontSize(B.Color_hVy, 12 * ($.SizerUtil___width._readField$0() / 3) / 100), _null, _null), A.Text$(value, _null, _null, _null, _null, A.part_p_PartP_poppins$closure().call$2$fontSize$fontWeight(12 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_4), _null, _null)], type$.JSArray_Widget), B.CrossAxisAlignment_2, B.MainAxisAlignment_3, B.MainAxisSize_1, 0), _null);
+      return new A.Padding(new A.EdgeInsets(0, t1, 0, t1), A.Row$(A._setArrayType([A.Text$(label, _null, _null, _null, _null, A.part_p_PartP_poppins$closure().call$2$color$fontSize(B.Color_L2f, 12 * ($.SizerUtil___width._readField$0() / 3) / 100), _null, _null), A.Text$(value, _null, _null, _null, _null, A.part_p_PartP_poppins$closure().call$3$color$fontSize$fontWeight(B.Color_Kln, 12 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_4), _null, _null)], type$.JSArray_Widget), B.CrossAxisAlignment_2, B.MainAxisAlignment_3, B.MainAxisSize_1, 0), _null);
     }
   };
   A._TicketInfoPageState__buildTicketCard_closure.prototype = {
     call$2(context, child) {
-      var t2, t3, t4, t5, t6, t7, t8, t9, t10, _null = null,
+      var t2, t3, t4, t5, t6, t7, _null = null,
         _s18_ = "MMM dd, yyyy HH:mm",
         t1 = this.$this;
       if (t1.get$isDrawTimePassed())
@@ -170889,16 +170898,10 @@
       t4 = A.BorderRadius$circular(15);
       t5 = 4 * $.SizerUtil___width._readField$0() / 100;
       t6 = type$.JSArray_Widget;
-      t7 = A._setArrayType([A.Text$("Ticket #" + A.S(J.$index$asx(t1._widget.ticketData, "ticketNumber")), _null, _null, _null, _null, A.part_p_PartP_poppins$closure().call$2$fontSize$fontWeight(18 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_6), _null, _null), A.SizedBox$(_null, 2 * $.SizerUtil___height._readField$0() / 100, _null), t1._buildInfoRow$2("Purchase Date", A.DateFormat$(_s18_).format$1(this.purchaseDate)), t1._buildInfoRow$2("Draw Time", A.DateFormat$(_s18_).format$1(this.drawTime))], t6);
-      if (!t1.get$isDrawTimePassed()) {
-        t8 = A.SizedBox$(_null, 2 * $.SizerUtil___height._readField$0() / 100, _null);
-        t9 = A.Text$("Time until draw:", _null, _null, _null, _null, A.part_p_PartP_poppins$closure().call$2$color$fontSize(B.Color_hVy, 12 * ($.SizerUtil___width._readField$0() / 3) / 100), _null, _null);
-        t10 = A.SizedBox$(_null, $.SizerUtil___height._readField$0() / 100, _null);
-        t1 = t1._framework$_element;
-        t1.toString;
-        B.JSArray_methods.addAll$1(t7, A._setArrayType([t8, A.Column$(A._setArrayType([t9, t10, new A.SpinKitWave(A.Theme_of(t1).primaryColor, 20 * ($.SizerUtil___width._readField$0() / 3) / 100, _null)], t6), B.CrossAxisAlignment_2, B.MainAxisAlignment_0, B.MainAxisSize_1)], t6));
-      }
-      return A.Transform$scale(B.Alignment_0_0, A.Opacity$(new A.Card(8, new A.RoundedRectangleBorder(t4, B.BorderSide_Ah5), new A.Padding(new A.EdgeInsets(t5, t5, t5, t5), A.Column$(t7, B.CrossAxisAlignment_0, B.MainAxisAlignment_0, B.MainAxisSize_1), _null), _null), t3), t2);
+      t7 = A._setArrayType([A.Text$("Ticket #" + A.S(J.$index$asx(t1._widget.ticketData, "ticketNumber")), _null, _null, _null, _null, A.part_p_PartP_poppins$closure().call$3$color$fontSize$fontWeight(B.Color_Kln, 18 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_6), _null, _null), A.SizedBox$(_null, 2 * $.SizerUtil___height._readField$0() / 100, _null), t1._buildInfoRow$2("Purchase Date", A.DateFormat$(_s18_).format$1(this.purchaseDate)), t1._buildInfoRow$2("Draw Time", A.DateFormat$(_s18_).format$1(this.drawTime))], t6);
+      if (!t1.get$isDrawTimePassed())
+        B.JSArray_methods.addAll$1(t7, A._setArrayType([A.SizedBox$(_null, 2 * $.SizerUtil___height._readField$0() / 100, _null), A.Column$(A._setArrayType([A.Text$("Time until draw:", _null, _null, _null, _null, A.part_p_PartP_poppins$closure().call$2$color$fontSize(B.Color_L2f, 12 * ($.SizerUtil___width._readField$0() / 3) / 100), _null, _null), A.SizedBox$(_null, $.SizerUtil___height._readField$0() / 100, _null), new A.SpinKitWave(B.Color_Gcn, 20 * ($.SizerUtil___width._readField$0() / 3) / 100, _null)], t6), B.CrossAxisAlignment_2, B.MainAxisAlignment_0, B.MainAxisSize_1)], t6));
+      return A.Transform$scale(B.Alignment_0_0, A.Opacity$(A.Card$(new A.Padding(new A.EdgeInsets(t5, t5, t5, t5), A.Column$(t7, B.CrossAxisAlignment_0, B.MainAxisAlignment_0, B.MainAxisSize_1), _null), B.Color_wst, 4, new A.RoundedRectangleBorder(t4, B.BorderSide_Ah5)), t3), t2);
     },
     $signature: 628
   };
@@ -176930,7 +176933,7 @@
     _static_2(A, "layout_helper_ChildLayoutHelper_layoutChild$closure", "ChildLayoutHelper_layoutChild", 45);
     _static(A, "layout_helper_ChildLayoutHelper_getDryBaseline$closure", 3, null, ["call$3"], ["ChildLayoutHelper_getDryBaseline"], 215, 0);
     _static(A, "layout_helper_ChildLayoutHelper_getBaseline$closure", 3, null, ["call$3"], ["ChildLayoutHelper_getBaseline"], 215, 0);
-    _static(A, "part_p_PartP_poppins$closure", 0, null, ["call$19$background$backgroundColor$color$decoration$decorationColor$decorationStyle$decorationThickness$fontFeatures$fontSize$fontStyle$fontWeight$foreground$height$letterSpacing$locale$shadows$textBaseline$textStyle$wordSpacing", "call$0", "call$1$color", "call$2$color$fontSize", "call$2$fontSize$fontWeight", "call$18$background$backgroundColor$color$decoration$decorationColor$decorationStyle$decorationThickness$fontFeatures$fontSize$fontStyle$fontWeight$foreground$height$letterSpacing$locale$shadows$textBaseline$wordSpacing", "call$2$color$fontSize", "call$3$color$fontSize$fontWeight", "call$3$color$fontSize$fontWeight", "call$1$height", "call$3$color$fontSize$fontWeight"], ["PartP_poppins", function() {
+    _static(A, "part_p_PartP_poppins$closure", 0, null, ["call$19$background$backgroundColor$color$decoration$decorationColor$decorationStyle$decorationThickness$fontFeatures$fontSize$fontStyle$fontWeight$foreground$height$letterSpacing$locale$shadows$textBaseline$textStyle$wordSpacing", "call$0", "call$1$color", "call$2$color$fontSize", "call$2$color$fontWeight", "call$3$color$fontSize$fontWeight", "call$18$background$backgroundColor$color$decoration$decorationColor$decorationStyle$decorationThickness$fontFeatures$fontSize$fontStyle$fontWeight$foreground$height$letterSpacing$locale$shadows$textBaseline$wordSpacing", "call$2$color$fontSize", "call$3$color$fontSize$fontWeight", "call$2$fontSize$fontWeight", "call$1$height", "call$3$color$fontSize$fontWeight"], ["PartP_poppins", function() {
       var _null = null;
       return A.PartP_poppins(_null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null);
     }, function(color) {
@@ -176939,9 +176942,12 @@
     }, function(color, fontSize) {
       var _null = null;
       return A.PartP_poppins(_null, _null, color, _null, _null, _null, _null, _null, fontSize, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null);
-    }, function(fontSize, fontWeight) {
+    }, function(color, fontWeight) {
       var _null = null;
-      return A.PartP_poppins(_null, _null, _null, _null, _null, _null, _null, _null, fontSize, _null, fontWeight, _null, _null, _null, _null, _null, _null, _null, _null);
+      return A.PartP_poppins(_null, _null, color, _null, _null, _null, _null, _null, _null, _null, fontWeight, _null, _null, _null, _null, _null, _null, _null, _null);
+    }, function(color, fontSize, fontWeight) {
+      var _null = null;
+      return A.PartP_poppins(_null, _null, color, _null, _null, _null, _null, _null, fontSize, _null, fontWeight, _null, _null, _null, _null, _null, _null, _null, _null);
     }, function(background, backgroundColor, color, decoration, decorationColor, decorationStyle, decorationThickness, fontFeatures, fontSize, fontStyle, fontWeight, foreground, height, letterSpacing, locale, shadows, textBaseline, wordSpacing) {
       return A.PartP_poppins(background, backgroundColor, color, decoration, decorationColor, decorationStyle, decorationThickness, fontFeatures, fontSize, fontStyle, fontWeight, foreground, height, letterSpacing, locale, shadows, textBaseline, null, wordSpacing);
     }, function(color, fontSize) {
@@ -176950,9 +176956,9 @@
     }, function(color, fontSize, fontWeight) {
       var _null = null;
       return A.PartP_poppins(_null, _null, color, _null, _null, _null, _null, _null, fontSize, _null, fontWeight, _null, _null, _null, _null, _null, _null, _null, _null);
-    }, function(color, fontSize, fontWeight) {
+    }, function(fontSize, fontWeight) {
       var _null = null;
-      return A.PartP_poppins(_null, _null, color, _null, _null, _null, _null, _null, fontSize, _null, fontWeight, _null, _null, _null, _null, _null, _null, _null, _null);
+      return A.PartP_poppins(_null, _null, _null, _null, _null, _null, _null, _null, fontSize, _null, fontWeight, _null, _null, _null, _null, _null, _null, _null, _null);
     }, function(height) {
       var _null = null;
       return A.PartP_poppins(_null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, height, _null, _null, _null, _null, _null, _null);
@@ -176960,7 +176966,7 @@
       var _null = null;
       return A.PartP_poppins(_null, _null, color, _null, _null, _null, _null, _null, fontSize, _null, fontWeight, _null, _null, _null, _null, _null, _null, _null, _null);
     }], 211, 0);
-    _static(A, "part_r_PartR_roboto$closure", 0, null, ["call$19$background$backgroundColor$color$decoration$decorationColor$decorationStyle$decorationThickness$fontFeatures$fontSize$fontStyle$fontWeight$foreground$height$letterSpacing$locale$shadows$textBaseline$textStyle$wordSpacing", "call$0", "call$1$color", "call$2$color$fontSize", "call$2$fontSize$fontWeight", "call$18$background$backgroundColor$color$decoration$decorationColor$decorationStyle$decorationThickness$fontFeatures$fontSize$fontStyle$fontWeight$foreground$height$letterSpacing$locale$shadows$textBaseline$wordSpacing", "call$2$color$fontSize", "call$3$color$fontSize$fontWeight", "call$3$color$fontSize$fontWeight", "call$1$height", "call$3$color$fontSize$fontWeight"], ["PartR_roboto", function() {
+    _static(A, "part_r_PartR_roboto$closure", 0, null, ["call$19$background$backgroundColor$color$decoration$decorationColor$decorationStyle$decorationThickness$fontFeatures$fontSize$fontStyle$fontWeight$foreground$height$letterSpacing$locale$shadows$textBaseline$textStyle$wordSpacing", "call$0", "call$1$color", "call$2$color$fontSize", "call$2$color$fontWeight", "call$3$color$fontSize$fontWeight", "call$18$background$backgroundColor$color$decoration$decorationColor$decorationStyle$decorationThickness$fontFeatures$fontSize$fontStyle$fontWeight$foreground$height$letterSpacing$locale$shadows$textBaseline$wordSpacing", "call$2$color$fontSize", "call$3$color$fontSize$fontWeight", "call$2$fontSize$fontWeight", "call$1$height", "call$3$color$fontSize$fontWeight"], ["PartR_roboto", function() {
       var _null = null;
       return A.PartR_roboto(_null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null);
     }, function(color) {
@@ -176969,9 +176975,12 @@
     }, function(color, fontSize) {
       var _null = null;
       return A.PartR_roboto(_null, _null, color, _null, _null, _null, _null, _null, fontSize, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null);
-    }, function(fontSize, fontWeight) {
+    }, function(color, fontWeight) {
       var _null = null;
-      return A.PartR_roboto(_null, _null, _null, _null, _null, _null, _null, _null, fontSize, _null, fontWeight, _null, _null, _null, _null, _null, _null, _null, _null);
+      return A.PartR_roboto(_null, _null, color, _null, _null, _null, _null, _null, _null, _null, fontWeight, _null, _null, _null, _null, _null, _null, _null, _null);
+    }, function(color, fontSize, fontWeight) {
+      var _null = null;
+      return A.PartR_roboto(_null, _null, color, _null, _null, _null, _null, _null, fontSize, _null, fontWeight, _null, _null, _null, _null, _null, _null, _null, _null);
     }, function(background, backgroundColor, color, decoration, decorationColor, decorationStyle, decorationThickness, fontFeatures, fontSize, fontStyle, fontWeight, foreground, height, letterSpacing, locale, shadows, textBaseline, wordSpacing) {
       return A.PartR_roboto(background, backgroundColor, color, decoration, decorationColor, decorationStyle, decorationThickness, fontFeatures, fontSize, fontStyle, fontWeight, foreground, height, letterSpacing, locale, shadows, textBaseline, null, wordSpacing);
     }, function(color, fontSize) {
@@ -176980,9 +176989,9 @@
     }, function(color, fontSize, fontWeight) {
       var _null = null;
       return A.PartR_roboto(_null, _null, color, _null, _null, _null, _null, _null, fontSize, _null, fontWeight, _null, _null, _null, _null, _null, _null, _null, _null);
-    }, function(color, fontSize, fontWeight) {
+    }, function(fontSize, fontWeight) {
       var _null = null;
-      return A.PartR_roboto(_null, _null, color, _null, _null, _null, _null, _null, fontSize, _null, fontWeight, _null, _null, _null, _null, _null, _null, _null, _null);
+      return A.PartR_roboto(_null, _null, _null, _null, _null, _null, _null, _null, fontSize, _null, fontWeight, _null, _null, _null, _null, _null, _null, _null, _null);
     }, function(height) {
       var _null = null;
       return A.PartR_roboto(_null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, height, _null, _null, _null, _null, _null, _null);
@@ -179731,6 +179740,7 @@
     B.Color_7Kv = new A.Color(1, 0.21176470588235294, 0.20392156862745098, 0.23137254901960785, B.ColorSpace_0);
     B.Color_1Cl = new A.Color(1, 0.5764705882352941, 0.5607843137254902, 0.6, B.ColorSpace_0);
     B.ColorScheme_NQE = new A.ColorScheme(B.Brightness_0, B.Color_NCR, B.Color_JT9, B.Color_zc9, B.Color_WQu, B.Color_WQu, B.Color_NCR, B.Color_nNC, B.Color_zc9, B.Color_T8U, B.Color_Oip, B.Color_v8D, B.Color_vh0, B.Color_vh0, B.Color_T8U, B.Color_I89, B.Color_v8D, B.Color_Nfe, B.Color_5Hl, B.Color_ASe, B.Color_BQC, B.Color_BQC, B.Color_Nfe, B.Color_Pho, B.Color_ASe, B.Color_4Am, B.Color_gDk, B.Color_h6L, B.Color_NS2, B.Color_gPD, B.Color_eHU, B.Color_P7g, B.Color_gPD, B.Color_Kb2, B.Color_ayE, B.Color_F6m, B.Color_088, B.Color_qgx, B.Color_7Kv, B.Color_EZ2, B.Color_1Cl, B.Color_P7g, B.Color_vnR, B.Color_vnR, B.Color_eHU, B.Color_xxB, B.Color_atC, B.Color_NCR, B.Color_gPD, B.Color_eHU);
+    B.Color_35F = new A.Color(1, 0.9647058823529412, 0.9647058823529412, 0.9647058823529412, B.ColorSpace_0);
     B.Color_4cJ = new A.Color(1, 0.3803921568627451, 0.3803921568627451, 0.3803921568627451, B.ColorSpace_0);
     B.Color_73v = new A.Color(0.4, 0.7843137254901961, 0.7843137254901961, 0.7843137254901961, B.ColorSpace_0);
     B.Color_7NB = new A.Color(1, 0.8901960784313725, 0.9490196078431372, 0.9921568627450981, B.ColorSpace_0);
@@ -179742,6 +179752,7 @@
     B.Color_Gcn = new A.Color(1, 0, 0.36470588235294116, 1, B.ColorSpace_0);
     B.Color_GmJ = new A.Color(0, 1, 1, 1, B.ColorSpace_0);
     B.Color_Kln = new A.Color(1, 0, 0.12941176470588237, 0.2980392156862745, B.ColorSpace_0);
+    B.Color_L2f = new A.Color(1, 0.5019607843137255, 0.5176470588235295, 0.5372549019607843, B.ColorSpace_0);
     B.Color_LTH = new A.Color(0.03137254901960784, 0, 0, 0, B.ColorSpace_0);
     B.Color_MCJ = new A.Color(1, 0.25882352941176473, 0.25882352941176473, 0.25882352941176473, B.ColorSpace_0);
     B.Color_Mqd = new A.Color(1, 0.12941176470588237, 0.5882352941176471, 0.9529411764705882, B.ColorSpace_0);
@@ -179761,7 +179772,6 @@
     B.Color_eYv = new A.Color(0.4, 0.7372549019607844, 0.7372549019607844, 0.7372549019607844, B.ColorSpace_0);
     B.Color_fUT = new A.Color(1, 0.09019607843137255, 0.09019607843137255, 0.09019607843137255, B.ColorSpace_0);
     B.Color_gPA = new A.Color(0.3803921568627451, 0, 0, 0, B.ColorSpace_0);
-    B.Color_hVy = new A.Color(1, 0.4588235294117647, 0.4588235294117647, 0.4588235294117647, B.ColorSpace_0);
     B.Color_kAU = new A.Color(0.12156862745098039, 1, 1, 1, B.ColorSpace_0);
     B.Color_kQ5 = new A.Color(1, 0.7333333333333333, 0.8705882352941177, 0.984313725490196, B.ColorSpace_0);
     B.Color_kd7 = new A.Color(0.3843137254901961, 1, 1, 1, B.ColorSpace_0);
@@ -179824,7 +179834,6 @@
     B.Color_m41 = new A.Color(0.3764705882352941, 0.23529411764705882, 0.23529411764705882, 0.2627450980392157, B.ColorSpace_0);
     B.Color_XFR = new A.Color(0.3764705882352941, 0.9215686274509803, 0.9215686274509803, 0.9607843137254902, B.ColorSpace_0);
     B.CupertinoDynamicColor_RmM = new A.CupertinoDynamicColor(B.Color_kNw, "tertiaryLabel", null, B.Color_kNw, B.Color_I6V, B.Color_m41, B.Color_XFR, B.Color_kNw, B.Color_I6V, B.Color_m41, B.Color_XFR);
-    B.Color_35F = new A.Color(1, 0.9647058823529412, 0.9647058823529412, 0.9647058823529412, B.ColorSpace_0);
     B.Color_hos = new A.Color(1, 0.13333333333333333, 0.13333333333333333, 0.13333333333333333, B.ColorSpace_0);
     B.CupertinoDynamicColor_YBl = new A.CupertinoDynamicColor(B.Color_35F, null, null, B.Color_35F, B.Color_hos, B.Color_35F, B.Color_hos, B.Color_35F, B.Color_hos, B.Color_35F, B.Color_hos);
     B.CupertinoDynamicColor_ml5 = new A.CupertinoDynamicColor(B.Color_vnR, null, null, B.Color_vnR, B.Color_wst, B.Color_vnR, B.Color_wst, B.Color_vnR, B.Color_wst, B.Color_vnR, B.Color_wst);
@@ -179832,6 +179841,7 @@
     B.Color_vyR = new A.Color(1, 0.3568627450980392, 0.3568627450980392, 0.3568627450980392, B.ColorSpace_0);
     B.CupertinoDynamicColor_pDp = new A.CupertinoDynamicColor(B.Color_yAD, null, null, B.Color_yAD, B.Color_vyR, B.Color_yAD, B.Color_vyR, B.Color_yAD, B.Color_vyR, B.Color_yAD, B.Color_vyR);
     B.Color_8Tv = new A.Color(1, 0.6, 0.6, 0.6, B.ColorSpace_0);
+    B.Color_hVy = new A.Color(1, 0.4588235294117647, 0.4588235294117647, 0.4588235294117647, B.ColorSpace_0);
     B.CupertinoDynamicColor_yWg = new A.CupertinoDynamicColor(B.Color_8Tv, "inactiveGray", null, B.Color_8Tv, B.Color_hVy, B.Color_8Tv, B.Color_hVy, B.Color_8Tv, B.Color_hVy, B.Color_8Tv, B.Color_hVy);
     B.Color_KzF = new A.Color(0.0784313725490196, 0.4549019607843137, 0.4549019607843137, 0.5019607843137255, B.ColorSpace_0);
     B.Color_aqp = new A.Color(0.17647058823529413, 0.4627450980392157, 0.4627450980392157, 0.5019607843137255, B.ColorSpace_0);
