@@ -170730,14 +170730,18 @@
   };
   A.TransactionList_build_closure.prototype = {
     call$2(context, state) {
-      var _null = null;
+      var t1, t2, _null = null;
       A.print(">>>>>>>>> " + state.toString$0(0));
       if (state instanceof A.TransactionHistoryLoading)
         return A.Center$(A.CircularProgressIndicator$(_null, _null, _null), _null, _null);
       else if (state instanceof A.TransactionHistoryError)
         return A.Center$(A.Text$(state.message, _null, _null, _null, _null, _null, _null, _null), _null, _null);
-      else if (state instanceof A.TransactionHistoryLoaded)
-        return A.ListView$builder(_null, new A.TransactionList_build__closure(state), J.get$length$asx(state.response), new A.NeverScrollableScrollPhysics(_null), true);
+      else if (state instanceof A.TransactionHistoryLoaded) {
+        t1 = state.response;
+        t2 = J.getInterceptor$(t1);
+        A.print(">>>>>>>>>>>>>>>>>>>>>> " + t2.toString$0(t1));
+        return A.ListView$builder(_null, new A.TransactionList_build__closure(state), t2.get$length(t1), new A.NeverScrollableScrollPhysics(_null), true);
+      }
       return A.SizedBox$(_null, _null, _null);
     },
     $signature: 630
