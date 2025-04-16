@@ -170602,15 +170602,16 @@
   };
   A.TransactionHistoryBloc__closure.prototype = {
     call$1(response) {
-      var t2, t3,
+      var t2, transactionHistory,
         t1 = response.data;
       A.print(">>>>>>>>>>>>>>>>>> RESPONSE " + A.S(t1));
       t2 = this.emit;
       if (t1 != null) {
-        t3 = J.map$1$1$ax(type$.List_dynamic._as(J.$index$asx(t1, "data")), new A.TransactionHistoryBloc___closure(), type$.TransactionHistoryResponse);
-        A.print(">>>>>>>>>>>>>>>>> PARSED RESPONSE " + A.S(A.List_List$of(t3, true, t3.$ti._eval$1("ListIterable.E"))));
+        t1 = J.map$1$1$ax(type$.List_dynamic._as(J.$index$asx(t1, "data")), new A.TransactionHistoryBloc___closure(), type$.TransactionHistoryResponse);
+        transactionHistory = A.List_List$of(t1, true, t1.$ti._eval$1("ListIterable.E"));
+        A.print(">>>>>>>>>>>>>>>>> PARSED RESPONSE " + A.S(transactionHistory));
         if (!t2._isCanceled)
-          t2._emit.call$1(new A.TransactionHistoryLoaded(t1));
+          t2._emit.call$1(new A.TransactionHistoryLoaded(transactionHistory));
       } else if (!t2._isCanceled)
         t2._emit.call$1(new A.TransactionHistoryError("Error getting transaction history"));
     },
@@ -170737,14 +170738,14 @@
       else if (state instanceof A.TransactionHistoryError)
         return A.Center$(A.Text$(state.message, _null, _null, _null, _null, _null, _null, _null), _null, _null);
       else if (state instanceof A.TransactionHistoryLoaded)
-        return A.ListView$builder(_null, new A.TransactionList_build__closure(state), J.get$length$asx(state.response), new A.NeverScrollableScrollPhysics(_null), true);
+        return A.ListView$builder(_null, new A.TransactionList_build__closure(state), state.response.length, new A.NeverScrollableScrollPhysics(_null), true);
       return A.SizedBox$(_null, _null, _null);
     },
     $signature: 630
   };
   A.TransactionList_build__closure.prototype = {
     call$2(context, index) {
-      return new A.TransactionItem(J.$index$asx(this.state.response, index), null);
+      return new A.TransactionItem(this.state.response[index], null);
     },
     $signature: 631
   };
