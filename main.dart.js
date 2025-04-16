@@ -170271,11 +170271,8 @@
   };
   A.MyTicketsBloc__closure.prototype = {
     call$1(response) {
-      var myTickets,
-        t1 = response.data;
-      A.print(">>>>>>>>>>>>>>>>>> " + A.S(t1));
-      t1 = J.map$1$1$ax(type$.List_dynamic._as(t1), new A.MyTicketsBloc___closure(), type$.MyTicketsResponse);
-      myTickets = A.List_List$of(t1, true, t1.$ti._eval$1("ListIterable.E"));
+      var t1 = J.map$1$1$ax(type$.List_dynamic._as(response.data), new A.MyTicketsBloc___closure(), type$.MyTicketsResponse),
+        myTickets = A.List_List$of(t1, true, t1.$ti._eval$1("ListIterable.E"));
       t1 = this.emit;
       if (!t1._isCanceled)
         t1._emit.call$1(new A.MyTicketsLoaded(myTickets));
@@ -170284,7 +170281,8 @@
   };
   A.MyTicketsBloc___closure.prototype = {
     call$1(ticket) {
-      var t1 = J.getInterceptor$asx(ticket);
+      var t1 = J.getInterceptor$(ticket);
+      A.print(">>>>>>>>>>>>>>>>>>>>>> " + t1.toString$0(ticket));
       A._asString(t1.$index(ticket, "id"));
       A.DateTime_parse(A._asString(t1.$index(ticket, "purchasedAt")));
       return new A.MyTicketsResponse(A.LotteryModel_LotteryModel$fromJson(type$.Map_String_dynamic._as(t1.$index(ticket, "lottery"))));
@@ -170293,8 +170291,10 @@
   };
   A.MyTicketsBloc__closure0.prototype = {
     call$2(error, s) {
-      var t1 = this.emit,
-        t2 = J.toString$0$(error);
+      var t1, t2;
+      A.print(">>>>>>>>>>>>>>>> " + A.S(error) + " " + A.S(s));
+      t1 = this.emit;
+      t2 = J.toString$0$(error);
       if (!t1._isCanceled)
         t1._emit.call$1(new A.MyTicketsError(t2));
     },
