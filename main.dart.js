@@ -170150,14 +170150,15 @@
   };
   A.WithdrawBloc_closure.prototype = {
     call$2($event, emit) {
-      var e, exception;
+      var e, s, exception;
       if (!emit._isCanceled)
         emit._emit.call$1(new A.WithdrawLoading());
       try {
         this.$this.homeApiServices.withdrawFunds$2$accessToken$body($event.accessToken, A.LinkedHashMap_LinkedHashMap$_literal(["amount", $event.requestModel.amount], type$.String, type$.dynamic)).then$1$1(new A.WithdrawBloc__closure(emit), type$.Null);
       } catch (exception) {
         e = A.unwrapException(exception);
-        A.getTraceFromException(exception);
+        s = A.getTraceFromException(exception);
+        A.print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>> " + A.S(e) + ", " + A.S(s));
         J.toString$0$(e);
         if (!emit._isCanceled)
           emit._emit.call$1(new A.WithdrawError());
@@ -171162,6 +171163,12 @@
     }
   };
   A._WithdrawDialogState.prototype = {
+    initState$0() {
+      this.super$State$initState();
+      var t1 = this._framework$_element;
+      t1.toString;
+      A.print(">>>>>>>>>>>>>>>>>>>>>>> " + A.S(J.$index$asx(type$.AuthDone._as(A.Provider_of(t1, false, type$.AuthBloc)._bloc$_state).userData, "token")));
+    },
     build$1(context) {
       var t6, t7, t8, t9, t10, t11, t12, _null = null,
         t1 = A.BorderRadius$circular(16),
