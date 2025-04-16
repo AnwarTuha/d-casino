@@ -170808,7 +170808,8 @@
   };
   A.TicketItem_build_closure.prototype = {
     call$0() {
-      return A.GoRouter_maybeOf(this.context).push$1$2$extra("/ticket-info", null, type$.nullable_Object);
+      var t1 = A.LinkedHashMap_LinkedHashMap$_literal(["ticketNumber", "12345", "purchaseDate", "2024-04-16T10:00:00Z", "drawTime", "2024-04-17T20:00:00Z", "lotteryType", "Powerball", "numbers", A._setArrayType([1, 2, 3, 4, 5], type$.JSArray_int), "price", 2, "status", "Pending"], type$.String, type$.Object);
+      return A.GoRouter_maybeOf(this.context).push$1$2$extra("/ticket-info", t1, type$.nullable_Object);
     },
     $signature: 0
   };
