@@ -37347,6 +37347,9 @@
     },
     __ReadingOrderSortData_Object_Diagnosticable: function __ReadingOrderSortData_Object_Diagnosticable() {
     },
+    Form$(child, key) {
+      return new A.Form(child, B.AutovalidateMode_0, key);
+    },
     Form_maybeOf(context) {
       var scope = context.dependOnInheritedWidgetOfExactType$1$0(type$._FormScope);
       return scope == null ? null : scope._formState;
@@ -171070,8 +171073,7 @@
       t12 = _this._buildForm$1$formTitle("Amount");
       t13 = A.SizedBox$(_null, $.$get$AppSizes_vSize4() * 0.7, _null);
       t14 = A.ButtonStyle$(_null, _null, _null, new A.WidgetStatePropertyAll(B.Color_Gcn, type$.WidgetStatePropertyAll_nullable_Color), _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null);
-      t14 = A.Column$(A._setArrayType([t2, t4, t5, t3, t8, t10, t11, t9, t12, t13, A.ElevatedButton$(false, A.BlocBuilder$(new A._DepositDialogState_build_closure0(), t6, t7), _null, _null, _null, _null, _null, _null, new A._DepositDialogState_build_closure1(_this, context), _null, t14)], type$.JSArray_Widget), B.CrossAxisAlignment_2, B.MainAxisAlignment_0, B.MainAxisSize_0);
-      return A.BlocListener$(_null, A.Dialog$(_null, A.Container$(new A.Form(t14, B.AutovalidateMode_0, _this.formKey), B.Clip_0, _null, new A.BoxDecoration(B.Color_Kln, _null, _null, t1, _null, _null, B.BoxShape_0), _null, _null, _null, new A.EdgeInsets(20, 18, 20, 18), _null), B.EdgeInsets_0_0_0_0), _null, new A._DepositDialogState_build_closure2(), t6, t7);
+      return A.BlocListener$(_null, A.Dialog$(_null, A.Container$(A.Form$(A.Column$(A._setArrayType([t2, t4, t5, t3, t8, t10, t11, t9, t12, t13, A.ElevatedButton$(false, A.BlocBuilder$(new A._DepositDialogState_build_closure0(), t6, t7), _null, _null, _null, _null, _null, _null, new A._DepositDialogState_build_closure1(_this, context), _null, t14)], type$.JSArray_Widget), B.CrossAxisAlignment_2, B.MainAxisAlignment_0, B.MainAxisSize_0), _this.formKey), B.Clip_0, _null, new A.BoxDecoration(B.Color_Kln, _null, _null, t1, _null, _null, B.BoxShape_0), _null, _null, _null, new A.EdgeInsets(20, 18, 20, 18), _null), B.EdgeInsets_0_0_0_0), _null, new A._DepositDialogState_build_closure2(), t6, t7);
     },
     _buildForm$1$formTitle(formTitle) {
       var t6, _null = null,
@@ -171163,12 +171165,6 @@
     }
   };
   A._WithdrawDialogState.prototype = {
-    initState$0() {
-      this.super$State$initState();
-      var t1 = this._framework$_element;
-      t1.toString;
-      A.print(">>>>>>>>>>>>>>>>>>>>>>> " + A.S(J.$index$asx(type$.AuthDone._as(A.Provider_of(t1, false, type$.AuthBloc)._bloc$_state).userData, "token")));
-    },
     build$1(context) {
       var t6, t7, t8, t9, t10, t11, t12, _null = null,
         t1 = A.BorderRadius$circular(16),
@@ -171184,7 +171180,7 @@
       t10 = this._withdraw_dialog$_buildForm$1$formTitle("Amount");
       t11 = A.SizedBox$(_null, $.$get$AppSizes_vSize4() * 0.7, _null);
       t12 = A.ButtonStyle$(_null, _null, _null, new A.WidgetStatePropertyAll(B.Color_Gcn, type$.WidgetStatePropertyAll_nullable_Color), _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null);
-      return A.Dialog$(_null, A.Container$(A.Column$(A._setArrayType([t2, t4, t5, t3, t8, t9, t10, t11, A.ElevatedButton$(false, A.BlocBuilder$(new A._WithdrawDialogState_build_closure0(), t6, t7), _null, _null, _null, _null, _null, _null, new A._WithdrawDialogState_build_closure1(this, context), _null, t12)], type$.JSArray_Widget), B.CrossAxisAlignment_2, B.MainAxisAlignment_0, B.MainAxisSize_0), B.Clip_0, _null, new A.BoxDecoration(B.Color_Kln, _null, _null, t1, _null, _null, B.BoxShape_0), _null, _null, _null, new A.EdgeInsets(20, 18, 20, 18), _null), B.EdgeInsets_0_0_0_0);
+      return A.Dialog$(_null, A.Container$(A.Form$(A.Column$(A._setArrayType([t2, t4, t5, t3, t8, t9, t10, t11, A.ElevatedButton$(false, A.BlocBuilder$(new A._WithdrawDialogState_build_closure0(), t6, t7), _null, _null, _null, _null, _null, _null, new A._WithdrawDialogState_build_closure1(this, context), _null, t12)], type$.JSArray_Widget), B.CrossAxisAlignment_2, B.MainAxisAlignment_0, B.MainAxisSize_0), this.formKey), B.Clip_0, _null, new A.BoxDecoration(B.Color_Kln, _null, _null, t1, _null, _null, B.BoxShape_0), _null, _null, _null, new A.EdgeInsets(20, 18, 20, 18), _null), B.EdgeInsets_0_0_0_0);
     },
     _withdraw_dialog$_buildForm$1$formTitle(formTitle) {
       var t5, _null = null,
@@ -171201,7 +171197,7 @@
     call$2(context, state) {
       var _null = null;
       if (state instanceof A.WithdrawError)
-        return A.Text$("Error depositing, try again", _null, _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_7zx, 14 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_5), _null, _null);
+        return A.Text$("Error withdrawing, try again", _null, _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_7zx, 14 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_5), _null, _null);
       return A.SizedBox$(_null, _null, _null);
     },
     $signature: 230
