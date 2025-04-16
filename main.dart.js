@@ -45532,9 +45532,10 @@
       this.myTicketsResponse = t0;
       this.key = t1;
     },
-    TransactionHistoryResponse: function TransactionHistoryResponse(t0, t1) {
+    TransactionHistoryResponse: function TransactionHistoryResponse(t0, t1, t2) {
       this.type = t0;
       this.amount = t1;
+      this.createdAt = t2;
     },
     _TransactionsApiService: function _TransactionsApiService(t0) {
       this._transactions_api_service$_dio = t0;
@@ -170603,11 +170604,11 @@
     call$1(response) {
       var t2, t3,
         t1 = response.data;
-      A.print(">>>>>>>>>>>>>>>>>> " + A.S(t1));
+      A.print(">>>>>>>>>>>>>>>>>> RESPONSE " + A.S(t1));
       t2 = this.emit;
       if (t1 != null) {
         t3 = J.map$1$1$ax(type$.List_dynamic._as(J.$index$asx(t1, "data")), new A.TransactionHistoryBloc___closure(), type$.TransactionHistoryResponse);
-        A.print(">>>>>>>>>>>>>>>>> " + A.S(A.List_List$of(t3, true, t3.$ti._eval$1("ListIterable.E"))));
+        A.print(">>>>>>>>>>>>>>>>> PARSED RESPONSE " + A.S(A.List_List$of(t3, true, t3.$ti._eval$1("ListIterable.E"))));
         if (!t2._isCanceled)
           t2._emit.call$1(new A.TransactionHistoryLoaded(t1));
       } else if (!t2._isCanceled)
@@ -170623,8 +170624,7 @@
       t2 = J.toString$0$(t1.$index(ticket, "type"));
       t3 = J.toString$0$(t1.$index(ticket, "amount"));
       t1.$index(ticket, "reference");
-      A.DateTime_parse(t1.$index(ticket, "createdAt"));
-      return new A.TransactionHistoryResponse(t2, t3);
+      return new A.TransactionHistoryResponse(t2, t3, A.DateTime_parse(t1.$index(ticket, "createdAt")));
     },
     $signature: 629
   };
@@ -170716,7 +170716,7 @@
       else
         t10 = t7 === "DEPOSIT" ? "Updated balance via deposit" : "Withdrawn balance";
       t11 = type$.JSArray_Widget;
-      t10 = A.Column$(A._setArrayType([t8, A.Text$(t10, _null, _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight($.$get$AppColors_white70(), 14 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_3), _null, _null), A.SizedBox$(_null, $.$get$AppSizes_hSize1(), _null), A.Text$("01/01/2025", _null, _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight($.$get$AppColors_white70(), 12 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_3), _null, _null)], t11), B.CrossAxisAlignment_0, B.MainAxisAlignment_0, B.MainAxisSize_1);
+      t10 = A.Column$(A._setArrayType([t8, A.Text$(t10, _null, _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight($.$get$AppColors_white70(), 14 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_3), _null, _null), A.SizedBox$(_null, $.$get$AppSizes_hSize1(), _null), A.Text$(A.DateFormat$("dd MMM yyyy").format$1(t6.createdAt), _null, _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight($.$get$AppColors_white70(), 12 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_3), _null, _null)], t11), B.CrossAxisAlignment_0, B.MainAxisAlignment_0, B.MainAxisSize_1);
       t8 = !t9;
       t9 = !t8 || t7 === "WITHDRAW" ? "-" : "+";
       t7 = !t8 || t7 === "WITHDRAW" ? B.MaterialColor_nI1 : B.MaterialColor_vIZ;
@@ -170730,18 +170730,14 @@
   };
   A.TransactionList_build_closure.prototype = {
     call$2(context, state) {
-      var t1, t2, _null = null;
+      var _null = null;
       A.print(">>>>>>>>> " + state.toString$0(0));
       if (state instanceof A.TransactionHistoryLoading)
         return A.Center$(A.CircularProgressIndicator$(_null, _null, _null), _null, _null);
       else if (state instanceof A.TransactionHistoryError)
         return A.Center$(A.Text$(state.message, _null, _null, _null, _null, _null, _null, _null), _null, _null);
-      else if (state instanceof A.TransactionHistoryLoaded) {
-        t1 = state.response;
-        t2 = J.getInterceptor$(t1);
-        A.print(">>>>>>>>>>>>>>>>>>>>>> " + t2.toString$0(t1));
-        return A.ListView$builder(_null, new A.TransactionList_build__closure(state), t2.get$length(t1), new A.NeverScrollableScrollPhysics(_null), true);
-      }
+      else if (state instanceof A.TransactionHistoryLoaded)
+        return A.ListView$builder(_null, new A.TransactionList_build__closure(state), J.get$length$asx(state.response), new A.NeverScrollableScrollPhysics(_null), true);
       return A.SizedBox$(_null, _null, _null);
     },
     $signature: 630
