@@ -756,9 +756,6 @@
     take$1$ax(receiver, a0) {
       return J.getInterceptor$ax(receiver).take$1(receiver, a0);
     },
-    toDouble$0$n(receiver) {
-      return J.getInterceptor$n(receiver).toDouble$0(receiver);
-    },
     toInt$0$n(receiver) {
       return J.getInterceptor$n(receiver).toInt$0(receiver);
     },
@@ -63722,9 +63719,6 @@
         return upperLimit;
       return receiver;
     },
-    toDouble$0(receiver) {
-      return receiver;
-    },
     toStringAsFixed$1(receiver, fractionDigits) {
       var result;
       if (fractionDigits > 20)
@@ -74269,9 +74263,6 @@
     },
     $add($receiver, $0) {
       return this.noSuchMethod$1($receiver, A.createInvocationMirror("+", "$add", 0, [$0], [], 0));
-    },
-    toDouble$0($receiver) {
-      return this.noSuchMethod$1($receiver, A.createInvocationMirror("toDouble", "toDouble$0", 0, [], [], 0));
     },
     get$length($receiver) {
       return this.noSuchMethod$1($receiver, A.createInvocationMirror("length", "get$length", 1, [], [], 0));
@@ -170626,7 +170617,7 @@
         t1 = J.getInterceptor$asx(ticket);
       t1.$index(ticket, "id");
       t2 = J.toString$0$(t1.$index(ticket, "type"));
-      J.toDouble$0$n(t1.$index(ticket, "amount"));
+      J.toString$0$(t1.$index(ticket, "amount"));
       t1.$index(ticket, "reference");
       A.DateTime_parse(t1.$index(ticket, "createdAt"));
       return new A.TransactionHistoryResponse(t2);
