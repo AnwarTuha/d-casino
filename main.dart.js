@@ -170271,9 +170271,10 @@
   };
   A.MyTicketsBloc__closure.prototype = {
     call$1(response) {
-      var t1, myTickets;
-      A.print(">>>>>>>>>>>>>>>>>> " + response.toString$0(0));
-      t1 = J.map$1$1$ax(type$.List_dynamic._as(response.data), new A.MyTicketsBloc___closure(), type$.MyTicketsResponse);
+      var myTickets,
+        t1 = response.data;
+      A.print(">>>>>>>>>>>>>>>>>> " + A.S(t1));
+      t1 = J.map$1$1$ax(type$.List_dynamic._as(t1), new A.MyTicketsBloc___closure(), type$.MyTicketsResponse);
       myTickets = A.List_List$of(t1, true, t1.$ti._eval$1("ListIterable.E"));
       t1 = this.emit;
       if (!t1._isCanceled)
