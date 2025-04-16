@@ -45214,7 +45214,7 @@
       return new A.PaginatedLotteryModel(t2);
     },
     LotteryModel_LotteryModel$fromJson(json) {
-      var t4, t5,
+      var t4, t5, t6,
         _s11_ = "description",
         _s9_ = "createdAt",
         t1 = J.getInterceptor$asx(json),
@@ -45223,28 +45223,30 @@
       t1.$index(json, _s11_);
       t1.$index(json, "ticketPrice");
       B.JSArray_methods.firstWhere$1(B.List_F2Y, new A.LotteryModel_LotteryModel$fromJson_closure(json));
-      A.DateTime_parse(t1.$index(json, "drawTime"));
+      t4 = A.DateTime_parse(t1.$index(json, "drawTime"));
       t1.$index(json, "winnerId");
       A.DateTime_parse(t1.$index(json, _s9_));
       t1 = t1.$index(json, "type");
-      t4 = J.getInterceptor$asx(t1);
-      t4.$index(t1, "id");
-      t5 = t4.$index(t1, "name");
-      t4.$index(t1, "value");
-      t4.$index(t1, _s11_);
-      A.DateTime_parse(t4.$index(t1, _s9_));
-      A.DateTime_parse(t4.$index(t1, "updatedAt"));
-      return new A.LotteryModel(t2, t3, new A.LotteryTypeModel(t5));
+      t5 = J.getInterceptor$asx(t1);
+      t5.$index(t1, "id");
+      t6 = t5.$index(t1, "name");
+      t5.$index(t1, "value");
+      t5.$index(t1, _s11_);
+      A.DateTime_parse(t5.$index(t1, _s9_));
+      A.DateTime_parse(t5.$index(t1, "updatedAt"));
+      return new A.LotteryModel(t2, t3, t4, new A.LotteryTypeModel(t6));
     },
     PaginatedLotteryModel: function PaginatedLotteryModel(t0) {
       this.data = t0;
     },
     PaginatedLotteryModel_PaginatedLotteryModel$fromJson_closure: function PaginatedLotteryModel_PaginatedLotteryModel$fromJson_closure() {
     },
-    LotteryModel: function LotteryModel(t0, t1, t2) {
-      this.id = t0;
-      this.name = t1;
-      this.lotteryTypeModel = t2;
+    LotteryModel: function LotteryModel(t0, t1, t2, t3) {
+      var _ = this;
+      _.id = t0;
+      _.name = t1;
+      _.drawTime = t2;
+      _.lotteryTypeModel = t3;
     },
     LotteryModel_LotteryModel$fromJson_closure: function LotteryModel_LotteryModel$fromJson_closure(t0) {
       this.json = t0;
@@ -45423,8 +45425,9 @@
     _TicketPurchaseDialogState__buildHowManyOrders_closure0: function _TicketPurchaseDialogState__buildHowManyOrders_closure0(t0) {
       this.$this = t0;
     },
-    MyTicketsResponse: function MyTicketsResponse(t0) {
-      this.lotteryModel = t0;
+    MyTicketsResponse: function MyTicketsResponse(t0, t1) {
+      this.purchasedAt = t0;
+      this.lotteryModel = t1;
     },
     _MyTicketsApiService: function _MyTicketsApiService(t0) {
       this._dio = t0;
@@ -170278,21 +170281,16 @@
   };
   A.MyTicketsBloc___closure.prototype = {
     call$1(ticket) {
-      var t1;
-      A.print(">>>>>>>>>>>>>>>>>>>>>>> " + A.S(ticket));
-      t1 = J.getInterceptor$asx(ticket);
+      var t1 = J.getInterceptor$asx(ticket);
       A._asString(t1.$index(ticket, "id"));
-      A.DateTime_parse(A._asString(t1.$index(ticket, "purchasedAt")));
-      return new A.MyTicketsResponse(A.LotteryModel_LotteryModel$fromJson(type$.Map_String_dynamic._as(t1.$index(ticket, "lottery"))));
+      return new A.MyTicketsResponse(A.DateTime_parse(A._asString(t1.$index(ticket, "purchasedAt"))), A.LotteryModel_LotteryModel$fromJson(type$.Map_String_dynamic._as(t1.$index(ticket, "lottery"))));
     },
     $signature: 625
   };
   A.MyTicketsBloc__closure0.prototype = {
     call$2(error, s) {
-      var t1, t2;
-      A.print(">>>>>>>>>>>>>>>> " + A.S(error) + " " + A.S(s));
-      t1 = this.emit;
-      t2 = J.toString$0$(error);
+      var t1 = this.emit,
+        t2 = J.toString$0$(error);
       if (!t1._isCanceled)
         t1._emit.call$1(new A.MyTicketsError(t2));
     },
@@ -170390,7 +170388,7 @@
   };
   A._ActiveTicketsState_build_closure.prototype = {
     call$2(context, state) {
-      var myTickets, _null = null;
+      var myTickets, t1, t2, _null = null;
       A.print(">>>>>>>>>>>>>>>>>>>>>>>>>>>> " + state.toString$0(0));
       if (state instanceof A.MyTicketsLoading)
         return A.Center$(A.CircularProgressIndicator$(_null, _null, _null), _null, _null);
@@ -170398,7 +170396,9 @@
         return A.Center$(A.Text$(state.error, _null, _null, _null, _null, _null, _null, _null), _null, _null);
       else if (state instanceof A.MyTicketsLoaded) {
         myTickets = state.myTickets;
-        return A.ListView$separated(new A._ActiveTicketsState_build__closure(myTickets), myTickets.length, B.EdgeInsets_0_0_0_0, new A.NeverScrollableScrollPhysics(_null), new A._ActiveTicketsState_build__closure0(), true);
+        t1 = $.$get$AppSizes_hSize4();
+        t2 = $.$get$AppSizes_vSize2();
+        return A.ListView$separated(new A._ActiveTicketsState_build__closure(myTickets), myTickets.length, new A.EdgeInsets(t1, t2, t1, t2), new A.NeverScrollableScrollPhysics(_null), new A._ActiveTicketsState_build__closure0(), true);
       }
       return A.SizedBox$(_null, _null, _null);
     },
@@ -170422,14 +170422,30 @@
     }
   };
   A.TicketItem.prototype = {
+    _getRemainingTime$1(drawDateTime) {
+      var days, hours, minutes, t2, t3,
+        t1 = drawDateTime.difference$1(new A.DateTime(Date.now(), 0, false))._duration;
+      if (t1 < 0)
+        return "Draw time passed";
+      days = B.JSInt_methods._tdivFast$1(t1, 864e8);
+      hours = B.JSInt_methods.$mod(B.JSInt_methods._tdivFast$1(t1, 3600000000), 24);
+      minutes = B.JSInt_methods.$mod(B.JSInt_methods._tdivFast$1(t1, 60000000), 60);
+      t1 = days > 0 ? "" + days + " days " : "";
+      t2 = hours > 0 ? "" + hours + " hours " : "";
+      t3 = minutes > 0 ? "" + minutes + " minutes" : "";
+      return t1 + t2 + t3;
+    },
     build$1(context) {
       var _null = null,
         t1 = A.BorderRadius$circular(16),
         t2 = A._setArrayType([new A.BoxShadow(0, B.BlurStyle_0, A.Color$fromARGB(B.JSNumber_methods.round$0(25.5), B.Color_vnR.toARGB32$0() >>> 16 & 255, B.Color_vnR.toARGB32$0() >>> 8 & 255, B.Color_vnR.toARGB32$0() & 255), new A.Offset(0, 4), 8)], type$.JSArray_BoxShadow),
         t3 = A._setArrayType([B.Color_Gcn, B.Color_PBe, B.Color_Kln], type$.JSArray_Color),
         t4 = 6 * $.SizerUtil___width._readField$0() / 100,
-        t5 = 3 * $.SizerUtil___width._readField$0() / 100;
-      return A.Container$(A.Text$(this.myTicketsResponse.lotteryModel.name, _null, _null, _null, _null, _null, _null, _null), B.Clip_0, _null, new A.BoxDecoration(_null, _null, _null, t1, t2, new A.LinearGradient(B.Alignment_m1_m1, B.Alignment_1_1, B.TileMode_0, t3, _null, _null), B.BoxShape_0), _null, _null, _null, new A.EdgeInsets(t4, t5, t4, t5), _null);
+        t5 = 3 * $.SizerUtil___width._readField$0() / 100,
+        t6 = this.myTicketsResponse,
+        t7 = t6.lotteryModel,
+        t8 = type$.JSArray_Widget;
+      return A.Container$(A.Row$(A._setArrayType([A.Column$(A._setArrayType([A.Text$(t7.name, _null, _null, _null, _null, A.TextStyle$(_null, _null, B.Color_wst, _null, _null, _null, _null, _null, _null, _null, _null, 16 * ($.SizerUtil___width._readField$0() / 3) / 100, _null, _null, B.FontWeight_5, _null, _null, true, _null, _null, _null, _null, _null, _null, _null, _null), _null, _null), A.SizedBox$(_null, $.SizerUtil___height._readField$0() / 100, _null), A.Text$("Purchase date: " + A.DateFormat$("dd/MM/yyyy").format$1(t6.purchasedAt), _null, _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight($.$get$AppColors_white70(), 12 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_3), _null, _null), A.SizedBox$(_null, $.$get$AppSizes_vSize1(), _null), A.Text$(this._getRemainingTime$1(t7.drawTime), _null, _null, _null, _null, A.TextStyle$(_null, _null, $.$get$AppColors_white70(), _null, _null, _null, _null, _null, _null, _null, _null, 14 * ($.SizerUtil___width._readField$0() / 3) / 100, _null, _null, B.FontWeight_3, _null, _null, true, _null, _null, _null, _null, _null, _null, _null, _null), _null, _null)], t8), B.CrossAxisAlignment_0, B.MainAxisAlignment_0, B.MainAxisSize_1), A.Icon$(B.IconData_57500_MaterialIcons_null_true, B.Color_wst, _null, 20 * ($.SizerUtil___width._readField$0() / 3) / 100)], t8), B.CrossAxisAlignment_2, B.MainAxisAlignment_3, B.MainAxisSize_1, 0), B.Clip_0, _null, new A.BoxDecoration(_null, _null, _null, t1, t2, new A.LinearGradient(B.Alignment_m1_m1, B.Alignment_1_1, B.TileMode_0, t3, _null, _null), B.BoxShape_0), _null, _null, _null, new A.EdgeInsets(t4, t5, t4, t5), _null);
     }
   };
   A.TransactionView.prototype = {
@@ -179582,6 +179598,7 @@
     B.IconButtonThemeData_null = new A.IconButtonThemeData(null);
     B.IconData_57415_MaterialIcons_null_false = new A.IconData(57415, "MaterialIcons", null, false);
     B.IconData_57490_MaterialIcons_null_true = new A.IconData(57490, "MaterialIcons", null, true);
+    B.IconData_57500_MaterialIcons_null_true = new A.IconData(57500, "MaterialIcons", null, true);
     B.IconData_58121_MaterialIcons_null_true = new A.IconData(58121, "MaterialIcons", null, true);
     B.IconData_58132_MaterialIcons_null_false = new A.IconData(58132, "MaterialIcons", null, false);
     B.IconData_58249_MaterialIcons_null_false = new A.IconData(58249, "MaterialIcons", null, false);
