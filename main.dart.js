@@ -170153,15 +170153,18 @@
   };
   A.WithdrawBloc_closure.prototype = {
     call$2($event, emit) {
-      var e, s, t1, t2, t3, exception;
+      var e, s, t1, t2, t3, t4, exception,
+        _s34_ = ">>>>>>>>>>>>>> >>>>>>>>>>>>>>>>>> ";
       if (!emit._isCanceled)
         emit._emit.call$1(new A.WithdrawLoading());
       try {
         t1 = $event.requestModel.amount;
         t2 = type$.String;
         t3 = type$.dynamic;
-        A.print(">>>>>>>>>>>>>> >>>>>>>>>>>>>>>>>> " + A.LinkedHashMap_LinkedHashMap$_literal(["amount", t1], t2, t3).toString$0(0));
-        this.$this.homeApiServices.withdrawFunds$2$accessToken$body($event.accessToken, A.LinkedHashMap_LinkedHashMap$_literal(["amount", t1], t2, t3)).then$1$1(new A.WithdrawBloc__closure(emit), type$.Null);
+        A.print(_s34_ + A.LinkedHashMap_LinkedHashMap$_literal(["amount", t1], t2, t3).toString$0(0));
+        t4 = $event.accessToken;
+        A.print(_s34_ + t4);
+        this.$this.homeApiServices.withdrawFunds$2$accessToken$body(t4, A.LinkedHashMap_LinkedHashMap$_literal(["amount", t1], t2, t3)).then$1$1(new A.WithdrawBloc__closure(emit), type$.Null);
       } catch (exception) {
         e = A.unwrapException(exception);
         s = A.getTraceFromException(exception);
