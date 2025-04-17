@@ -166766,19 +166766,6 @@
       matchList.get$lastOrNull();
       return new A.GoRouterState(t1, t2, null, null, matchList.fullPath, matchList.pathParameters, matchList.extra, null, B.ValueKey_topLevel);
     },
-    namedLocation$4$fragment$pathParameters$queryParameters($name, fragment, pathParameters, queryParameters) {
-      var t2, t3, t4, $location,
-        t1 = this._nameToPath.$index(0, $name);
-      t1.toString;
-      t2 = type$.String;
-      t2 = A.LinkedHashMap_LinkedHashMap$_empty(t2, t2);
-      for (t3 = pathParameters.get$entries(pathParameters), t3 = t3.get$iterator(t3); t3.moveNext$0();) {
-        t4 = t3.get$current(t3);
-        t2.$indexSet(0, t4.key, A._Uri__uriEncode(2, t4.value, B.C_Utf8Codec, false));
-      }
-      $location = A.patternToPath(t1, t2);
-      return A._Uri__Uri(fragment, $location, queryParameters.get$isEmpty(queryParameters) ? null : queryParameters).get$_text();
-    },
     findMatch$2$extra(uri, extra) {
       var t1 = type$.String,
         pathParameters = A.LinkedHashMap_LinkedHashMap$_empty(t1, t1),
@@ -171459,10 +171446,7 @@
   };
   A.TicketItem_build_closure.prototype = {
     call$0() {
-      var inherited = A.GoRouter_maybeOf(this.context),
-        t1 = inherited.__GoRouter_configuration_F;
-      t1 === $ && A.throwUnnamedLateFieldNI();
-      return A.LinkedHashSet_LinkedHashSet$_literal([inherited.push$1$2$extra(t1.namedLocation$4$fragment$pathParameters$queryParameters("/ticket-detail", null, B.Map_empty1, B.Map_empty4), null, type$.nullable_Object)], type$.Future_nullable_Object);
+      A.GoRouter_maybeOf(this.context).push$1$2$extra("/ticket-detail", null, type$.nullable_Object);
     },
     $signature: 0
   };
@@ -171898,7 +171882,7 @@
   };
   A.AppRoutesConfig_config_closure5.prototype = {
     call$2(context, state) {
-      if (!B.JSArray_methods.contains$1(A._setArrayType(["/", "/lottery_category", "/transaction-history", "/transaction-detail", "/my-tickets"], type$.JSArray_String), state.fullPath))
+      if (!B.JSArray_methods.contains$1(A._setArrayType(["/", "/lottery_category", "/transaction-history", "/transaction-detail", "/my-tickets", "/ticket-detail"], type$.JSArray_String), state.fullPath))
         return "/";
     },
     $signature: 643
@@ -179791,7 +179775,6 @@
       Future_dynamic: findType("Future<@>"),
       Future_nullable_ByteData: findType("Future<ByteData?>"),
       Future_nullable_Map_of_String_and_List_String: findType("Future<Map<String,List<String>>?>"),
-      Future_nullable_Object: findType("Future<Object?>"),
       Future_void: findType("Future<~>"),
       GeneralConstantMap_ShortcutActivator_Intent: findType("GeneralConstantMap<ShortcutActivator,Intent>"),
       GeneralConstantMap_int_Color: findType("GeneralConstantMap<int,Color>"),
