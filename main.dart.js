@@ -173823,7 +173823,7 @@
         t2 = A.Text$(_this.title, _null, _null, _null, _null, B.TextStyle_jpL, B.TextAlign_2, _null),
         t3 = A.Text$(_this.subtitle, _null, _null, _null, _null, B.TextStyle_0Yk, B.TextAlign_2, _null),
         t4 = A.ButtonStyle$(_null, _null, _null, new A.WidgetStatePropertyAll(B.Color_Gcn, type$.WidgetStatePropertyAll_nullable_Color), _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null);
-      return A.Dialog$(B.Color_Edl, A.Container$(_null, A.Column$(A._setArrayType([t2, B.SizedBox_null_8_null_null, t3, B.SizedBox_null_16_null_null, A.ElevatedButton$(false, A.Text$(_this.buttonText, _null, _null, _null, _null, _null, _null, _null), _null, _null, _null, _null, _null, _null, _this.onPressed, _null, t4)], type$.JSArray_Widget), B.CrossAxisAlignment_2, B.MainAxisAlignment_0, B.MainAxisSize_0), B.Clip_0, _null, _null, new A.BoxDecoration(B.Color_Kln, _null, _null, t1, _null, _null, B.BoxShape_0), _null, _null, _null, B.EdgeInsets_16_16_16_16, _null, _null, _null), B.EdgeInsets_24_24_24_24);
+      return A.Dialog$(B.Color_Edl, A.Container$(_null, A.Column$(A._setArrayType([t2, B.SizedBox_null_8_null_null, t3, B.SizedBox_null_16_null_null, A.ElevatedButton$(false, A.Text$(_this.buttonText, _null, _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_wst, 14 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_6), _null, _null), _null, _null, _null, _null, _null, _null, _this.onPressed, _null, t4)], type$.JSArray_Widget), B.CrossAxisAlignment_2, B.MainAxisAlignment_0, B.MainAxisSize_0), B.Clip_0, _null, _null, new A.BoxDecoration(B.Color_Kln, _null, _null, t1, _null, _null, B.BoxShape_0), _null, _null, _null, B.EdgeInsets_16_16_16_16, _null, _null, _null), B.EdgeInsets_24_24_24_24);
     }
   };
   A.DepositDialog.prototype = {
@@ -173880,7 +173880,11 @@
   };
   A._DepositDialogState_build___closure.prototype = {
     call$0() {
-      var t1 = A.GoRouter_maybeOf(this.context).__GoRouter_routerDelegate_F;
+      var t1 = this.context,
+        t2 = A.GoRouter_maybeOf(t1).__GoRouter_routerDelegate_F;
+      t2 === $ && A.throwUnnamedLateFieldNI();
+      t2.pop$1(null);
+      t1 = A.GoRouter_maybeOf(t1).__GoRouter_routerDelegate_F;
       t1 === $ && A.throwUnnamedLateFieldNI();
       t1.pop$1(null);
     },
@@ -174010,7 +174014,11 @@
   };
   A._WithdrawDialogState_build___closure.prototype = {
     call$0() {
-      var t1 = A.GoRouter_maybeOf(this.context).__GoRouter_routerDelegate_F;
+      var t1 = this.context,
+        t2 = A.GoRouter_maybeOf(t1).__GoRouter_routerDelegate_F;
+      t2 === $ && A.throwUnnamedLateFieldNI();
+      t2.pop$1(null);
+      t1 = A.GoRouter_maybeOf(t1).__GoRouter_routerDelegate_F;
       t1 === $ && A.throwUnnamedLateFieldNI();
       t1.pop$1(null);
     },
