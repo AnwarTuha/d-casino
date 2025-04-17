@@ -173925,16 +173925,17 @@
       t6 = type$.WithdrawBloc;
       t7 = type$.WithdrawState;
       t8 = A.BlocBuilder$(new A._WithdrawDialogState_build_closure(), t6, t7);
-      t9 = $.$get$AppSizes_vSize2();
-      t10 = A.SizedBox$(_null, t9, _null);
-      t11 = _this._withdraw_dialog$_buildForm$1$formTitle("Amount");
-      t12 = A.SizedBox$(_null, t9, _null);
-      t13 = _this._buildBankDropdown$0();
-      t9 = A.SizedBox$(_null, t9, _null);
-      t14 = _this._withdraw_dialog$_buildForm$1$formTitle("Account Number");
-      t15 = A.SizedBox$(_null, $.$get$AppSizes_vSize4() * 0.7, _null);
+      t9 = A.SizedBox$(_null, $.$get$AppSizes_vSize2(), _null);
+      t10 = _this._withdraw_dialog$_buildForm$1$formTitle("Amount");
+      t11 = $.$get$AppSizes_vSize4();
+      t12 = t11 * 0.9;
+      t13 = A.SizedBox$(_null, t12, _null);
+      t14 = _this._buildBankDropdown$0();
+      t12 = A.SizedBox$(_null, t12, _null);
+      t15 = _this._withdraw_dialog$_buildForm$1$formTitle("Account Number");
+      t11 = A.SizedBox$(_null, t11 * 0.7, _null);
       t16 = A.ButtonStyle$(_null, _null, _null, new A.WidgetStatePropertyAll(B.Color_Gcn, type$.WidgetStatePropertyAll_nullable_Color), _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null);
-      return A.Dialog$(_null, A.Container$(_null, A.Form$(A.Column$(A._setArrayType([t2, t4, t5, t3, t8, t10, t11, t12, t13, t9, t14, t15, A.ElevatedButton$(false, A.BlocBuilder$(new A._WithdrawDialogState_build_closure0(), t6, t7), _null, _null, _null, _null, _null, _null, new A._WithdrawDialogState_build_closure1(_this, context), _null, t16)], type$.JSArray_Widget), B.CrossAxisAlignment_2, B.MainAxisAlignment_0, B.MainAxisSize_0), _this.formKey), B.Clip_0, _null, _null, new A.BoxDecoration(B.Color_Kln, _null, _null, t1, _null, _null, B.BoxShape_0), _null, _null, _null, new A.EdgeInsets(20, 18, 20, 18), _null, _null, _null), B.EdgeInsets_0_0_0_0);
+      return A.Dialog$(_null, A.Container$(_null, A.Form$(A.Column$(A._setArrayType([t2, t4, t5, t3, t8, t9, t10, t13, t14, t12, t15, t11, A.ElevatedButton$(false, A.BlocBuilder$(new A._WithdrawDialogState_build_closure0(), t6, t7), _null, _null, _null, _null, _null, _null, new A._WithdrawDialogState_build_closure1(_this, context), _null, t16)], type$.JSArray_Widget), B.CrossAxisAlignment_2, B.MainAxisAlignment_0, B.MainAxisSize_0), _this.formKey), B.Clip_0, _null, _null, new A.BoxDecoration(B.Color_Kln, _null, _null, t1, _null, _null, B.BoxShape_0), _null, _null, _null, new A.EdgeInsets(20, 18, 20, 18), _null, _null, _null), B.EdgeInsets_0_0_0_0);
     },
     _buildBankDropdown$0() {
       var _null = null,
@@ -173945,13 +173946,14 @@
       return A.Column$(A._setArrayType([t1, t2, A.DropdownButtonFormField$(A.InputDecoration$(_null, new A.OutlineInputBorder(4, B.BorderRadius_nnp, B.BorderSide_ViT), _null, _null, _null, _null, _null, _null, true, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, true, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null), B.Color_Kln, B.List_VKD, new A._WithdrawDialogState__buildBankDropdown_closure(this), t4, new A._WithdrawDialogState__buildBankDropdown_closure0(), t3, type$.String)], type$.JSArray_Widget), B.CrossAxisAlignment_0, B.MainAxisAlignment_0, B.MainAxisSize_1);
     },
     _withdraw_dialog$_buildForm$1$formTitle(formTitle) {
-      var _null = null,
+      var t5, _null = null,
         t1 = A.Text$(formTitle, _null, _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_wst, 14 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_5), _null, _null),
         t2 = A.SizedBox$(_null, $.$get$AppSizes_vSize1(), _null),
-        t3 = formTitle === "Amount" ? this.amountController : this.accountController,
-        t4 = A._setArrayType([new A.WholeNumberInputFormatter(A.NumberFormat_NumberFormat("#,###"))], type$.JSArray_TextInputFormatter),
-        t5 = A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_wst, 14 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_5);
-      return A.Column$(A._setArrayType([t1, t2, A.TextFormField$(t3, A.InputDecoration$(_null, new A.OutlineInputBorder(4, B.BorderRadius_nnp, B.BorderSide_ViT), _null, _null, _null, _null, _null, _null, true, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, true, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null), t4, B.TextInputType_2_false_false, _null, _null, t5, B.TextAlign_4, new A._WithdrawDialogState__buildForm_closure(formTitle))], type$.JSArray_Widget), B.CrossAxisAlignment_0, B.MainAxisAlignment_0, B.MainAxisSize_1);
+        t3 = formTitle === "Amount",
+        t4 = t3 ? this.amountController : this.accountController;
+      t3 = t3 ? A._setArrayType([new A.WholeNumberInputFormatter(A.NumberFormat_NumberFormat("#,###"))], type$.JSArray_TextInputFormatter) : _null;
+      t5 = A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_wst, 14 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_5);
+      return A.Column$(A._setArrayType([t1, t2, A.TextFormField$(t4, A.InputDecoration$(_null, new A.OutlineInputBorder(4, B.BorderRadius_nnp, B.BorderSide_ViT), _null, _null, _null, _null, _null, _null, true, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, true, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null), t3, B.TextInputType_2_false_false, _null, _null, t5, B.TextAlign_4, new A._WithdrawDialogState__buildForm_closure(formTitle))], type$.JSArray_Widget), B.CrossAxisAlignment_0, B.MainAxisAlignment_0, B.MainAxisSize_1);
     }
   };
   A._WithdrawDialogState_build_closure.prototype = {
