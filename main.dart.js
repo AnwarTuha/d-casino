@@ -45800,8 +45800,7 @@
       this.myTicketsResponse = t0;
       this.key = t1;
     },
-    TicketItem_build_closure: function TicketItem_build_closure(t0) {
-      this.context = t0;
+    TicketItem_build_closure: function TicketItem_build_closure() {
     },
     TicketDetailEvent: function TicketDetailEvent() {
     },
@@ -170887,7 +170886,7 @@
         A.print(_s34_ + A.LinkedHashMap_LinkedHashMap$_literal(["amount", t1], t2, t3).toString$0(0));
         t4 = $event.accessToken;
         A.print(_s34_ + t4);
-        this.$this.homeApiServices.withdrawFunds$2$accessToken$body(t4, A.LinkedHashMap_LinkedHashMap$_literal(["amount", t1], t2, t3)).then$1$1(new A.WithdrawBloc__closure(emit), type$.Null);
+        this.$this.homeApiServices.withdrawFunds$2$accessToken$body("Bearer " + t4, A.LinkedHashMap_LinkedHashMap$_literal(["amount", t1], t2, t3)).then$1$1(new A.WithdrawBloc__closure(emit), type$.Null);
       } catch (exception) {
         e = A.unwrapException(exception);
         s = A.getTraceFromException(exception);
@@ -171441,12 +171440,11 @@
         t6 = this.myTicketsResponse,
         t7 = t6.lotteryModel,
         t8 = type$.JSArray_Widget;
-      return A.GestureDetector$(_null, A.Container$(_null, A.Row$(A._setArrayType([A.Column$(A._setArrayType([A.Text$(t7.name, _null, _null, _null, _null, A.TextStyle$(_null, _null, B.Color_wst, _null, _null, _null, _null, _null, _null, _null, _null, 16 * ($.SizerUtil___width._readField$0() / 3) / 100, _null, _null, B.FontWeight_5, _null, _null, true, _null, _null, _null, _null, _null, _null, _null, _null), _null, _null), A.SizedBox$(_null, $.SizerUtil___height._readField$0() / 100, _null), A.Text$("Purchase date: " + A.DateFormat$("dd/MM/yyyy").format$1(t6.purchasedAt), _null, _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight($.$get$AppColors_white70(), 12 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_3), _null, _null), A.SizedBox$(_null, $.$get$AppSizes_vSize1(), _null), A.Text$(this._getRemainingTime$1(t7.drawTime), _null, _null, _null, _null, A.TextStyle$(_null, _null, $.$get$AppColors_white70(), _null, _null, _null, _null, _null, _null, _null, _null, 14 * ($.SizerUtil___width._readField$0() / 3) / 100, _null, _null, B.FontWeight_3, _null, _null, true, _null, _null, _null, _null, _null, _null, _null, _null), _null, _null)], t8), B.CrossAxisAlignment_0, B.MainAxisAlignment_0, B.MainAxisSize_1), A.Icon$(B.IconData_57500_MaterialIcons_null_true, B.Color_wst, _null, 20 * ($.SizerUtil___width._readField$0() / 3) / 100)], t8), B.CrossAxisAlignment_2, B.MainAxisAlignment_3, B.MainAxisSize_1, 0), B.Clip_0, _null, _null, new A.BoxDecoration(_null, _null, _null, t1, t2, new A.LinearGradient(B.Alignment_m1_m1, B.Alignment_1_1, B.TileMode_0, t3, _null, _null), B.BoxShape_0), _null, _null, _null, new A.EdgeInsets(t4, t5, t4, t5), _null, _null, _null), B.DragStartBehavior_1, false, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, new A.TicketItem_build_closure(context), _null, _null, _null, _null, _null, _null);
+      return A.GestureDetector$(_null, A.Container$(_null, A.Row$(A._setArrayType([A.Column$(A._setArrayType([A.Text$(t7.name, _null, _null, _null, _null, A.TextStyle$(_null, _null, B.Color_wst, _null, _null, _null, _null, _null, _null, _null, _null, 16 * ($.SizerUtil___width._readField$0() / 3) / 100, _null, _null, B.FontWeight_5, _null, _null, true, _null, _null, _null, _null, _null, _null, _null, _null), _null, _null), A.SizedBox$(_null, $.SizerUtil___height._readField$0() / 100, _null), A.Text$("Purchase date: " + A.DateFormat$("dd/MM/yyyy").format$1(t6.purchasedAt), _null, _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight($.$get$AppColors_white70(), 12 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_3), _null, _null), A.SizedBox$(_null, $.$get$AppSizes_vSize1(), _null), A.Text$(this._getRemainingTime$1(t7.drawTime), _null, _null, _null, _null, A.TextStyle$(_null, _null, $.$get$AppColors_white70(), _null, _null, _null, _null, _null, _null, _null, _null, 14 * ($.SizerUtil___width._readField$0() / 3) / 100, _null, _null, B.FontWeight_3, _null, _null, true, _null, _null, _null, _null, _null, _null, _null, _null), _null, _null)], t8), B.CrossAxisAlignment_0, B.MainAxisAlignment_0, B.MainAxisSize_1), A.Icon$(B.IconData_57500_MaterialIcons_null_true, B.Color_wst, _null, 20 * ($.SizerUtil___width._readField$0() / 3) / 100)], t8), B.CrossAxisAlignment_2, B.MainAxisAlignment_3, B.MainAxisSize_1, 0), B.Clip_0, _null, _null, new A.BoxDecoration(_null, _null, _null, t1, t2, new A.LinearGradient(B.Alignment_m1_m1, B.Alignment_1_1, B.TileMode_0, t3, _null, _null), B.BoxShape_0), _null, _null, _null, new A.EdgeInsets(t4, t5, t4, t5), _null, _null, _null), B.DragStartBehavior_1, false, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, new A.TicketItem_build_closure(), _null, _null, _null, _null, _null, _null);
     }
   };
   A.TicketItem_build_closure.prototype = {
     call$0() {
-      A.GoRouter_maybeOf(this.context).push$1$2$extra("/ticket-detail", null, type$.nullable_Object);
     },
     $signature: 0
   };
