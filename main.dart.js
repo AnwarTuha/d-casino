@@ -45702,10 +45702,9 @@
     _TicketPurchaseDialogState__buildHowManyOrders_closure0: function _TicketPurchaseDialogState__buildHowManyOrders_closure0(t0) {
       this.$this = t0;
     },
-    MyTicketsResponse: function MyTicketsResponse(t0, t1, t2) {
-      this.id = t0;
-      this.purchasedAt = t1;
-      this.lotteryModel = t2;
+    MyTicketsResponse: function MyTicketsResponse(t0, t1) {
+      this.purchasedAt = t0;
+      this.lotteryModel = t1;
     },
     _MyTicketsApiService: function _MyTicketsApiService(t0) {
       this._dio = t0;
@@ -45801,14 +45800,12 @@
       this.myTicketsResponse = t0;
       this.key = t1;
     },
-    TicketItem_build_closure: function TicketItem_build_closure(t0, t1) {
-      this.$this = t0;
-      this.context = t1;
+    TicketItem_build_closure: function TicketItem_build_closure(t0) {
+      this.context = t0;
     },
     TicketDetailEvent: function TicketDetailEvent() {
     },
-    LoadTicketDetail: function LoadTicketDetail(t0) {
-      this.ticketId = t0;
+    LoadTicketDetail: function LoadTicketDetail() {
     },
     TicketDetailState: function TicketDetailState() {
     },
@@ -45840,12 +45837,10 @@
       _._bloc$_state = t6;
       _._emitted = false;
     },
-    TicketDetailPage: function TicketDetailPage(t0, t1) {
-      this.ticketId = t0;
-      this.key = t1;
+    TicketDetailPage: function TicketDetailPage(t0) {
+      this.key = t0;
     },
-    TicketDetailPage_build_closure0: function TicketDetailPage_build_closure0(t0) {
-      this.$this = t0;
+    TicketDetailPage_build_closure0: function TicketDetailPage_build_closure0() {
     },
     TicketDetailPage_build_closure: function TicketDetailPage_build_closure() {
     },
@@ -166772,14 +166767,14 @@
       return new A.GoRouterState(t1, t2, null, null, matchList.fullPath, matchList.pathParameters, matchList.extra, null, B.ValueKey_topLevel);
     },
     namedLocation$4$fragment$pathParameters$queryParameters($name, fragment, pathParameters, queryParameters) {
-      var t2, t3, param, $location,
+      var t2, t3, t4, $location,
         t1 = this._nameToPath.$index(0, $name);
       t1.toString;
       t2 = type$.String;
       t2 = A.LinkedHashMap_LinkedHashMap$_empty(t2, t2);
-      for (t3 = new A.LinkedHashMapEntriesIterable(pathParameters, A._instanceType(pathParameters)._eval$1("LinkedHashMapEntriesIterable<1,2>")).get$iterator(0); t3.moveNext$0();) {
-        param = t3.__js_helper$_current;
-        t2.$indexSet(0, param.key, A._Uri__uriEncode(2, param.value, B.C_Utf8Codec, false));
+      for (t3 = pathParameters.get$entries(pathParameters), t3 = t3.get$iterator(t3); t3.moveNext$0();) {
+        t4 = t3.get$current(t3);
+        t2.$indexSet(0, t4.key, A._Uri__uriEncode(2, t4.value, B.C_Utf8Codec, false));
       }
       $location = A.patternToPath(t1, t2);
       return A._Uri__Uri(fragment, $location, queryParameters.get$isEmpty(queryParameters) ? null : queryParameters).get$_text();
@@ -171296,7 +171291,8 @@
   A.MyTicketsBloc___closure.prototype = {
     call$1(ticket) {
       var t1 = J.getInterceptor$asx(ticket);
-      return new A.MyTicketsResponse(A._asString(t1.$index(ticket, "id")), A.DateTime_parse(A._asString(t1.$index(ticket, "purchasedAt"))), A.LotteryModel_LotteryModel$fromJson(type$.Map_String_dynamic._as(t1.$index(ticket, "lottery"))));
+      A._asString(t1.$index(ticket, "id"));
+      return new A.MyTicketsResponse(A.DateTime_parse(A._asString(t1.$index(ticket, "purchasedAt"))), A.LotteryModel_LotteryModel$fromJson(type$.Map_String_dynamic._as(t1.$index(ticket, "lottery"))));
     },
     $signature: 633
   };
@@ -171458,18 +171454,15 @@
         t6 = this.myTicketsResponse,
         t7 = t6.lotteryModel,
         t8 = type$.JSArray_Widget;
-      return A.GestureDetector$(_null, A.Container$(_null, A.Row$(A._setArrayType([A.Column$(A._setArrayType([A.Text$(t7.name, _null, _null, _null, _null, A.TextStyle$(_null, _null, B.Color_wst, _null, _null, _null, _null, _null, _null, _null, _null, 16 * ($.SizerUtil___width._readField$0() / 3) / 100, _null, _null, B.FontWeight_5, _null, _null, true, _null, _null, _null, _null, _null, _null, _null, _null), _null, _null), A.SizedBox$(_null, $.SizerUtil___height._readField$0() / 100, _null), A.Text$("Purchase date: " + A.DateFormat$("dd/MM/yyyy").format$1(t6.purchasedAt), _null, _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight($.$get$AppColors_white70(), 12 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_3), _null, _null), A.SizedBox$(_null, $.$get$AppSizes_vSize1(), _null), A.Text$(this._getRemainingTime$1(t7.drawTime), _null, _null, _null, _null, A.TextStyle$(_null, _null, $.$get$AppColors_white70(), _null, _null, _null, _null, _null, _null, _null, _null, 14 * ($.SizerUtil___width._readField$0() / 3) / 100, _null, _null, B.FontWeight_3, _null, _null, true, _null, _null, _null, _null, _null, _null, _null, _null), _null, _null)], t8), B.CrossAxisAlignment_0, B.MainAxisAlignment_0, B.MainAxisSize_1), A.Icon$(B.IconData_57500_MaterialIcons_null_true, B.Color_wst, _null, 20 * ($.SizerUtil___width._readField$0() / 3) / 100)], t8), B.CrossAxisAlignment_2, B.MainAxisAlignment_3, B.MainAxisSize_1, 0), B.Clip_0, _null, _null, new A.BoxDecoration(_null, _null, _null, t1, t2, new A.LinearGradient(B.Alignment_m1_m1, B.Alignment_1_1, B.TileMode_0, t3, _null, _null), B.BoxShape_0), _null, _null, _null, new A.EdgeInsets(t4, t5, t4, t5), _null, _null, _null), B.DragStartBehavior_1, false, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, new A.TicketItem_build_closure(this, context), _null, _null, _null, _null, _null, _null);
+      return A.GestureDetector$(_null, A.Container$(_null, A.Row$(A._setArrayType([A.Column$(A._setArrayType([A.Text$(t7.name, _null, _null, _null, _null, A.TextStyle$(_null, _null, B.Color_wst, _null, _null, _null, _null, _null, _null, _null, _null, 16 * ($.SizerUtil___width._readField$0() / 3) / 100, _null, _null, B.FontWeight_5, _null, _null, true, _null, _null, _null, _null, _null, _null, _null, _null), _null, _null), A.SizedBox$(_null, $.SizerUtil___height._readField$0() / 100, _null), A.Text$("Purchase date: " + A.DateFormat$("dd/MM/yyyy").format$1(t6.purchasedAt), _null, _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight($.$get$AppColors_white70(), 12 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_3), _null, _null), A.SizedBox$(_null, $.$get$AppSizes_vSize1(), _null), A.Text$(this._getRemainingTime$1(t7.drawTime), _null, _null, _null, _null, A.TextStyle$(_null, _null, $.$get$AppColors_white70(), _null, _null, _null, _null, _null, _null, _null, _null, 14 * ($.SizerUtil___width._readField$0() / 3) / 100, _null, _null, B.FontWeight_3, _null, _null, true, _null, _null, _null, _null, _null, _null, _null, _null), _null, _null)], t8), B.CrossAxisAlignment_0, B.MainAxisAlignment_0, B.MainAxisSize_1), A.Icon$(B.IconData_57500_MaterialIcons_null_true, B.Color_wst, _null, 20 * ($.SizerUtil___width._readField$0() / 3) / 100)], t8), B.CrossAxisAlignment_2, B.MainAxisAlignment_3, B.MainAxisSize_1, 0), B.Clip_0, _null, _null, new A.BoxDecoration(_null, _null, _null, t1, t2, new A.LinearGradient(B.Alignment_m1_m1, B.Alignment_1_1, B.TileMode_0, t3, _null, _null), B.BoxShape_0), _null, _null, _null, new A.EdgeInsets(t4, t5, t4, t5), _null, _null, _null), B.DragStartBehavior_1, false, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, new A.TicketItem_build_closure(context), _null, _null, _null, _null, _null, _null);
     }
   };
   A.TicketItem_build_closure.prototype = {
     call$0() {
-      var inherited, t2,
-        t1 = type$.String;
-      t1 = A.LinkedHashMap_LinkedHashMap$_literal(["ticketId", this.$this.myTicketsResponse.id], t1, t1);
-      inherited = A.GoRouter_maybeOf(this.context);
-      t2 = inherited.__GoRouter_configuration_F;
-      t2 === $ && A.throwUnnamedLateFieldNI();
-      return A.LinkedHashSet_LinkedHashSet$_literal([inherited.push$1$2$extra(t2.namedLocation$4$fragment$pathParameters$queryParameters("/ticket-detail", null, t1, B.Map_empty4), null, type$.nullable_Object)], type$.Future_nullable_Object);
+      var inherited = A.GoRouter_maybeOf(this.context),
+        t1 = inherited.__GoRouter_configuration_F;
+      t1 === $ && A.throwUnnamedLateFieldNI();
+      return A.LinkedHashSet_LinkedHashSet$_literal([inherited.push$1$2$extra(t1.namedLocation$4$fragment$pathParameters$queryParameters("/ticket-detail", null, B.Map_empty1, B.Map_empty4), null, type$.nullable_Object)], type$.Future_nullable_Object);
     },
     $signature: 0
   };
@@ -171480,7 +171473,7 @@
   };
   A.LoadTicketDetail.prototype = {
     get$props() {
-      return [this.ticketId];
+      return [];
     }
   };
   A.TicketDetailState.prototype = {
@@ -171525,7 +171518,7 @@
               return A._asyncAwait(A.Future_Future$delayed(A.Duration$(0, 0, 0, 1), null, type$.dynamic), $async$_onLoadTicketDetail$2);
             case 6:
               // returning from await.
-              ticketDetail = new A.TicketDetailLoaded($event.ticketId, new A.DateTime(Date.now(), 0, false)._addMicroseconds$1(A.Duration$(2, 0, 0, 0)._duration), false, "$1,000,000", "$10", 1000);
+              ticketDetail = new A.TicketDetailLoaded("", new A.DateTime(Date.now(), 0, false)._addMicroseconds$1(A.Duration$(2, 0, 0, 0)._duration), false, "$1,000,000", "$10", 1000);
               if (!emit._isCanceled)
                 emit._emit.call$1(ticketDetail);
               $async$handler = 1;
@@ -171563,7 +171556,7 @@
   A.TicketDetailPage.prototype = {
     build$1(context) {
       var t1 = type$.TicketDetailBloc;
-      return A.BlocProvider$(A.BlocBuilder$(new A.TicketDetailPage_build_closure(), t1, type$.TicketDetailState), new A.TicketDetailPage_build_closure0(this), t1);
+      return A.BlocProvider$(A.BlocBuilder$(new A.TicketDetailPage_build_closure(), t1, type$.TicketDetailState), new A.TicketDetailPage_build_closure0(), t1);
     }
   };
   A.TicketDetailPage_build_closure0.prototype = {
@@ -171577,7 +171570,7 @@
       t5 = $.$get$Bloc_transformer();
       t1 = new A.TicketDetailBloc(t1, t2, t3, t4, t5, B.C__DefaultBlocObserver, new A.TicketDetailInitial());
       t1.on$1$1(0, t1.get$_onLoadTicketDetail(), type$.LoadTicketDetail);
-      t1.add$1(0, new A.LoadTicketDetail(this.$this.ticketId));
+      t1.add$1(0, new A.LoadTicketDetail());
       return t1;
     },
     $signature: 637
@@ -171956,7 +171949,7 @@
   A.AppRoutesConfig_config_closure3.prototype = {
     call$2(context, state) {
       var _null = null;
-      return A.NoTransitionPage$(_null, new A.TicketDetailPage("", _null), _null, _null, _null, type$.dynamic);
+      return A.NoTransitionPage$(_null, new A.TicketDetailPage(_null), _null, _null, _null, type$.dynamic);
     },
     $signature: 59
   };
