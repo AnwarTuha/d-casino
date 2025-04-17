@@ -45487,8 +45487,10 @@
       this.lotteryId = t0;
       this.quantity = t1;
     },
-    WithdrawRequestModel: function WithdrawRequestModel(t0) {
+    WithdrawRequestModel: function WithdrawRequestModel(t0, t1, t2) {
       this.amount = t0;
+      this.bankName = t1;
+      this.accountNumber = t2;
     },
     ChoosePriceCubit: function ChoosePriceCubit(t0, t1) {
       var _ = this;
@@ -46020,10 +46022,11 @@
     WithdrawDialog: function WithdrawDialog(t0) {
       this.key = t0;
     },
-    _WithdrawDialogState: function _WithdrawDialogState(t0, t1) {
+    _WithdrawDialogState: function _WithdrawDialogState(t0, t1, t2) {
       var _ = this;
       _.formKey = t0;
       _.amountController = t1;
+      _.accountController = t2;
       _._framework$_element = _._widget = null;
     },
     _WithdrawDialogState_build_closure: function _WithdrawDialogState_build_closure() {
@@ -170700,7 +170703,7 @@
   };
   A.WithdrawRequestModel.prototype = {
     toJson$0() {
-      return A.LinkedHashMap_LinkedHashMap$_literal(["amount", this.amount], type$.String, type$.dynamic);
+      return A.LinkedHashMap_LinkedHashMap$_literal(["amount", this.amount, "bankName", this.bankName, "bankAccountDetails", this.accountNumber], type$.String, type$.dynamic);
     }
   };
   A.ChoosePriceCubit.prototype = {};
@@ -170875,22 +170878,14 @@
   };
   A.WithdrawBloc_closure.prototype = {
     call$2($event, emit) {
-      var e, s, t1, t2, t3, t4, exception,
-        _s34_ = ">>>>>>>>>>>>>> >>>>>>>>>>>>>>>>>> ";
+      var e, exception;
       if (!emit._isCanceled)
         emit._emit.call$1(new A.WithdrawLoading());
       try {
-        t1 = $event.requestModel.amount;
-        t2 = type$.String;
-        t3 = type$.dynamic;
-        A.print(_s34_ + A.LinkedHashMap_LinkedHashMap$_literal(["amount", t1], t2, t3).toString$0(0));
-        t4 = $event.accessToken;
-        A.print(_s34_ + t4);
-        this.$this.homeApiServices.withdrawFunds$2$accessToken$body("Bearer " + t4, A.LinkedHashMap_LinkedHashMap$_literal(["amount", t1], t2, t3)).then$1$1(new A.WithdrawBloc__closure(emit), type$.Null);
+        this.$this.homeApiServices.withdrawFunds$2$accessToken$body("Bearer " + $event.accessToken, $event.requestModel.toJson$0()).then$1$1(new A.WithdrawBloc__closure(emit), type$.Null);
       } catch (exception) {
         e = A.unwrapException(exception);
-        s = A.getTraceFromException(exception);
-        A.print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>> " + A.S(e) + ", " + A.S(s));
+        A.getTraceFromException(exception);
         J.toString$0$(e);
         if (!emit._isCanceled)
           emit._emit.call$1(new A.WithdrawError());
@@ -172095,12 +172090,13 @@
   };
   A.WithdrawDialog.prototype = {
     createState$0() {
-      return new A._WithdrawDialogState(new A.LabeledGlobalKey(null, type$.LabeledGlobalKey_FormState), new A.TextEditingController(B.TextEditingValue_Yyo, $.$get$ChangeNotifier__emptyListeners()));
+      var t1 = $.$get$ChangeNotifier__emptyListeners();
+      return new A._WithdrawDialogState(new A.LabeledGlobalKey(null, type$.LabeledGlobalKey_FormState), new A.TextEditingController(B.TextEditingValue_Yyo, t1), new A.TextEditingController(B.TextEditingValue_Yyo, t1));
     }
   };
   A._WithdrawDialogState.prototype = {
     build$1(context) {
-      var t6, t7, t8, t9, t10, t11, t12, _null = null,
+      var t6, t7, t8, t9, t10, t11, t12, t13, t14, _this = this, _null = null,
         t1 = A.BorderRadius$circular(16),
         t2 = A.Text$("Withdraw winnings", _null, _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_wst, 16 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_5), _null, _null),
         t3 = $.$get$AppSizes_vSize1(),
@@ -172110,21 +172106,23 @@
       t6 = type$.WithdrawBloc;
       t7 = type$.WithdrawState;
       t8 = A.BlocBuilder$(new A._WithdrawDialogState_build_closure(), t6, t7);
-      t9 = A.SizedBox$(_null, $.$get$AppSizes_vSize2(), _null);
-      t10 = this._withdraw_dialog$_buildForm$1$formTitle("Amount");
-      t11 = A.SizedBox$(_null, $.$get$AppSizes_vSize4() * 0.7, _null);
-      t12 = A.ButtonStyle$(_null, _null, _null, new A.WidgetStatePropertyAll(B.Color_Gcn, type$.WidgetStatePropertyAll_nullable_Color), _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null);
-      return A.Dialog$(_null, A.Container$(_null, A.Form$(A.Column$(A._setArrayType([t2, t4, t5, t3, t8, t9, t10, t11, A.ElevatedButton$(false, A.BlocBuilder$(new A._WithdrawDialogState_build_closure0(), t6, t7), _null, _null, _null, _null, _null, _null, new A._WithdrawDialogState_build_closure1(this, context), _null, t12)], type$.JSArray_Widget), B.CrossAxisAlignment_2, B.MainAxisAlignment_0, B.MainAxisSize_0), this.formKey), B.Clip_0, _null, _null, new A.BoxDecoration(B.Color_Kln, _null, _null, t1, _null, _null, B.BoxShape_0), _null, _null, _null, new A.EdgeInsets(20, 18, 20, 18), _null, _null, _null), B.EdgeInsets_0_0_0_0);
+      t9 = $.$get$AppSizes_vSize2();
+      t10 = A.SizedBox$(_null, t9, _null);
+      t11 = _this._withdraw_dialog$_buildForm$1$formTitle("Amount");
+      t9 = A.SizedBox$(_null, t9, _null);
+      t12 = _this._withdraw_dialog$_buildForm$1$formTitle("Account Number");
+      t13 = A.SizedBox$(_null, $.$get$AppSizes_vSize4() * 0.7, _null);
+      t14 = A.ButtonStyle$(_null, _null, _null, new A.WidgetStatePropertyAll(B.Color_Gcn, type$.WidgetStatePropertyAll_nullable_Color), _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null);
+      return A.Dialog$(_null, A.Container$(_null, A.Form$(A.Column$(A._setArrayType([t2, t4, t5, t3, t8, t10, t11, t9, t12, t13, A.ElevatedButton$(false, A.BlocBuilder$(new A._WithdrawDialogState_build_closure0(), t6, t7), _null, _null, _null, _null, _null, _null, new A._WithdrawDialogState_build_closure1(_this, context), _null, t14)], type$.JSArray_Widget), B.CrossAxisAlignment_2, B.MainAxisAlignment_0, B.MainAxisSize_0), _this.formKey), B.Clip_0, _null, _null, new A.BoxDecoration(B.Color_Kln, _null, _null, t1, _null, _null, B.BoxShape_0), _null, _null, _null, new A.EdgeInsets(20, 18, 20, 18), _null, _null, _null), B.EdgeInsets_0_0_0_0);
     },
     _withdraw_dialog$_buildForm$1$formTitle(formTitle) {
-      var t5, _null = null,
+      var _null = null,
         t1 = A.Text$(formTitle, _null, _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_wst, 14 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_5), _null, _null),
         t2 = A.SizedBox$(_null, $.$get$AppSizes_vSize1(), _null),
-        t3 = formTitle === "Amount",
-        t4 = t3 ? A._setArrayType([new A.WholeNumberInputFormatter(A.NumberFormat_NumberFormat("#,###"))], type$.JSArray_TextInputFormatter) : _null;
-      t3 = t3 ? B.TextInputType_2_false_false : B.TextInputType_0_null_null;
-      t5 = A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_wst, 14 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_5);
-      return A.Column$(A._setArrayType([t1, t2, A.TextFormField$(this.amountController, A.InputDecoration$(_null, new A.OutlineInputBorder(4, B.BorderRadius_nnp, B.BorderSide_ViT), _null, _null, _null, _null, _null, _null, true, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, true, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null), t4, t3, _null, _null, t5, B.TextAlign_4, new A._WithdrawDialogState__buildForm_closure(formTitle))], type$.JSArray_Widget), B.CrossAxisAlignment_0, B.MainAxisAlignment_0, B.MainAxisSize_1);
+        t3 = formTitle === "Amount" ? this.amountController : this.accountController,
+        t4 = A._setArrayType([new A.WholeNumberInputFormatter(A.NumberFormat_NumberFormat("#,###"))], type$.JSArray_TextInputFormatter),
+        t5 = A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_wst, 14 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_5);
+      return A.Column$(A._setArrayType([t1, t2, A.TextFormField$(t3, A.InputDecoration$(_null, new A.OutlineInputBorder(4, B.BorderRadius_nnp, B.BorderSide_ViT), _null, _null, _null, _null, _null, _null, true, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, true, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null), t4, B.TextInputType_2_false_false, _null, _null, t5, B.TextAlign_4, new A._WithdrawDialogState__buildForm_closure(formTitle))], type$.JSArray_Widget), B.CrossAxisAlignment_0, B.MainAxisAlignment_0, B.MainAxisSize_1);
     }
   };
   A._WithdrawDialogState_build_closure.prototype = {
@@ -172138,13 +172136,16 @@
   };
   A._WithdrawDialogState_build_closure1.prototype = {
     call$0() {
-      var t2,
+      var t2, t3,
         t1 = this.$this;
       if (t1.formKey.get$currentState().validate$0()) {
-        t1 = t1.amountController._change_notifier$_value.text;
-        t1 = A.double_parse(A.stringReplaceAllUnchecked(t1, ",", ""));
-        t2 = this.context;
-        J.add$1$ax(A.Provider_of(t2, false, type$.WithdrawBloc), new A.WithdrawRequestEvent(new A.WithdrawRequestModel(t1), J.$index$asx(type$.AuthDone._as(A.Provider_of(t2, false, type$.AuthBloc)._bloc$_state).userData, "token")));
+        t1 = t1.amountController;
+        t2 = t1._change_notifier$_value.text;
+        t2 = A.double_parse(A.stringReplaceAllUnchecked(t2, ",", ""));
+        null.toString;
+        t1 = t1._change_notifier$_value.text;
+        t3 = this.context;
+        J.add$1$ax(A.Provider_of(t3, false, type$.WithdrawBloc), new A.WithdrawRequestEvent(new A.WithdrawRequestModel(t2, null, t1), J.$index$asx(type$.AuthDone._as(A.Provider_of(t3, false, type$.AuthBloc)._bloc$_state).userData, "token")));
       }
     },
     $signature: 0
