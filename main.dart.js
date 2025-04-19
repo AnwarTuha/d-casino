@@ -172387,10 +172387,11 @@
         t2 = A.Color$fromARGB(B.JSNumber_methods.round$0(76.5), B.Color_PBe.toARGB32$0() >>> 16 & 255, B.Color_PBe.toARGB32$0() >>> 8 & 255, B.Color_PBe.toARGB32$0() & 255),
         t3 = type$.JSArray_Widget,
         t4 = A.Row$(A._setArrayType([A.Text$("Previous winners", _null, _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_wst, 16 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_3), _null, _null), A.SizedBox$(_null, _null, $.$get$AppSizes_hSize2()), A.Icon$(B.IconData_61466_MaterialIcons_null_false, B.Color_wst, _null, 20)], t3), B.CrossAxisAlignment_2, B.MainAxisAlignment_3, B.MainAxisSize_1, 0),
-        t5 = A.Duration$(0, 0, 0, 0, 0, 4),
-        t6 = A.Duration$(0, 0, 0, 800, 0, 0),
-        t7 = $.Zone__current;
-      return A.Container$(A.Column$(A._setArrayType([t4, new A.CarouselSlider(new A.CarouselOptions(50, 1, true, t5, t6, B.Cubic_fC5), new A._PurchaseWidgetState__buildPreviousWinners_closure(), new A.CarouselSliderControllerImpl(new A._AsyncCompleter(new A._Future(t7, type$._Future_Null), type$._AsyncCompleter_Null)), 5, _null)], t3), B.CrossAxisAlignment_2, B.MainAxisAlignment_0, B.MainAxisSize_1), B.Clip_0, _null, new A.BoxDecoration(t2, _null, _null, t1, _null, _null, B.BoxShape_0), _null, 1 / 0, _null, new A.EdgeInsets(10, 10, 10, 10), _null);
+        t5 = $.SizerUtil___height._readField$0(),
+        t6 = A.Duration$(0, 0, 0, 0, 0, 4),
+        t7 = A.Duration$(0, 0, 0, 800, 0, 0),
+        t8 = $.Zone__current;
+      return A.Container$(A.Column$(A._setArrayType([t4, A.SizedBox$(new A.CarouselSlider(new A.CarouselOptions(50, 1, true, t6, t7, B.Cubic_fC5), new A._PurchaseWidgetState__buildPreviousWinners_closure(), new A.CarouselSliderControllerImpl(new A._AsyncCompleter(new A._Future(t8, type$._Future_Null), type$._AsyncCompleter_Null)), 5, _null), 50 * t5 / 100, _null)], t3), B.CrossAxisAlignment_2, B.MainAxisAlignment_0, B.MainAxisSize_1), B.Clip_0, _null, new A.BoxDecoration(t2, _null, _null, t1, _null, _null, B.BoxShape_0), _null, _null, _null, new A.EdgeInsets(10, 10, 10, 10), _null);
     }
   };
   A._PurchaseWidgetState_build_closure.prototype = {
