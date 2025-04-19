@@ -172373,7 +172373,7 @@
   A._PurchaseWidgetState.prototype = {
     build$1(context) {
       var _null = null,
-        t1 = this._buildPreviousWinners$0(),
+        t1 = A.Expanded$(this._buildPreviousWinners$0()),
         t2 = A.SizedBox$(_null, $.$get$AppSizes_vSize1(), _null),
         t3 = A.BorderRadius$circular(8),
         t4 = A.Color$fromARGB(B.JSNumber_methods.round$0(76.5), B.Color_PBe.toARGB32$0() >>> 16 & 255, B.Color_PBe.toARGB32$0() >>> 8 & 255, B.Color_PBe.toARGB32$0() & 255),
