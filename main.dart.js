@@ -172390,7 +172390,7 @@
         t5 = A.Duration$(0, 0, 0, 0, 0, 4),
         t6 = A.Duration$(0, 0, 0, 800, 0, 0),
         t7 = $.Zone__current;
-      return A.Container$(A.Column$(A._setArrayType([t4, new A.CarouselSlider(new A.CarouselOptions(50, 1, true, t5, t6, B.Cubic_fC5), new A._PurchaseWidgetState__buildPreviousWinners_closure(), new A.CarouselSliderControllerImpl(new A._AsyncCompleter(new A._Future(t7, type$._Future_Null), type$._AsyncCompleter_Null)), 5, _null)], t3), B.CrossAxisAlignment_2, B.MainAxisAlignment_0, B.MainAxisSize_1), B.Clip_0, _null, new A.BoxDecoration(t2, _null, _null, t1, _null, _null, B.BoxShape_0), _null, _null, _null, new A.EdgeInsets(10, 10, 10, 10), _null);
+      return A.Container$(A.Column$(A._setArrayType([t4, new A.CarouselSlider(new A.CarouselOptions(50, 1, true, t5, t6, B.Cubic_fC5), new A._PurchaseWidgetState__buildPreviousWinners_closure(), new A.CarouselSliderControllerImpl(new A._AsyncCompleter(new A._Future(t7, type$._Future_Null), type$._AsyncCompleter_Null)), 5, _null)], t3), B.CrossAxisAlignment_2, B.MainAxisAlignment_0, B.MainAxisSize_1), B.Clip_0, _null, new A.BoxDecoration(t2, _null, _null, t1, _null, _null, B.BoxShape_0), _null, 1 / 0, _null, new A.EdgeInsets(10, 10, 10, 10), _null);
     }
   };
   A._PurchaseWidgetState_build_closure.prototype = {
