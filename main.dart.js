@@ -171963,7 +171963,7 @@
         t2 = A.BorderRadius$circular(8),
         t3 = A.Color$fromARGB(B.JSNumber_methods.round$0(76.5), B.Color_PBe.toARGB32$0() >>> 16 & 255, B.Color_PBe.toARGB32$0() >>> 8 & 255, B.Color_PBe.toARGB32$0() & 255),
         t4 = type$.JSArray_Widget;
-      return A.Container$(A.Column$(A._setArrayType([A.Row$(A._setArrayType([A.Text$("Previous winners", _null, _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_wst, 16 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_3), _null, _null), A.SizedBox$(_null, _null, $.$get$AppSizes_hSize2()), A.Icon$(B.IconData_61466_MaterialIcons_null_false, B.Color_wst, _null, 20)], t4), B.CrossAxisAlignment_2, B.MainAxisAlignment_3, B.MainAxisSize_1, 0), A.Expanded$(A.ListView$separated(new A._PurchaseWidgetState__buildPreviousWinners_closure(), 10, _null, _null, new A._PurchaseWidgetState__buildPreviousWinners_closure0(), true))], t4), B.CrossAxisAlignment_2, B.MainAxisAlignment_0, B.MainAxisSize_1), B.Clip_0, _null, new A.BoxDecoration(t3, _null, _null, t2, _null, _null, B.BoxShape_0), _null, 50 * t1 / 100, _null, new A.EdgeInsets(10, 10, 10, 10), _null);
+      return A.Container$(A.Column$(A._setArrayType([A.Row$(A._setArrayType([A.Text$("Previous winners", _null, _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_wst, 16 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_3), _null, _null), A.SizedBox$(_null, _null, $.$get$AppSizes_hSize2()), A.Icon$(B.IconData_61466_MaterialIcons_null_false, B.Color_wst, _null, 20)], t4), B.CrossAxisAlignment_2, B.MainAxisAlignment_3, B.MainAxisSize_1, 0), A.SizedBox$(_null, $.$get$AppSizes_vSize2(), _null), A.Expanded$(A.ListView$separated(new A._PurchaseWidgetState__buildPreviousWinners_closure(), 10, _null, _null, new A._PurchaseWidgetState__buildPreviousWinners_closure0(), true))], t4), B.CrossAxisAlignment_2, B.MainAxisAlignment_0, B.MainAxisSize_1), B.Clip_0, _null, new A.BoxDecoration(t3, _null, _null, t2, _null, _null, B.BoxShape_0), _null, 60 * t1 / 100, _null, new A.EdgeInsets(10, 10, 10, 10), _null);
     }
   };
   A._PurchaseWidgetState_build_closure.prototype = {
@@ -171986,10 +171986,8 @@
   };
   A._PurchaseWidgetState__buildPreviousWinners_closure.prototype = {
     call$2(context, index) {
-      var _null = null,
-        t1 = A.Text$("+2519****5760", _null, _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_wst, 15 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_4), _null, _null),
-        t2 = $.$get$AppSizes_hSize2();
-      return A.Container$(A.Row$(A._setArrayType([t1, A.SizedBox$(_null, _null, t2), A.Text$("-", _null, _null, _null, _null, A.part_r_PartR_roboto$closure().call$2$color$fontSize(B.Color_wst, 16 * ($.SizerUtil___width._readField$0() / 3) / 100), _null, _null), A.SizedBox$(_null, _null, t2), A.Text$("ETB 100,000", _null, _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_wst, 15 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_4), _null, _null)], type$.JSArray_Widget), B.CrossAxisAlignment_2, B.MainAxisAlignment_2, B.MainAxisSize_1, 0), B.Clip_0, _null, _null, _null, _null, _null, _null, _null);
+      var _null = null;
+      return A.Container$(A.Row$(A._setArrayType([A.Text$("+2519****5760", _null, _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_wst, 15 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_4), _null, _null), A.Text$("ETB 100,000", _null, _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_wst, 15 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_4), _null, _null)], type$.JSArray_Widget), B.CrossAxisAlignment_2, B.MainAxisAlignment_3, B.MainAxisSize_1, 0), B.Clip_0, _null, _null, _null, _null, _null, _null, _null);
     },
     $signature: 230
   };
