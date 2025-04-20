@@ -45881,40 +45881,39 @@
       return new A.PaginatedLotteryModel(t2);
     },
     LotteryModel_LotteryModel$fromJson(json) {
-      var t5, t6, t7,
+      var t4, t5, t6,
         _s11_ = "description",
         _s9_ = "createdAt",
         t1 = J.getInterceptor$asx(json),
         t2 = t1.$index(json, "id"),
-        t3 = t1.$index(json, "name"),
-        t4 = t1.$index(json, _s11_);
+        t3 = t1.$index(json, "name");
+      t1.$index(json, _s11_);
       t1.$index(json, "ticketPrice");
       B.JSArray_methods.firstWhere$1(B.List_F2Y, new A.LotteryModel_LotteryModel$fromJson_closure(json));
-      t5 = A.DateTime_parse(t1.$index(json, "drawTime"));
+      t4 = A.DateTime_parse(t1.$index(json, "drawTime"));
       t1.$index(json, "winnerId");
       A.DateTime_parse(t1.$index(json, _s9_));
       t1 = t1.$index(json, "type");
-      t6 = J.getInterceptor$asx(t1);
-      t6.$index(t1, "id");
-      t7 = t6.$index(t1, "name");
-      t6.$index(t1, "value");
-      t6.$index(t1, _s11_);
-      A.DateTime_parse(t6.$index(t1, _s9_));
-      A.DateTime_parse(t6.$index(t1, "updatedAt"));
-      return new A.LotteryModel(t2, t3, t4, t5, new A.LotteryTypeModel(t7));
+      t5 = J.getInterceptor$asx(t1);
+      t5.$index(t1, "id");
+      t6 = t5.$index(t1, "name");
+      t5.$index(t1, "value");
+      t5.$index(t1, _s11_);
+      A.DateTime_parse(t5.$index(t1, _s9_));
+      A.DateTime_parse(t5.$index(t1, "updatedAt"));
+      return new A.LotteryModel(t2, t3, t4, new A.LotteryTypeModel(t6));
     },
     PaginatedLotteryModel: function PaginatedLotteryModel(t0) {
       this.data = t0;
     },
     PaginatedLotteryModel_PaginatedLotteryModel$fromJson_closure: function PaginatedLotteryModel_PaginatedLotteryModel$fromJson_closure() {
     },
-    LotteryModel: function LotteryModel(t0, t1, t2, t3, t4) {
+    LotteryModel: function LotteryModel(t0, t1, t2, t3) {
       var _ = this;
       _.id = t0;
       _.name = t1;
-      _.description = t2;
-      _.drawTime = t3;
-      _.lotteryTypeModel = t4;
+      _.drawTime = t2;
+      _.lotteryTypeModel = t3;
     },
     LotteryModel_LotteryModel$fromJson_closure: function LotteryModel_LotteryModel$fromJson_closure(t0) {
       this.json = t0;
@@ -172463,7 +172462,7 @@
       t14 = A.Icon$(B.IconData_59087_MaterialIcons_null_false, B.Color_wst, _null, 20);
       t15 = $.$get$AppSizes_hSize2();
       t16 = type$.JSArray_Widget;
-      return A.Container$(A.Stack$(B.AlignmentDirectional_m1_m1, A._setArrayType([t5, A.Column$(A._setArrayType([t7, t8, t9, t11, t13, t10, A.Row$(A._setArrayType([A.Row$(A._setArrayType([t14, A.SizedBox$(_null, _null, t15), A.Text$(t12.description, _null, _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_wst, 10 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_3), _null, _null)], t16), B.CrossAxisAlignment_2, B.MainAxisAlignment_0, B.MainAxisSize_1), A.Row$(A._setArrayType([A.Icon$(B.IconData_58498_MaterialIcons_null_false, B.Color_wst, _null, 20), A.SizedBox$(_null, _null, t15), A.Text$(this._widget.lotteryModel.lotteryTypeModel.name + " ticket", _null, _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_wst, 10 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_2), _null, _null)], t16), B.CrossAxisAlignment_2, B.MainAxisAlignment_0, B.MainAxisSize_1)], t16), B.CrossAxisAlignment_2, B.MainAxisAlignment_4, B.MainAxisSize_1)], t16), B.CrossAxisAlignment_2, B.MainAxisAlignment_0, B.MainAxisSize_1)], t16), B.Clip_1, B.StackFit_0, _null), B.Clip_0, _null, new A.BoxDecoration(t4, _null, _null, t2, t3, new A.LinearGradient(B.Alignment_m1_m1, B.Alignment_1_1, B.TileMode_0, t6, _null, _null), B.BoxShape_0), _null, _null, _null, new A.EdgeInsets(t1, t1, t1, t1), 1 / 0);
+      return A.Container$(A.Stack$(B.AlignmentDirectional_m1_m1, A._setArrayType([t5, A.Column$(A._setArrayType([t7, t8, t9, t11, t13, t10, A.Row$(A._setArrayType([A.Row$(A._setArrayType([t14, A.SizedBox$(_null, _null, t15), A.Text$(t12.name, _null, _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_wst, 10 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_3), _null, _null)], t16), B.CrossAxisAlignment_2, B.MainAxisAlignment_0, B.MainAxisSize_1), A.Row$(A._setArrayType([A.Icon$(B.IconData_58498_MaterialIcons_null_false, B.Color_wst, _null, 20), A.SizedBox$(_null, _null, t15), A.Text$(this._widget.lotteryModel.lotteryTypeModel.name + " ticket", _null, _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_wst, 10 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_2), _null, _null)], t16), B.CrossAxisAlignment_2, B.MainAxisAlignment_0, B.MainAxisSize_1)], t16), B.CrossAxisAlignment_2, B.MainAxisAlignment_4, B.MainAxisSize_1)], t16), B.CrossAxisAlignment_2, B.MainAxisAlignment_0, B.MainAxisSize_1)], t16), B.Clip_1, B.StackFit_0, _null), B.Clip_0, _null, new A.BoxDecoration(t4, _null, _null, t2, t3, new A.LinearGradient(B.Alignment_m1_m1, B.Alignment_1_1, B.TileMode_0, t6, _null, _null), B.BoxShape_0), _null, _null, _null, new A.EdgeInsets(t1, t1, t1, t1), 1 / 0);
     }
   };
   A._LotteryDetailViewState_initState_closure.prototype = {
@@ -172590,7 +172589,7 @@
         t1 === $ && A.throwUnnamedLateFieldNI();
         t1.pop$1(_null);
         context.dependOnInheritedWidgetOfExactType$1$0(type$._ScaffoldMessengerScope)._scaffoldMessengerState.showSnackBar$1(A.SnackBar$(_null, _null, _null, B.Color_Gcn, _null, B.Clip_1, _null, A.Text$("You've successfully purchased " + B.JSString_methods.trim$0(this.$this.countController._change_notifier$_value.text) + " tickets", _null, _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_wst, 14 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_5), _null, _null), _null, B.Duration_4000000, _null, _null, _null, _null, _null, _null, _null, _null, _null));
-        A.GoRouter_maybeOf(context).push$1$2$extra("/my-tickets", _null, type$.nullable_Object);
+        A.GoRouter_maybeOf(context).push$1$2$extra("/ticket-detail", _null, type$.nullable_Object);
       }
     },
     $signature: 624
