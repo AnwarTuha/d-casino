@@ -178624,7 +178624,7 @@
       J.add$1$ax(A.Provider_of(t1, false, type$.LotteryBloc), new A.GetLotteries(_this._widget.lotteryModel.id, 1));
     },
     build$1(context) {
-      var t16, t17, t18, _this = this, _null = null,
+      var t14, t15, t16, _null = null,
         t1 = $.$get$AppSizes_hSize4(),
         t2 = A.BorderRadius$circular(8),
         t3 = $.$get$AppSizes_vSize2(),
@@ -178637,21 +178637,22 @@
         t10 = A.Row$(A._setArrayType([A.Text$("Purchase tickets", _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_wst, 16 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_3), _null, _null), A.Text$(A.DateFormat$("MMM dd").format$1(new A.DateTime(Date.now(), 0, false)), _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight($.$get$AppColors_white70(), 16 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_3), _null, _null)], t9), B.CrossAxisAlignment_2, B.MainAxisAlignment_3, B.MainAxisSize_1),
         t11 = A.SizedBox$(_null, t4, _null),
         t12 = A.SizedBox$(_null, t3, _null),
-        t13 = A.Text$("How many tickets?", _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight($.$get$AppColors_white70(), 14 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_3), _null, _null),
-        t14 = A.SizedBox$(_null, t4, _null),
-        t15 = _this.___TicketPurchaseDialogState_totalPayed_A;
-      t15 === $ && A.throwUnnamedLateFieldNI();
-      t15 = A.Text$("You'll spend: " + t15, _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight($.$get$AppColors_white70(), 14 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_3), _null, _null);
+        t13 = A.Text$("How many tickets?", _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight($.$get$AppColors_white70(), 14 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_3), _null, _null);
       t4 = A.SizedBox$(_null, t4, _null);
-      t16 = _this._buildHowManyOrders$0();
-      t17 = A.SizedBox$(_null, $.$get$AppSizes_vSize6(), _null);
-      t18 = A.ButtonStyle$(_null, _null, _null, new A.WidgetStatePropertyAll(B.Color_Gcn, type$.WidgetStatePropertyAll_nullable_Color), _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null);
-      return A.BlocListener$(_null, A.Dialog$(_null, A.Container$(A.Column$(A._setArrayType([t5, t8, t10, t11, A.Column$(A._setArrayType([t12, t13, t14, t15, t4, t16, t17, A.Row$(A._setArrayType([A.Expanded$(A.ElevatedButton$(false, A.BlocBuilder$(new A._TicketPurchaseDialogState_build_closure0(), t6, t7), _null, _null, _null, _null, _null, _null, new A._TicketPurchaseDialogState_build_closure1(_this, context), _null, t18))], t9), B.CrossAxisAlignment_2, B.MainAxisAlignment_0, B.MainAxisSize_1)], t9), B.CrossAxisAlignment_0, B.MainAxisAlignment_0, B.MainAxisSize_0)], t9), B.CrossAxisAlignment_0, B.MainAxisAlignment_0, B.MainAxisSize_0), B.Clip_0, _null, new A.BoxDecoration(B.Color_Kln, _null, _null, t2, _null, _null, B.BoxShape_0), _null, _null, _null, new A.EdgeInsets(t1, t3, t1, t3), _null), new A.EdgeInsets(t1, 0, t1, 0), _null), _null, new A._TicketPurchaseDialogState_build_closure2(_this), t6, t7);
+      t14 = this._buildHowManyOrders$0();
+      t15 = A.SizedBox$(_null, $.$get$AppSizes_vSize6(), _null);
+      t16 = A.ButtonStyle$(_null, _null, _null, new A.WidgetStatePropertyAll(B.Color_Gcn, type$.WidgetStatePropertyAll_nullable_Color), _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null);
+      return A.BlocListener$(_null, A.Dialog$(_null, A.Container$(A.Column$(A._setArrayType([t5, t8, t10, t11, A.Column$(A._setArrayType([t12, t13, t4, t14, t15, A.Row$(A._setArrayType([A.Expanded$(A.ElevatedButton$(false, A.BlocBuilder$(new A._TicketPurchaseDialogState_build_closure0(), t6, t7), _null, _null, _null, _null, _null, _null, new A._TicketPurchaseDialogState_build_closure1(this, context), _null, t16))], t9), B.CrossAxisAlignment_2, B.MainAxisAlignment_0, B.MainAxisSize_1)], t9), B.CrossAxisAlignment_0, B.MainAxisAlignment_0, B.MainAxisSize_0)], t9), B.CrossAxisAlignment_0, B.MainAxisAlignment_0, B.MainAxisSize_0), B.Clip_0, _null, new A.BoxDecoration(B.Color_Kln, _null, _null, t2, _null, _null, B.BoxShape_0), _null, _null, _null, new A.EdgeInsets(t1, t3, t1, t3), _null), new A.EdgeInsets(t1, 0, t1, 0), _null), _null, new A._TicketPurchaseDialogState_build_closure2(this), t6, t7);
     },
     _buildHowManyOrders$0() {
-      var _this = this, _null = null,
-        t1 = A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_wst, $.$get$AppSizes_fSize16(), B.FontWeight_6);
-      return A.Row$(A._setArrayType([A.Expanded$(A.TextFormField$(_this.countController, A.InputDecoration$(_null, new A.OutlineInputBorder(4, B.BorderRadius_nnp, new A.BorderSide(B.Color_wst, 1, B.BorderStyle_1, -1)), _null, _null, _null, _null, "", _null, true, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, true, _this._buildQuantityButton$2$icon$onTap(B.IconData_58646_MaterialIcons_null_false, new A._TicketPurchaseDialogState__buildHowManyOrders_closure(_this)), _null, _null, _null, _null, _null, _null, _this._buildQuantityButton$2$icon$onTap(B.IconData_57415_MaterialIcons_null_false, new A._TicketPurchaseDialogState__buildHowManyOrders_closure0(_this)), _null, _null, _null, _null, _null), _null, B.TextInputType_2_false_false, 3, new A._TicketPurchaseDialogState__buildHowManyOrders_closure1(_this), t1, B.TextAlign_2, _null))], type$.JSArray_Widget), B.CrossAxisAlignment_1, B.MainAxisAlignment_0, B.MainAxisSize_0);
+      var t3, t4, _this = this, _null = null,
+        t1 = A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_wst, $.$get$AppSizes_fSize16(), B.FontWeight_6),
+        t2 = type$.JSArray_Widget;
+      t1 = A.Row$(A._setArrayType([A.Expanded$(A.TextFormField$(_this.countController, A.InputDecoration$(_null, new A.OutlineInputBorder(4, B.BorderRadius_nnp, new A.BorderSide(B.Color_wst, 1, B.BorderStyle_1, -1)), _null, _null, _null, _null, "", _null, true, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, true, _this._buildQuantityButton$2$icon$onTap(B.IconData_58646_MaterialIcons_null_false, new A._TicketPurchaseDialogState__buildHowManyOrders_closure(_this)), _null, _null, _null, _null, _null, _null, _this._buildQuantityButton$2$icon$onTap(B.IconData_57415_MaterialIcons_null_false, new A._TicketPurchaseDialogState__buildHowManyOrders_closure0(_this)), _null, _null, _null, _null, _null), _null, B.TextInputType_2_false_false, 3, new A._TicketPurchaseDialogState__buildHowManyOrders_closure1(_this), t1, B.TextAlign_2, _null))], t2), B.CrossAxisAlignment_1, B.MainAxisAlignment_0, B.MainAxisSize_0);
+      t3 = A.SizedBox$(_null, $.$get$AppSizes_vSize1(), _null);
+      t4 = _this.___TicketPurchaseDialogState_totalPayed_A;
+      t4 === $ && A.throwUnnamedLateFieldNI();
+      return A.Column$(A._setArrayType([t1, t3, new A.Align(B.Alignment_0_0, _null, _null, A.Text$("You'll spend: " + t4 + " birr", _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_wst, 14 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_3), _null, _null), _null)], t2), B.CrossAxisAlignment_2, B.MainAxisAlignment_0, B.MainAxisSize_0);
     },
     _buildQuantityButton$2$icon$onTap(icon, onTap) {
       var _null = null,
