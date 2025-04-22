@@ -172484,7 +172484,7 @@
     $call$body$PurchaseBloc_closure($event, emit) {
       var $async$goto = 0,
         $async$completer = A._makeAsyncAwaitCompleter(type$.void),
-        $async$handler = 1, $async$errorStack = [], $async$self = this, response, e, s, exception, $async$exception;
+        $async$handler = 1, $async$errorStack = [], $async$self = this, response, lotteryModel, e, s, t1, exception, $async$exception;
       var $async$call$2 = A._wrapJsFunctionForAsync(function($async$errorCode, $async$result) {
         if ($async$errorCode === 1) {
           $async$errorStack.push($async$result);
@@ -172503,6 +172503,10 @@
               // returning from await.
               response = $async$result;
               if (response.data != null) {
+                A.print(">>>>>>>>>>>>>>>>>>>> " + A.S(response.data));
+                t1 = response.data;
+                t1.toString;
+                lotteryModel = A.LotteryModel_LotteryModel$fromJson(J.$index$asx(t1, "lottery"));
                 if (!emit._isCanceled)
                   emit._emit.call$1(new A.PurchaseSuccess());
               } else if (!emit._isCanceled)
@@ -173242,10 +173246,10 @@
       var _null = null,
         t1 = $.$get$AppSizes_hSize4(),
         t2 = $.$get$AppSizes_vSize2();
-      return A.AnnotatedRegion$(A.Scaffold$(_null, B.Color_Kln, new A.Padding(new A.EdgeInsets(t1, t2, t1, t2), A.Column$(A._setArrayType([this._buildCountDownTimer$0(), A.SizedBox$(_null, t2, _null), A.Text$("Your tickets", _null, _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_wst, 20 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_4), _null, _null), A.Text$("View your tickets below", _null, _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight($.$get$AppColors_white70(), 14 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_3), _null, _null), A.SizedBox$(_null, $.$get$AppSizes_vSize1(), _null), this._buildMyTickets$0()], type$.JSArray_Widget), B.CrossAxisAlignment_0, B.MainAxisAlignment_0, B.MainAxisSize_1), _null)), B.SystemUiOverlayStyle_iGj, type$.SystemUiOverlayStyle);
+      return A.AnnotatedRegion$(A.Scaffold$(_null, B.Color_Kln, new A.Padding(new A.EdgeInsets(t1, t2, t1, t2), A.Column$(A._setArrayType([this._buildCountDownTimer$0(), A.SizedBox$(_null, t2, _null), A.Text$("Your tickets", _null, _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_wst, 20 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_4), _null, _null), A.Text$("View your tickets below", _null, _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight($.$get$AppColors_white70(), 14 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_3), _null, _null), A.SizedBox$(_null, $.$get$AppSizes_vSize1(), _null), A.Expanded$(this._buildMyTickets$0())], type$.JSArray_Widget), B.CrossAxisAlignment_0, B.MainAxisAlignment_0, B.MainAxisSize_1), _null)), B.SystemUiOverlayStyle_iGj, type$.SystemUiOverlayStyle);
     },
     _buildMyTickets$0() {
-      return A.ListView$separated(new A._TicketDetailViewState__buildMyTickets_closure(), 10, null, new A.NeverScrollableScrollPhysics(null), new A._TicketDetailViewState__buildMyTickets_closure0(), true);
+      return A.ListView$separated(new A._TicketDetailViewState__buildMyTickets_closure(), 20, null, null, new A._TicketDetailViewState__buildMyTickets_closure0(), true);
     },
     _buildCountDownTimer$0() {
       var t7, t8, t9, t10, t11, t12, t13, t14, t15, _null = null,
@@ -173261,7 +173265,7 @@
       t8 = A.Text$("50,000 Birr", _null, _null, _null, _null, A.part_r_PartR_roboto$closure().call$2$color$fontSize(B.Color_wst, 44 * ($.SizerUtil___width._readField$0() / 3) / 100), _null, _null);
       t9 = A.part_l_PartL_lato$closure().call$3$color$fontSize$fontWeight(B.Color_wst, 30 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_3);
       t10 = A.part_r_PartR_raleway$closure().call$2$color$fontSize(B.Color_wst, 9 * ($.SizerUtil___width._readField$0() / 3) / 100);
-      t9 = A.TimerCountdown$(A.part_r_PartR_raleway$closure().call$2$color$fontSize(B.Color_wst, 15 * ($.SizerUtil___width._readField$0() / 3) / 100), t10, new A.DateTime(Date.now(), 0, false)._addMicroseconds$1(A.Duration$(5, 14, 0, 0, 27, 34)._duration), B.CountDownTimerFormat_0, new A._TicketDetailViewState__buildCountDownTimer_closure(), t1, t9);
+      t9 = A.TimerCountdown$(A.part_r_PartR_raleway$closure().call$2$color$fontSize(B.Color_wst, 15 * ($.SizerUtil___width._readField$0() / 3) / 100), t10, new A.DateTime(Date.now(), 0, false)._addMicroseconds$1(A.Duration$(1, 14, 0, 0, 27, 34)._duration), B.CountDownTimerFormat_0, new A._TicketDetailViewState__buildCountDownTimer_closure(), t1, t9);
       t10 = $.$get$AppSizes_vSize1();
       t11 = A.SizedBox$(_null, t10, _null);
       t12 = A.Divider$(B.Color_wst, 0.2);
@@ -173583,6 +173587,7 @@
   A.AppRoutesConfig_config_closure3.prototype = {
     call$2(context, state) {
       var _null = null;
+      type$.LotteryModel._as(state.extra);
       return A.NoTransitionPage$(_null, new A.TicketDetailView(_null), _null, _null, _null, type$.dynamic);
     },
     $signature: 54
