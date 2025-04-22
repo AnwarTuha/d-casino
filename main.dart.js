@@ -181936,23 +181936,24 @@
       return A.ListView$separated(new A._TicketDetailViewState__buildMyTickets_closure(this), 20, null, null, new A._TicketDetailViewState__buildMyTickets_closure0(), true);
     },
     _buildCountDownTimer$0() {
-      var t7, t8, t9, t10, t11, _null = null,
-        t1 = $.$get$AppSizes_hSize4(),
-        t2 = A.BorderRadius$circular(16),
-        t3 = A._setArrayType([new A.BoxShadow(0, B.BlurStyle_0, A.Color$fromARGB(B.JSNumber_methods.round$0(25.5), B.Color_vnR.toARGB32$0() >>> 16 & 255, B.Color_vnR.toARGB32$0() >>> 8 & 255, B.Color_vnR.toARGB32$0() & 255), new A.Offset(0, 4), 8)], type$.JSArray_BoxShadow),
-        t4 = A.Color$fromARGB(51, B.Color_Gcn.toARGB32$0() >>> 16 & 255, B.Color_Gcn.toARGB32$0() >>> 8 & 255, B.Color_Gcn.toARGB32$0() & 255),
-        t5 = A.Color$fromARGB(51, B.Color_Gcn.toARGB32$0() >>> 16 & 255, B.Color_Gcn.toARGB32$0() >>> 8 & 255, B.Color_Gcn.toARGB32$0() & 255),
-        t6 = B.JSNumber_methods.round$0(127.5);
+      var t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, _this = this, _null = null;
+      A.print(">>>>>>>>>>>>>>>>>>>. " + _this._widget.lotteryModel.drawTime.toString$0(0));
+      t1 = $.$get$AppSizes_hSize4();
+      t2 = A.BorderRadius$circular(16);
+      t3 = A._setArrayType([new A.BoxShadow(0, B.BlurStyle_0, A.Color$fromARGB(B.JSNumber_methods.round$0(25.5), B.Color_vnR.toARGB32$0() >>> 16 & 255, B.Color_vnR.toARGB32$0() >>> 8 & 255, B.Color_vnR.toARGB32$0() & 255), new A.Offset(0, 4), 8)], type$.JSArray_BoxShadow);
+      t4 = A.Color$fromARGB(51, B.Color_Gcn.toARGB32$0() >>> 16 & 255, B.Color_Gcn.toARGB32$0() >>> 8 & 255, B.Color_Gcn.toARGB32$0() & 255);
+      t5 = A.Color$fromARGB(51, B.Color_Gcn.toARGB32$0() >>> 16 & 255, B.Color_Gcn.toARGB32$0() >>> 8 & 255, B.Color_Gcn.toARGB32$0() & 255);
+      t6 = B.JSNumber_methods.round$0(127.5);
       t6 = A._setArrayType([t5, A.Color$fromARGB(t6, B.Color_PBe.toARGB32$0() >>> 16 & 255, B.Color_PBe.toARGB32$0() >>> 8 & 255, B.Color_PBe.toARGB32$0() & 255), A.Color$fromARGB(t6, B.Color_Kln.toARGB32$0() >>> 16 & 255, B.Color_Kln.toARGB32$0() >>> 8 & 255, B.Color_Kln.toARGB32$0() & 255)], type$.JSArray_Color);
       t5 = A.Positioned$(-10, A.Transform$rotate(150, B.AssetGenImage_Kfr.image$2$color$scale(0, A.Color$fromARGB(6, B.Color_wst.toARGB32$0() >>> 16 & 255, B.Color_wst.toARGB32$0() >>> 8 & 255, B.Color_wst.toARGB32$0() & 255), 0.4)), _null, _null, _null, -10, _null, _null);
       t7 = A.Text$("Jackpot", _null, _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_wst, 17 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_2), _null, _null);
       t8 = A.BlocBuilder$(new A._TicketDetailViewState__buildCountDownTimer_closure(), type$.LotteryStatBloc, type$.LotteryStatState);
       t9 = A.part_l_PartL_lato$closure().call$3$color$fontSize$fontWeight(B.Color_wst, 30 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_3);
       t10 = A.part_r_PartR_raleway$closure().call$2$color$fontSize(B.Color_wst, 9 * ($.SizerUtil___width._readField$0() / 3) / 100);
-      t9 = A.TimerCountdown$(A.part_r_PartR_raleway$closure().call$2$color$fontSize(B.Color_wst, 15 * ($.SizerUtil___width._readField$0() / 3) / 100), t10, this._widget.lotteryModel.drawTime, B.CountDownTimerFormat_0, new A._TicketDetailViewState__buildCountDownTimer_closure0(this), t1, t9);
+      t9 = A.TimerCountdown$(A.part_r_PartR_raleway$closure().call$2$color$fontSize(B.Color_wst, 15 * ($.SizerUtil___width._readField$0() / 3) / 100), t10, _this._widget.lotteryModel.drawTime, B.CountDownTimerFormat_0, new A._TicketDetailViewState__buildCountDownTimer_closure0(_this), t1, t9);
       t10 = $.$get$AppSizes_vSize1();
       t11 = type$.JSArray_Widget;
-      return A.Container$(A.Stack$(B.AlignmentDirectional_m1_m1, A._setArrayType([t5, A.Column$(A._setArrayType([t7, t8, t9, A.SizedBox$(_null, t10, _null), A.Divider$(B.Color_wst, 0.2), A.SizedBox$(_null, t10, _null), this._buildLotteryInfo$0()], t11), B.CrossAxisAlignment_2, B.MainAxisAlignment_0, B.MainAxisSize_1)], t11), B.Clip_1, B.StackFit_0, _null), B.Clip_0, _null, new A.BoxDecoration(t4, _null, _null, t2, t3, new A.LinearGradient(B.Alignment_m1_m1, B.Alignment_1_1, B.TileMode_0, t6, _null, _null), B.BoxShape_0), _null, _null, _null, new A.EdgeInsets(t1, t1, t1, t1), 1 / 0);
+      return A.Container$(A.Stack$(B.AlignmentDirectional_m1_m1, A._setArrayType([t5, A.Column$(A._setArrayType([t7, t8, t9, A.SizedBox$(_null, t10, _null), A.Divider$(B.Color_wst, 0.2), A.SizedBox$(_null, t10, _null), _this._buildLotteryInfo$0()], t11), B.CrossAxisAlignment_2, B.MainAxisAlignment_0, B.MainAxisSize_1)], t11), B.Clip_1, B.StackFit_0, _null), B.Clip_0, _null, new A.BoxDecoration(t4, _null, _null, t2, t3, new A.LinearGradient(B.Alignment_m1_m1, B.Alignment_1_1, B.TileMode_0, t6, _null, _null), B.BoxShape_0), _null, _null, _null, new A.EdgeInsets(t1, t1, t1, t1), 1 / 0);
     },
     _buildLotteryInfo$0() {
       var _null = null,
