@@ -172503,7 +172503,7 @@
               // returning from await.
               response = $async$result;
               if (response.data != null) {
-                A.print(">>>>>>>>>>>>>>>>>>>> " + A.S(J.$index$asx(response.data, 0)));
+                A.print(">>>>>>>>>>>>>>>>>>>> NEW RESPONSE " + A.S(J.$index$asx(response.data, 0)));
                 t1 = response.data;
                 t1.toString;
                 lotteryModel = A.LotteryModel_LotteryModel$fromJson(J.$index$asx(J.$index$asx(t1, 0), "lottery"));
