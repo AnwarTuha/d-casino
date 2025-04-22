@@ -179031,7 +179031,6 @@
   A._ActiveTicketsState_build_closure.prototype = {
     call$2(context, state) {
       var myTickets, t1, t2, _null = null;
-      A.print(">>>>>>>>>>>>>>>>>>>>>>>>>>>> " + state.toString$0(0));
       if (state instanceof A.MyTicketsLoading)
         return A.Center$(A.CircularProgressIndicator$(_null, _null, _null), _null, _null);
       else if (state instanceof A.MyTicketsError)
@@ -179326,7 +179325,7 @@
       var t5, t6, _null = null,
         t1 = A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_wst, 14 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_6),
         t2 = A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_wst, 14 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_3),
-        t3 = A.Lottie_asset("assets/lottie/close.json", B.BoxFit_2),
+        t3 = A.Lottie_asset("assets/lottie/close.json", B.BoxFit_1),
         t4 = this._framework$_element;
       t4.toString;
       t5 = A.BorderRadius$circular(12);
@@ -179346,16 +179345,15 @@
   };
   A._TicketDetailViewState__buildMyTickets_closure.prototype = {
     call$2(context, state) {
-      var myTickets, t1, t2, _null = null;
+      var myTickets, t1, _null = null;
       if (state instanceof A.MyTicketsLoading)
         return A.Center$(A.CircularProgressIndicator$(_null, _null, _null), _null, _null);
       else if (state instanceof A.MyTicketsError)
         return A.Center$(A.Text$(state.error, _null, _null, _null, _null, _null, _null), _null, _null);
       else if (state instanceof A.MyTicketsLoaded) {
         myTickets = state.myTickets;
-        t1 = $.$get$AppSizes_hSize4();
-        t2 = $.$get$AppSizes_vSize2();
-        return A.ListView$separated(new A._TicketDetailViewState__buildMyTickets__closure(this.$this, myTickets), myTickets.length, new A.EdgeInsets(t1, t2, t1, t2), _null, new A._TicketDetailViewState__buildMyTickets__closure0(), true);
+        t1 = $.$get$AppSizes_vSize2();
+        return A.ListView$separated(new A._TicketDetailViewState__buildMyTickets__closure(this.$this, myTickets), myTickets.length, new A.EdgeInsets(0, t1, 0, t1), _null, new A._TicketDetailViewState__buildMyTickets__closure0(), true);
       }
       return A.SizedBox$(_null, _null, _null);
     },
@@ -179485,13 +179483,13 @@
       t4.toString;
       t5 = A.BorderRadius$circular(12);
       t6 = $.$get$AppSizes_vSize2() * 0.8;
-      return A.Dialogs_materialDialog(A._setArrayType([A.GestureDetector$(_null, A.Container$(A.Center$(A.Text$("Continue", _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_wst, 14 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_6), _null, _null), _null, _null), B.Clip_0, _null, new A.BoxDecoration(B.Color_Gcn, _null, _null, t5, _null, _null, B.BoxShape_0), _null, _null, _null, new A.EdgeInsets(0, t6, 0, t6), _null), B.DragStartBehavior_1, false, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, new A._TenSecCountdownState__buildWinnerDialog_closure(this), _null, _null, _null, _null, _null, _null)], type$.JSArray_Widget), B.Color_Kln, t4, B.CustomViewPosition_1, t3, "Congratulations, you won " + prize + " birr.\nYour winnings are automatically deposited to your wallet.", B.TextAlign_2, t2, "Winner - " + prize, B.TextAlign_2, t1);
+      return A.Dialogs_materialDialog(A._setArrayType([A.GestureDetector$(_null, A.Container$(A.Center$(A.Text$("Continue", _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_wst, 14 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_6), _null, _null), _null, _null), B.Clip_0, _null, new A.BoxDecoration(B.Color_Gcn, _null, _null, t5, _null, _null, B.BoxShape_0), _null, _null, _null, new A.EdgeInsets(0, t6, 0, t6), _null), B.DragStartBehavior_1, false, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, new A._TenSecCountdownState__buildWinnerDialog_closure(this), _null, _null, _null, _null, _null, _null)], type$.JSArray_Widget), B.Color_Kln, t4, B.CustomViewPosition_1, t3, "Congratulations, you won " + prize + " birr.\nYour winnings are automatically deposited to your wallet.", B.TextAlign_2, t2, "You've won " + prize + " birr", B.TextAlign_2, t1);
     },
     _ten_sec_countdown$_buildLoserDialog$0() {
       var t5, t6, _null = null,
         t1 = A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_wst, 14 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_6),
         t2 = A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_wst, 14 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_3),
-        t3 = A.Lottie_asset("assets/lottie/close.json", B.BoxFit_2),
+        t3 = A.Lottie_asset("assets/lottie/close.json", B.BoxFit_1),
         t4 = this._framework$_element;
       t4.toString;
       t5 = A.BorderRadius$circular(12);
