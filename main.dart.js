@@ -181949,7 +181949,7 @@
       t8 = A.BlocBuilder$(new A._TicketDetailViewState__buildCountDownTimer_closure(), type$.LotteryStatBloc, type$.LotteryStatState);
       t9 = A.part_l_PartL_lato$closure().call$3$color$fontSize$fontWeight(B.Color_wst, 30 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_3);
       t10 = A.part_r_PartR_raleway$closure().call$2$color$fontSize(B.Color_wst, 9 * ($.SizerUtil___width._readField$0() / 3) / 100);
-      t9 = A.TimerCountdown$(A.part_r_PartR_raleway$closure().call$2$color$fontSize(B.Color_wst, 15 * ($.SizerUtil___width._readField$0() / 3) / 100), t10, A.DateTime_parse("2025-04-23T10:27:10.633Z"), B.CountDownTimerFormat_0, new A._TicketDetailViewState__buildCountDownTimer_closure0(this), t1, t9);
+      t9 = A.TimerCountdown$(A.part_r_PartR_raleway$closure().call$2$color$fontSize(B.Color_wst, 15 * ($.SizerUtil___width._readField$0() / 3) / 100), t10, A.DateTime_parse("2025-04-22T10:11:50.054Z"), B.CountDownTimerFormat_0, new A._TicketDetailViewState__buildCountDownTimer_closure0(this), t1, t9);
       t10 = $.$get$AppSizes_vSize1();
       t11 = type$.JSArray_Widget;
       return A.Container$(A.Stack$(B.AlignmentDirectional_m1_m1, A._setArrayType([t5, A.Column$(A._setArrayType([t7, t8, t9, A.SizedBox$(_null, t10, _null), A.Divider$(B.Color_wst, 0.2), A.SizedBox$(_null, t10, _null), this._buildLotteryInfo$0()], t11), B.CrossAxisAlignment_2, B.MainAxisAlignment_0, B.MainAxisSize_1)], t11), B.Clip_1, B.StackFit_0, _null), B.Clip_0, _null, new A.BoxDecoration(t4, _null, _null, t2, t3, new A.LinearGradient(B.Alignment_m1_m1, B.Alignment_1_1, B.TileMode_0, t6, _null, _null), B.BoxShape_0), _null, _null, _null, new A.EdgeInsets(t1, t1, t1, t1), 1 / 0);
