@@ -181922,6 +181922,9 @@
   A._TicketDetailViewState.prototype = {
     initState$0() {
       this.super$State$initState();
+      var t1 = this._framework$_element;
+      t1.toString;
+      J.add$1$ax(A.Provider_of(t1, false, type$.LotteryStatBloc), new A.LotteryStatFetchEvent(this._widget.lotteryModel.id));
     },
     build$1(context) {
       var _null = null,
@@ -181956,7 +181959,7 @@
         t1 = A.Icon$(B.IconData_59087_MaterialIcons_null_false, B.Color_wst, _null, 20),
         t2 = $.$get$AppSizes_hSize2(),
         t3 = type$.JSArray_Widget;
-      return A.Row$(A._setArrayType([A.Row$(A._setArrayType([t1, A.SizedBox$(_null, _null, t2), A.Text$("Ticket", _null, _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_wst, 10 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_2), _null, _null)], t3), B.CrossAxisAlignment_2, B.MainAxisAlignment_0, B.MainAxisSize_1), A.Row$(A._setArrayType([A.Icon$(B.IconData_58498_MaterialIcons_null_false, B.Color_wst, _null, 20), A.SizedBox$(_null, _null, t2), A.BlocBuilder$(new A._TicketDetailViewState__buildLotteryInfo_closure(), type$.LotteryStatBloc, type$.LotteryStatState)], t3), B.CrossAxisAlignment_2, B.MainAxisAlignment_0, B.MainAxisSize_1)], t3), B.CrossAxisAlignment_2, B.MainAxisAlignment_4, B.MainAxisSize_1);
+      return A.Row$(A._setArrayType([A.Row$(A._setArrayType([t1, A.SizedBox$(_null, _null, t2), A.Text$(this._widget.lotteryModel.lotteryTypeModel.name + " ticket", _null, _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_wst, 10 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_2), _null, _null)], t3), B.CrossAxisAlignment_2, B.MainAxisAlignment_0, B.MainAxisSize_1), A.Row$(A._setArrayType([A.Icon$(B.IconData_58498_MaterialIcons_null_false, B.Color_wst, _null, 20), A.SizedBox$(_null, _null, t2), A.BlocBuilder$(new A._TicketDetailViewState__buildLotteryInfo_closure(), type$.LotteryStatBloc, type$.LotteryStatState)], t3), B.CrossAxisAlignment_2, B.MainAxisAlignment_0, B.MainAxisSize_1)], t3), B.CrossAxisAlignment_2, B.MainAxisAlignment_4, B.MainAxisSize_1);
     }
   };
   A._TicketDetailViewState__buildMyTickets_closure.prototype = {
