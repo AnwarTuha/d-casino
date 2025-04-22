@@ -172503,10 +172503,10 @@
               // returning from await.
               response = $async$result;
               if (response.data != null) {
-                A.print(">>>>>>>>>>>>>>>>>>>> " + A.S(response.data));
+                A.print(">>>>>>>>>>>>>>>>>>>> " + A.S(J.$index$asx(response.data, 0)));
                 t1 = response.data;
                 t1.toString;
-                lotteryModel = A.LotteryModel_LotteryModel$fromJson(J.$index$asx(t1, "lottery"));
+                lotteryModel = A.LotteryModel_LotteryModel$fromJson(J.$index$asx(J.$index$asx(t1, 0), "lottery"));
                 if (!emit._isCanceled)
                   emit._emit.call$1(new A.PurchaseSuccess());
               } else if (!emit._isCanceled)
