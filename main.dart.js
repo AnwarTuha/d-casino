@@ -46075,7 +46075,8 @@
     },
     PurchaseLoading: function PurchaseLoading() {
     },
-    PurchaseSuccess: function PurchaseSuccess() {
+    PurchaseSuccess: function PurchaseSuccess(t0) {
+      this.lotteryModel = t0;
     },
     PurchaseError: function PurchaseError() {
     },
@@ -172503,12 +172504,11 @@
               // returning from await.
               response = $async$result;
               if (response.data != null) {
-                A.print(">>>>>>>>>>>>>>>>>>>> NEW RESPONSE " + A.S(J.$index$asx(response.data, 0)));
                 t1 = response.data;
                 t1.toString;
                 lotteryModel = A.LotteryModel_LotteryModel$fromJson(J.$index$asx(J.$index$asx(t1, 0), "lottery"));
                 if (!emit._isCanceled)
-                  emit._emit.call$1(new A.PurchaseSuccess());
+                  emit._emit.call$1(new A.PurchaseSuccess(lotteryModel));
               } else if (!emit._isCanceled)
                 emit._emit.call$1(new A.PurchaseError());
               $async$handler = 1;
@@ -172802,7 +172802,7 @@
         t1 === $ && A.throwUnnamedLateFieldNI();
         t1.pop$1(_null);
         context.dependOnInheritedWidgetOfExactType$1$0(type$._ScaffoldMessengerScope)._scaffoldMessengerState.showSnackBar$1(A.SnackBar$(_null, _null, _null, B.Color_Gcn, _null, B.Clip_1, _null, A.Text$("You've successfully purchased " + B.JSString_methods.trim$0(this.$this.countController._change_notifier$_value.text) + " tickets", _null, _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_wst, 14 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_5), _null, _null), _null, B.Duration_4000000, _null, _null, _null, _null, _null, _null, _null, _null, _null));
-        A.GoRouter_maybeOf(context).push$1$2$extra("/ticket-detail", _null, type$.nullable_Object);
+        A.GoRouter_maybeOf(context).push$1$2$extra("/ticket-detail", state.lotteryModel, type$.nullable_Object);
       }
     },
     $signature: 626
