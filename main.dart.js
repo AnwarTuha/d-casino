@@ -181936,8 +181936,11 @@
       return A.ListView$separated(new A._TicketDetailViewState__buildMyTickets_closure(this), 20, null, null, new A._TicketDetailViewState__buildMyTickets_closure0(), true);
     },
     _buildCountDownTimer$0() {
-      var t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, _this = this, _null = null;
-      A.print(">>>>>>>>>>>>>>>>>>>. " + _this._widget.lotteryModel.drawTime.toString$0(0));
+      var t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, _this = this,
+        _s21_ = ">>>>>>>>>>>>>>>>>>>. ",
+        _null = null;
+      A.print(_s21_ + _this._widget.lotteryModel.drawTime.toString$0(0));
+      A.print(_s21_ + _this._widget.lotteryModel.id);
       t1 = $.$get$AppSizes_hSize4();
       t2 = A.BorderRadius$circular(16);
       t3 = A._setArrayType([new A.BoxShadow(0, B.BlurStyle_0, A.Color$fromARGB(B.JSNumber_methods.round$0(25.5), B.Color_vnR.toARGB32$0() >>> 16 & 255, B.Color_vnR.toARGB32$0() >>> 8 & 255, B.Color_vnR.toARGB32$0() & 255), new A.Offset(0, 4), 8)], type$.JSArray_BoxShadow);
