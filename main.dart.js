@@ -45968,8 +45968,9 @@
     },
     LotteryStatEvent: function LotteryStatEvent() {
     },
-    LotteryStatFetchEvent: function LotteryStatFetchEvent(t0) {
+    LotteryStatFetchEvent: function LotteryStatFetchEvent(t0, t1) {
       this.lotteryId = t0;
+      this.isRefreshing = t1;
     },
     LotteryStatState: function LotteryStatState() {
     },
@@ -178278,8 +178279,9 @@
           switch ($async$goto) {
             case 0:
               // Function start
-              if (!emit._isCanceled)
-                emit._emit.call$1(new A.LotteryStatLoading());
+              if (!$event.isRefreshing)
+                if (!emit._isCanceled)
+                  emit._emit.call$1(new A.LotteryStatLoading());
               $async$handler = 3;
               $async$goto = 6;
               return A._asyncAwait($async$self.$this.lotteryDetailApiServices.getLotteryStats$1$lotteryId($event.lotteryId), $async$call$2);
@@ -178480,7 +178482,7 @@
       t1.onClick$1(0, new A._LotteryDetailViewState_initState_closure(_this));
       t1 = _this._framework$_element;
       t1.toString;
-      J.add$1$ax(A.Provider_of(t1, false, type$.LotteryStatBloc), new A.LotteryStatFetchEvent(_this._widget.lotteryModel.id));
+      J.add$1$ax(A.Provider_of(t1, false, type$.LotteryStatBloc), new A.LotteryStatFetchEvent(_this._widget.lotteryModel.id, false));
       _this._lottery_detail_view$_lotteryStatTimer = A.Timer_Timer$periodic(A.Duration$(0, 0, 3), new A._LotteryDetailViewState_initState_closure0(_this));
       _this.super$State$initState();
     },
@@ -178533,7 +178535,7 @@
       var t1 = this.$this,
         t2 = t1._framework$_element;
       t2.toString;
-      J.add$1$ax(A.Provider_of(t2, false, type$.LotteryStatBloc), new A.LotteryStatFetchEvent(t1._widget.lotteryModel.id));
+      J.add$1$ax(A.Provider_of(t2, false, type$.LotteryStatBloc), new A.LotteryStatFetchEvent(t1._widget.lotteryModel.id, true));
     },
     $signature: 58
   };
@@ -179341,7 +179343,7 @@
       _this.super$State$initState();
       t1 = _this._framework$_element;
       t1.toString;
-      J.add$1$ax(A.Provider_of(t1, false, type$.LotteryStatBloc), new A.LotteryStatFetchEvent(_this._widget.lotteryModel.id));
+      J.add$1$ax(A.Provider_of(t1, false, type$.LotteryStatBloc), new A.LotteryStatFetchEvent(_this._widget.lotteryModel.id, false));
       _this._lotteryStatTimer = A.Timer_Timer$periodic(A.Duration$(0, 0, 3), new A._TicketDetailViewState_initState_closure0(_this));
       t1 = _this._framework$_element;
       t1.toString;
@@ -179423,7 +179425,7 @@
       var t1 = this.$this,
         t2 = t1._framework$_element;
       t2.toString;
-      J.add$1$ax(A.Provider_of(t2, false, type$.LotteryStatBloc), new A.LotteryStatFetchEvent(t1._widget.lotteryModel.id));
+      J.add$1$ax(A.Provider_of(t2, false, type$.LotteryStatBloc), new A.LotteryStatFetchEvent(t1._widget.lotteryModel.id, true));
     },
     $signature: 58
   };
