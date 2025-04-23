@@ -178618,18 +178618,19 @@
     call$1(context) {
       var _null = null,
         t1 = type$.AuthBloc,
-        t2 = type$.PurchaseBloc,
-        t3 = type$.ChoosePriceCubit,
-        t4 = type$.LotteryBloc;
-      t4 = A._setArrayType([A.BlocProvider$value(_null, A.Provider_of(context, false, t1), t1), A.BlocProvider$value(_null, A.Provider_of(context, false, t2), t2), A.BlocProvider$value(_null, A.Provider_of(context, false, t3), t3), A.BlocProvider$value(_null, A.Provider_of(context, false, t4), t4)], type$.JSArray_SingleChildWidget);
-      return A.MultiBlocProvider$(new A.TicketPurchaseDialog(this.$this._widget.lotteryModel, _null), t4);
+        t2 = type$.WalletBloc,
+        t3 = type$.PurchaseBloc,
+        t4 = type$.ChoosePriceCubit,
+        t5 = type$.LotteryBloc;
+      t5 = A._setArrayType([A.BlocProvider$value(_null, A.Provider_of(context, false, t1), t1), A.BlocProvider$value(_null, A.Provider_of(context, false, t2), t2), A.BlocProvider$value(_null, A.Provider_of(context, false, t3), t3), A.BlocProvider$value(_null, A.Provider_of(context, false, t4), t4), A.BlocProvider$value(_null, A.Provider_of(context, false, t5), t5)], type$.JSArray_SingleChildWidget);
+      return A.MultiBlocProvider$(new A.TicketPurchaseDialog(this.$this._widget.lotteryModel, _null), t5);
     },
     $signature: 620
   };
   A._PurchaseWidgetState__buildPreviousWinners_closure.prototype = {
     call$2(context, index) {
       var _null = null;
-      return A.Container$(A.Row$(A._setArrayType([A.Text$("+2519****5760", _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_wst, 15 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_4), _null, _null), A.Text$("ETB 100,000", _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_wst, 15 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_4), _null, _null)], type$.JSArray_Widget), B.CrossAxisAlignment_2, B.MainAxisAlignment_3, B.MainAxisSize_1), B.Clip_0, _null, _null, _null, _null, _null, _null, _null);
+      return A.Container$(A.Row$(A._setArrayType([A.Text$("+2519****5760", _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_wst, 14 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_3), _null, _null), A.Text$("ETB 100,000", _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_wst, 14 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_3), _null, _null)], type$.JSArray_Widget), B.CrossAxisAlignment_2, B.MainAxisAlignment_3, B.MainAxisSize_1), B.Clip_0, _null, _null, _null, _null, _null, _null, _null);
     },
     $signature: 621
   };
@@ -178714,12 +178715,19 @@
   };
   A._TicketPurchaseDialogState_build_closure1.prototype = {
     call$0() {
-      var t3,
-        t1 = this.$this,
-        t2 = t1._widget.lotteryModel;
-      t1 = A.int_parse(B.JSString_methods.trim$0(t1.countController._change_notifier$_value.text), null);
-      t3 = this.context;
-      J.add$1$ax(A.Provider_of(t3, false, type$.PurchaseBloc), new A.Purchase(new A.PurchaseRequestModel(t2.id, t1), J.$index$asx(type$.AuthDone._as(A.Provider_of(t3, false, type$.AuthBloc)._bloc$_state).userData, "token")));
+      var _null = null,
+        t1 = this.context,
+        t2 = type$.WalletLoaded._as(A.Provider_of(t1, false, type$.WalletBloc)._bloc$_state),
+        t3 = this.$this,
+        t4 = t3.___TicketPurchaseDialogState_totalPayed_A;
+      t4 === $ && A.throwUnnamedLateFieldNI();
+      if (t2.walletResponseModel.balance < A.int_parse(t4, _null))
+        t1.dependOnInheritedWidgetOfExactType$1$0(type$._ScaffoldMessengerScope)._scaffoldMessengerState.showSnackBar$1(A.SnackBar$(_null, _null, _null, B.Color_7zx, _null, B.Clip_1, _null, A.Text$("You don't have enough balance", _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_wst, 14 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_5), _null, _null), _null, B.Duration_4000000, _null, _null, _null, _null, _null, _null, _null, _null, _null));
+      else {
+        t2 = t3._widget.lotteryModel;
+        t3 = A.int_parse(B.JSString_methods.trim$0(t3.countController._change_notifier$_value.text), _null);
+        J.add$1$ax(A.Provider_of(t1, false, type$.PurchaseBloc), new A.Purchase(new A.PurchaseRequestModel(t2.id, t3), J.$index$asx(type$.AuthDone._as(A.Provider_of(t1, false, type$.AuthBloc)._bloc$_state).userData, "token")));
+      }
     },
     $signature: 0
   };
