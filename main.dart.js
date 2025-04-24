@@ -46398,7 +46398,7 @@
     },
     _TenSecCountdownState: function _TenSecCountdownState() {
       var _ = this;
-      _._secondsRemaining = 5;
+      _._secondsRemaining = 10;
       _._percent = 1;
       _._framework$_element = _._widget = null;
     },
