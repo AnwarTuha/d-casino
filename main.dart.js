@@ -46396,7 +46396,7 @@
     },
     _TenSecCountdownState: function _TenSecCountdownState() {
       var _ = this;
-      _._secondsRemaining = 10;
+      _._secondsRemaining = 5;
       _._percent = 1;
       _._framework$_element = _._widget = null;
     },
@@ -180266,7 +180266,7 @@
   };
   A._WithdrawDialogState_build__closure.prototype = {
     call$1(context) {
-      return new A.CustomDialog("Withdraw request sent", "Your withdraw request is under review", "Continue", new A._WithdrawDialogState_build___closure(context), null);
+      return new A.CustomDialog("Withdraw request sent", "Your withdraw request is under review. This will take 4-8 hours to review", "Continue", new A._WithdrawDialogState_build___closure(context), null);
     },
     $signature: 124
   };
