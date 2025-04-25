@@ -179905,24 +179905,34 @@
   };
   A.TransactionItem.prototype = {
     build$1(context) {
-      var t8, _null = null,
+      var t9, t10, t11, _null = null,
         t1 = A.BorderRadius$circular(16),
         t2 = A._setArrayType([new A.BoxShadow(0, B.BlurStyle_0, A.Color$fromARGB(B.JSNumber_methods.round$0(25.5), B.Color_vnR.toARGB32$0() >>> 16 & 255, B.Color_vnR.toARGB32$0() >>> 8 & 255, B.Color_vnR.toARGB32$0() & 255), new A.Offset(0, 4), 8)], type$.JSArray_BoxShadow),
         t3 = A._setArrayType([B.Color_Gcn, B.Color_PBe, B.Color_Kln], type$.JSArray_Color),
         t4 = 6 * $.SizerUtil___width._readField$0() / 100,
         t5 = 3 * $.SizerUtil___width._readField$0() / 100,
         t6 = this.transactionHistoryResponse,
-        t7 = t6.type;
-      if (t7 === B.TransactionType_2)
-        t7 = "Ticket Purchase";
+        t7 = t6.type,
+        t8 = t7 === B.TransactionType_2;
+      if (t8)
+        t9 = "Ticket Purchase";
       else if (t7 === B.TransactionType_0)
-        t7 = "Deposit";
+        t9 = "Deposit";
       else
-        t7 = t7 === B.TransactionType_3 ? "Prize Deposit" : "Withdraw";
-      t7 = A.Text$(t7, _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_wst, 16 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_5), _null, _null);
-      t8 = type$.JSArray_Widget;
-      t7 = A.Column$(A._setArrayType([t7, A.Text$("Withdrawn balance", _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight($.$get$AppColors_white70(), 14 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_3), _null, _null), A.SizedBox$(_null, $.$get$AppSizes_hSize1(), _null), A.Text$(A.DateFormat$("dd MMM yyyy").format$1(t6.createdAt), _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight($.$get$AppColors_white70(), 12 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_3), _null, _null)], t8), B.CrossAxisAlignment_0, B.MainAxisAlignment_0, B.MainAxisSize_1);
-      return A.Container$(A.Row$(A._setArrayType([t7, A.Text$("+ " + t6.amount, _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.MaterialColor_vIZ, 16 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_4), _null, _null)], t8), B.CrossAxisAlignment_2, B.MainAxisAlignment_3, B.MainAxisSize_1), B.Clip_0, _null, new A.BoxDecoration(_null, _null, _null, t1, t2, new A.LinearGradient(B.Alignment_m1_m1, B.Alignment_1_1, B.TileMode_0, t3, _null, _null), B.BoxShape_0), _null, _null, _null, new A.EdgeInsets(t4, t5, t4, t5), _null);
+        t9 = t7 === B.TransactionType_3 ? "Prize Deposit" : "Withdraw";
+      t9 = A.Text$(t9, _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_wst, 16 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_5), _null, _null);
+      if (t8)
+        t10 = "Purchased ticket on";
+      else if (t7 === B.TransactionType_0)
+        t10 = "Deposit approved on";
+      else
+        t10 = t7 === B.TransactionType_3 ? "Prize deposited on" : "Withdrawn from balance";
+      t11 = type$.JSArray_Widget;
+      t10 = A.Column$(A._setArrayType([t9, A.Text$(t10, _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight($.$get$AppColors_white70(), 14 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_3), _null, _null), A.SizedBox$(_null, $.$get$AppSizes_hSize1(), _null), A.Text$(A.DateFormat$("dd MMM yyyy").format$1(t6.createdAt), _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight($.$get$AppColors_white70(), 12 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_3), _null, _null)], t11), B.CrossAxisAlignment_0, B.MainAxisAlignment_0, B.MainAxisSize_1);
+      t7 = t7 !== B.TransactionType_1;
+      t9 = !t7 || t8 ? "-" : "+";
+      t7 = !t7 || t8 ? B.MaterialColor_nI1 : B.MaterialColor_vIZ;
+      return A.Container$(A.Row$(A._setArrayType([t10, A.Text$(t9 + " " + t6.amount, _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(t7, 16 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_4), _null, _null)], t11), B.CrossAxisAlignment_2, B.MainAxisAlignment_3, B.MainAxisSize_1), B.Clip_0, _null, new A.BoxDecoration(_null, _null, _null, t1, t2, new A.LinearGradient(B.Alignment_m1_m1, B.Alignment_1_1, B.TileMode_0, t3, _null, _null), B.BoxShape_0), _null, _null, _null, new A.EdgeInsets(t4, t5, t4, t5), _null);
     }
   };
   A.TransactionList.prototype = {
@@ -196645,6 +196655,17 @@
     B.Color_Y71 = new A.Color(1, 0.050980392156862744, 0.2784313725490196, 0.6313725490196078, B.ColorSpace_0);
     B.Map_tFOkc = new A.GeneralConstantMap([50, B.Color_7NB, 100, B.Color_kQ5, 200, B.Color_Qsv, 300, B.Color_DU0, 400, B.Color_NRO, 500, B.Color_Mqd, 600, B.Color_ZRq, 700, B.Color_mQg, 800, B.Color_vNy, 900, B.Color_Y71], type$.GeneralConstantMap_int_Color);
     B.MaterialColor_45F = new A.MaterialColor(B.Map_tFOkc, 1, 0.12941176470588237, 0.5882352941176471, 0.9529411764705882, B.ColorSpace_0);
+    B.Color_fPm = new A.Color(1, 1, 0.9215686274509803, 0.9333333333333333, B.ColorSpace_0);
+    B.Color_IlO = new A.Color(1, 1, 0.803921568627451, 0.8235294117647058, B.ColorSpace_0);
+    B.Color_8jS = new A.Color(1, 0.9372549019607843, 0.6039215686274509, 0.6039215686274509, B.ColorSpace_0);
+    B.Color_tSx = new A.Color(1, 0.8980392156862745, 0.45098039215686275, 0.45098039215686275, B.ColorSpace_0);
+    B.Color_yso = new A.Color(1, 0.9372549019607843, 0.3254901960784314, 0.3137254901960784, B.ColorSpace_0);
+    B.Color_qmq = new A.Color(1, 0.9568627450980393, 0.2627450980392157, 0.21176470588235294, B.ColorSpace_0);
+    B.Color_ZpV = new A.Color(1, 0.8980392156862745, 0.2235294117647059, 0.20784313725490197, B.ColorSpace_0);
+    B.Color_fGa = new A.Color(1, 0.7764705882352941, 0.1568627450980392, 0.1568627450980392, B.ColorSpace_0);
+    B.Color_kOT = new A.Color(1, 0.7176470588235294, 0.10980392156862745, 0.10980392156862745, B.ColorSpace_0);
+    B.Map_tFKwC = new A.GeneralConstantMap([50, B.Color_fPm, 100, B.Color_IlO, 200, B.Color_8jS, 300, B.Color_tSx, 400, B.Color_yso, 500, B.Color_qmq, 600, B.Color_ZpV, 700, B.Color_D1Q, 800, B.Color_fGa, 900, B.Color_kOT], type$.GeneralConstantMap_int_Color);
+    B.MaterialColor_nI1 = new A.MaterialColor(B.Map_tFKwC, 1, 0.9568627450980393, 0.2627450980392157, 0.21176470588235294, B.ColorSpace_0);
     B.Color_vv0 = new A.Color(1, 0.9098039215686274, 0.9607843137254902, 0.9137254901960784, B.ColorSpace_0);
     B.Color_EjK = new A.Color(1, 0.7843137254901961, 0.9019607843137255, 0.788235294117647, B.ColorSpace_0);
     B.Color_nGS = new A.Color(1, 0.6470588235294118, 0.8392156862745098, 0.6549019607843137, B.ColorSpace_0);
