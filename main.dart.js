@@ -46424,7 +46424,7 @@
       var t2, t3,
         t1 = J.getInterceptor$asx(json);
       t1.$index(json, "id");
-      t2 = B.JSArray_methods.firstWhere$2$orElse(B.List_07d, new A.TransactionHistoryResponse_TransactionHistoryResponse$fromJson_closure(json), new A.TransactionHistoryResponse_TransactionHistoryResponse$fromJson_closure0());
+      t2 = B.JSArray_methods.firstWhere$2$orElse(B.List_eG3, new A.TransactionHistoryResponse_TransactionHistoryResponse$fromJson_closure(json), new A.TransactionHistoryResponse_TransactionHistoryResponse$fromJson_closure0());
       t3 = J.toString$0$(t1.$index(json, "amount"));
       t1.$index(json, "reference");
       return new A.TransactionHistoryResponse(t2, t3, A.DateTime_parse(t1.$index(json, "createdAt")));
@@ -179905,17 +179905,24 @@
   };
   A.TransactionItem.prototype = {
     build$1(context) {
-      var _null = null,
+      var t8, _null = null,
         t1 = A.BorderRadius$circular(16),
         t2 = A._setArrayType([new A.BoxShadow(0, B.BlurStyle_0, A.Color$fromARGB(B.JSNumber_methods.round$0(25.5), B.Color_vnR.toARGB32$0() >>> 16 & 255, B.Color_vnR.toARGB32$0() >>> 8 & 255, B.Color_vnR.toARGB32$0() & 255), new A.Offset(0, 4), 8)], type$.JSArray_BoxShadow),
         t3 = A._setArrayType([B.Color_Gcn, B.Color_PBe, B.Color_Kln], type$.JSArray_Color),
         t4 = 6 * $.SizerUtil___width._readField$0() / 100,
         t5 = 3 * $.SizerUtil___width._readField$0() / 100,
-        t6 = A.Text$("Withdraw", _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_wst, 16 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_5), _null, _null),
-        t7 = this.transactionHistoryResponse,
-        t8 = type$.JSArray_Widget;
-      t6 = A.Column$(A._setArrayType([t6, A.Text$("Withdrawn balance", _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight($.$get$AppColors_white70(), 14 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_3), _null, _null), A.SizedBox$(_null, $.$get$AppSizes_hSize1(), _null), A.Text$(A.DateFormat$("dd MMM yyyy").format$1(t7.createdAt), _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight($.$get$AppColors_white70(), 12 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_3), _null, _null)], t8), B.CrossAxisAlignment_0, B.MainAxisAlignment_0, B.MainAxisSize_1);
-      return A.Container$(A.Row$(A._setArrayType([t6, A.Text$("+ " + t7.amount, _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.MaterialColor_vIZ, 16 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_4), _null, _null)], t8), B.CrossAxisAlignment_2, B.MainAxisAlignment_3, B.MainAxisSize_1), B.Clip_0, _null, new A.BoxDecoration(_null, _null, _null, t1, t2, new A.LinearGradient(B.Alignment_m1_m1, B.Alignment_1_1, B.TileMode_0, t3, _null, _null), B.BoxShape_0), _null, _null, _null, new A.EdgeInsets(t4, t5, t4, t5), _null);
+        t6 = this.transactionHistoryResponse,
+        t7 = t6.type;
+      if (t7 === B.TransactionType_2)
+        t7 = "Ticket Purchase";
+      else if (t7 === B.TransactionType_0)
+        t7 = "Deposit";
+      else
+        t7 = t7 === B.TransactionType_3 ? "Prize Deposit" : "Withdraw";
+      t7 = A.Text$(t7, _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_wst, 16 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_5), _null, _null);
+      t8 = type$.JSArray_Widget;
+      t7 = A.Column$(A._setArrayType([t7, A.Text$("Withdrawn balance", _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight($.$get$AppColors_white70(), 14 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_3), _null, _null), A.SizedBox$(_null, $.$get$AppSizes_hSize1(), _null), A.Text$(A.DateFormat$("dd MMM yyyy").format$1(t6.createdAt), _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight($.$get$AppColors_white70(), 12 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_3), _null, _null)], t8), B.CrossAxisAlignment_0, B.MainAxisAlignment_0, B.MainAxisSize_1);
+      return A.Container$(A.Row$(A._setArrayType([t7, A.Text$("+ " + t6.amount, _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.MaterialColor_vIZ, 16 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_4), _null, _null)], t8), B.CrossAxisAlignment_2, B.MainAxisAlignment_3, B.MainAxisSize_1), B.Clip_0, _null, new A.BoxDecoration(_null, _null, _null, t1, t2, new A.LinearGradient(B.Alignment_m1_m1, B.Alignment_1_1, B.TileMode_0, t3, _null, _null), B.BoxShape_0), _null, _null, _null, new A.EdgeInsets(t4, t5, t4, t5), _null);
     }
   };
   A.TransactionList.prototype = {
@@ -195486,10 +195493,6 @@
     B.ListFormat_5 = new A.ListFormat(5, "multiCompatible");
     B.ListTileThemeData_bIp = new A.ListTileThemeData(null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
     B.List_04A = A._setArrayType(makeConstList([82, 9, 106, 213, 48, 54, 165, 56, 191, 64, 163, 158, 129, 243, 215, 251, 124, 227, 57, 130, 155, 47, 255, 135, 52, 142, 67, 68, 196, 222, 233, 203, 84, 123, 148, 50, 166, 194, 35, 61, 238, 76, 149, 11, 66, 250, 195, 78, 8, 46, 161, 102, 40, 217, 36, 178, 118, 91, 162, 73, 109, 139, 209, 37, 114, 248, 246, 100, 134, 104, 152, 22, 212, 164, 92, 204, 93, 101, 182, 146, 108, 112, 72, 80, 253, 237, 185, 218, 94, 21, 70, 87, 167, 141, 157, 132, 144, 216, 171, 0, 140, 188, 211, 10, 247, 228, 88, 5, 184, 179, 69, 6, 208, 44, 30, 143, 202, 63, 15, 2, 193, 175, 189, 3, 1, 19, 138, 107, 58, 145, 17, 65, 79, 103, 220, 234, 151, 242, 207, 206, 240, 180, 230, 115, 150, 172, 116, 34, 231, 173, 53, 133, 226, 249, 55, 232, 28, 117, 223, 110, 71, 241, 26, 113, 29, 41, 197, 137, 111, 183, 98, 14, 170, 24, 190, 27, 252, 86, 62, 75, 198, 210, 121, 32, 154, 219, 192, 254, 120, 205, 90, 244, 31, 221, 168, 51, 136, 7, 199, 49, 177, 18, 16, 89, 39, 128, 236, 95, 96, 81, 127, 169, 25, 181, 74, 13, 45, 229, 122, 159, 147, 201, 156, 239, 160, 224, 59, 77, 174, 42, 245, 176, 200, 235, 187, 60, 131, 83, 153, 97, 23, 43, 4, 126, 186, 119, 214, 38, 225, 105, 20, 99, 85, 33, 12, 125]), type$.JSArray_int);
-    B.TransactionType_0 = new A.TransactionType(0, "DEPOSIT");
-    B.TransactionType_1 = new A.TransactionType(1, "WITHDRAW");
-    B.TransactionType_2 = new A.TransactionType(2, "TICKET_PURCHASE");
-    B.List_07d = A._setArrayType(makeConstList([B.TransactionType_0, B.TransactionType_1, B.TransactionType_2]), A.findType("JSArray<TransactionType>"));
     B.List_0_6_12_18 = A._setArrayType(makeConstList([0, 6, 12, 18]), type$.JSArray_int);
     B.List_110_117_108_108 = A._setArrayType(makeConstList([110, 117, 108, 108]), type$.JSArray_int);
     B.List_1gw = A._setArrayType(makeConstList(["text", "multiline", "number", "phone", "datetime", "emailAddress", "url", "visiblePassword", "name", "address", "none", "webSearch", "twitter"]), type$.JSArray_String);
@@ -195638,6 +195641,11 @@
     B.ScrollIntent_Lhi = new A.ScrollIntent(B.AxisDirection_2, B.ScrollIncrementType_1);
     B.List_d7X = A._setArrayType(makeConstList([B.C_ActivateIntent, B.ScrollIntent_Lhi]), A.findType("JSArray<Intent>"));
     B.List_dF0 = A._setArrayType(makeConstList([2774754246, 2222750968, 2574743534, 2373680118, 234025727, 3177933782, 2976870366, 1422247313, 1345335392, 50397442, 2842126286, 2099981142, 436141799, 1658312629, 3870010189, 2591454956, 1170918031, 2642575903, 1086966153, 2273148410, 368769775, 3948501426, 3376891790, 200339707, 3970805057, 1742001331, 4255294047, 3937382213, 3214711843, 4154762323, 2524082916, 1539358875, 3266819957, 486407649, 2928907069, 1780885068, 1513502316, 1094664062, 49805301, 1338821763, 1546925160, 4104496465, 887481809, 150073849, 2473685474, 1943591083, 1395732834, 1058346282, 201589768, 1388824469, 1696801606, 1589887901, 672667696, 2711000631, 251987210, 3046808111, 151455502, 907153956, 2608889883, 1038279391, 652995533, 1764173646, 3451040383, 2675275242, 453576978, 2659418909, 1949051992, 773462580, 756751158, 2993581788, 3998898868, 4221608027, 4132590244, 1295727478, 1641469623, 3467883389, 2066295122, 1055122397, 1898917726, 2542044179, 4115878822, 1758581177, 0, 753790401, 1612718144, 536673507, 3367088505, 3982187446, 3194645204, 1187761037, 3653156455, 1262041458, 3729410708, 3561770136, 3898103984, 1255133061, 1808847035, 720367557, 3853167183, 385612781, 3309519750, 3612167578, 1429418854, 2491778321, 3477423498, 284817897, 100794884, 2172616702, 4031795360, 1144798328, 3131023141, 3819481163, 4082192802, 4272137053, 3225436288, 2324664069, 2912064063, 3164445985, 1211644016, 83228145, 3753688163, 3249976951, 1977277103, 1663115586, 806359072, 452984805, 250868733, 1842533055, 1288555905, 336333848, 890442534, 804056259, 3781124030, 2727843637, 3427026056, 957814574, 1472513171, 4071073621, 2189328124, 1195195770, 2892260552, 3881655738, 723065138, 2507371494, 2690670784, 2558624025, 3511635870, 2145180835, 1713513028, 2116692564, 2878378043, 2206763019, 3393603212, 703524551, 3552098411, 1007948840, 2044649127, 3797835452, 487262998, 1994120109, 1004593371, 1446130276, 1312438900, 503974420, 3679013266, 168166924, 1814307912, 3831258296, 1573044895, 1859376061, 4021070915, 2791465668, 2828112185, 2761266481, 937747667, 2339994098, 854058965, 1137232011, 1496790894, 3077402074, 2358086913, 1691735473, 3528347292, 3769215305, 3027004632, 4199962284, 133494003, 636152527, 2942657994, 2390391540, 3920539207, 403179536, 3585784431, 2289596656, 1864705354, 1915629148, 605822008, 4054230615, 3350508659, 1371981463, 602466507, 2094914977, 2624877800, 555687742, 3712699286, 3703422305, 2257292045, 2240449039, 2423288032, 1111375484, 3300242801, 2858837708, 3628615824, 84083462, 32962295, 302911004, 2741068226, 1597322602, 4183250862, 3501832553, 2441512471, 1489093017, 656219450, 3114180135, 954327513, 335083755, 3013122091, 856756514, 3144247762, 1893325225, 2307821063, 2811532339, 3063651117, 572399164, 2458355477, 552200649, 1238290055, 4283782570, 2015897680, 2061492133, 2408352771, 4171342169, 2156497161, 386731290, 3669999461, 837215959, 3326231172, 3093850320, 3275833730, 2962856233, 1999449434, 286199582, 3417354363, 4233385128, 3602627437, 974525996]), type$.JSArray_int);
+    B.TransactionType_0 = new A.TransactionType(0, "DEPOSIT");
+    B.TransactionType_1 = new A.TransactionType(1, "WITHDRAWAL");
+    B.TransactionType_2 = new A.TransactionType(2, "TICKET_PURCHASE");
+    B.TransactionType_3 = new A.TransactionType(3, "PRIZE");
+    B.List_eG3 = A._setArrayType(makeConstList([B.TransactionType_0, B.TransactionType_1, B.TransactionType_2, B.TransactionType_3]), A.findType("JSArray<TransactionType>"));
     B.List_empty23 = A._setArrayType(makeConstList([]), type$.JSArray_AppLifecycleState);
     B.List_empty22 = A._setArrayType(makeConstList([]), A.findType("JSArray<CustomPainterSemantics>"));
     B.List_empty1 = A._setArrayType(makeConstList([]), type$.JSArray_DiagnosticsNode);
