@@ -3,15 +3,18 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 
-const RESOURCES = {"assets/AssetManifest.bin": "3fcb222824144754916f7ab3415af2b1",
-"assets/AssetManifest.bin.json": "609baa0370634f639b6e089b8260ae11",
-"assets/AssetManifest.json": "f6fe6169665412eb54fe825335638aba",
+const RESOURCES = {"assets/AssetManifest.bin": "b5d7c3f75f16e14789d86da189b51266",
+"assets/AssetManifest.bin.json": "3cc57776b0ff357a57d7cbae2830f262",
+"assets/AssetManifest.json": "9a96d3a6b82bceb85739dfb63e9533a0",
 "assets/assets/icons/ic_coin.png": "3eef59a640566e81c9cbecf632ece698",
 "assets/assets/icons/ic_controller.png": "a93f8695708ab22bcc9ec31efca67b37",
 "assets/assets/icons/ic_my_ticket.png": "68cbc9432837a309ad74cdf14988c0d2",
 "assets/assets/icons/ic_ticket.png": "7473c49f134a2241667e3cbf10bbe2f0",
 "assets/assets/icons/ic_trophy.png": "e0b7dc699582ec8c3d32fbbdc1c9150d",
 "assets/assets/icons/ic_wallet.png": "9839c45b55ea6e4a7a31c4780bad42bb",
+"assets/assets/images/aviator.jpg": "14a93e0657d250f2865b9a70a16b2e81",
+"assets/assets/images/bingo.jpg": "9277e3db2c74f2cd868daf98c9e09a49",
+"assets/assets/images/dog.jpg": "c8ae0ad3797ecc2658d14ffd465c214c",
 "assets/assets/lottie/close.json": "9d12b83e1ed03490a56033bf8d36d2b1",
 "assets/assets/lottie/confetti.json": "2bb59d88b2388a6a6b964faec2c2e9b8",
 "assets/assets/lottie/cup.json": "06363136e1a81639b8ae12789528088c",
@@ -34,14 +37,14 @@ const RESOURCES = {"assets/AssetManifest.bin": "3fcb222824144754916f7ab3415af2b1
 "canvaskit/skwasm_st.wasm": "56c3973560dfcbf28ce47cebe40f3206",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "flutter.js": "76f08d47ff9f5715220992f993002504",
-"flutter_bootstrap.js": "7a5c0338c8a6c6a656662b801ab6480a",
+"flutter_bootstrap.js": "083efa1fc51aa46581f07cc9eb56dcd5",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "icons/Icon-maskable-192.png": "c457ef57daa1d16f64b27b786ec2ea3c",
 "icons/Icon-maskable-512.png": "301a7604d45b3e739efc881eb04896ea",
 "index.html": "658bb5e567bb209c10afe1bc2735c091",
 "/": "658bb5e567bb209c10afe1bc2735c091",
-"main.dart.js": "252c764beb23af2c62a7ea06445be8ff",
+"main.dart.js": "262594ae9734e74eef8115cf9f516f82",
 "manifest.json": "71669737d2c5c5196e778bd27191e0ec",
 "version.json": "869997d6ab84a53b94a3585223014f0f"};
 // The application shell files that are downloaded before a service worker can
