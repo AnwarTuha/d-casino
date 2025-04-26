@@ -1,0 +1,73 @@
+{
+  "app_name": "Lottery App",
+  "welcome": "Welcome",
+  "draw_time": "Draw Time",
+  "tickets": "Tickets",
+  "my_tickets": "My Tickets",
+  "settings": "Settings",
+  "language": "Language",
+  "theme": "Theme",
+  "notifications": "Notifications",
+  "about": "About",
+  "contact_us": "Contact Us",
+  "logout": "Logout",
+
+  "deposit": {
+    "title": "Deposit balance",
+    "copy_message": "Copied to clipboard",
+    "instruction": "Deposit via Telebirr to %s and paste the reference number below along with amount",
+    "error": "Error depositing, try again",
+    "reference_number": "Telebirr reference number",
+    "amount": "Amount",
+    "field_required": "This field is required",
+    "valid_amount": "Enter a valid amount"
+  },
+
+  "withdraw": {
+    "title": "Withdraw winnings",
+    "description": "Withdraw your winnings to your chosen account",
+    "error": "Error withdrawing, try again",
+    "retry": "Retry",
+    "withdraw": "Withdraw",
+    "bank_name": "Bank Name",
+    "select_bank": "Please select a bank",
+    "amount": "Amount",
+    "account": "Account",
+    "zero_not_allowed": "Zero(s) only are not allowed"
+  },
+
+  "transactions": {
+    "ticket_purchase": "Ticket Purchase",
+    "deposit": "Deposit",
+    "prize": "Prize Deposit",
+    "withdraw": "Withdraw",
+    "purchased_on": "Purchased ticket on",
+    "deposit_approved": "Deposit approved on",
+    "prize_deposited": "Prize deposited on",
+    "withdrawn_from": "Withdrawn from balance"
+  },
+
+  "lottery": {
+    "title": "Lotteries",
+    "description": "A place where you can participate in lotteries using coins and win real prizes",
+    "ticket_purchase": {
+      "error": "Error purchasing ticket, try again",
+      "how_many": "How many tickets?",
+      "insufficient_balance": "You don't have enough balance"
+    }
+  },
+
+  "common": {
+    "retry": "Retry",
+    "error": {
+      "title": "Error",
+      "message": "Something went wrong"
+    }
+  },
+
+  "banks": {
+    "dashen": "Dashen Bank",
+    "cbe": "Commercial Bank of Ethiopia",
+    "boa": "Bank of Abyssinia"
+  }
+}
