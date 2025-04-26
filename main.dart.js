@@ -188875,7 +188875,7 @@
   A.AppLocalizationsDelegate.prototype = {
     isSupported$1(locale) {
       $.$get$LocalizationService__instance();
-      return B.JSArray_methods.contains$1(A._setArrayType(["en", "ar"], type$.JSArray_String), locale.get$languageCode(0));
+      return B.JSArray_methods.contains$1(A._setArrayType(["en", "am"], type$.JSArray_String), locale.get$languageCode(0));
     },
     load$1(_, locale) {
       return this.load$body$AppLocalizationsDelegate(0, locale);
