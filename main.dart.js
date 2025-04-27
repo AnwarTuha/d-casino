@@ -104530,21 +104530,20 @@
       }
       t3 = _this.___DropdownMenuState__fadeOpacity_F;
       t3 === $ && A.throwUnnamedLateFieldNI();
-      t4 = _this._widget.dropdownColor;
-      if (t4 == null)
-        t4 = A.Theme_of(context).canvasColor;
-      t5 = route.elevation;
-      t6 = _this.___DropdownMenuState__resize_F;
-      t6 === $ && A.throwUnnamedLateFieldNI();
-      t7 = _this._widget.borderRadius;
-      t8 = B.Map_46Kcb.$index(0, t5);
+      t4 = _this._widget;
+      t5 = t4.dropdownColor;
+      t6 = route.elevation;
+      t7 = _this.___DropdownMenuState__resize_F;
+      t7 === $ && A.throwUnnamedLateFieldNI();
+      t4 = t4.borderRadius;
+      t8 = B.Map_46Kcb.$index(0, t6);
       t1 = t1.get$popupMenuLabel();
       _this._widget.toString;
       t9 = A.ScrollConfiguration_of(context).copyWith$4$overscroll$physics$platform$scrollbars(false, B.ClampingScrollPhysics_null, A.Theme_of(context).platform, false);
       t10 = _this._widget.scrollController;
       t11 = A.LinkedHashMap_LinkedHashMap$_literal([null, 0], type$.nullable_Key, type$.int);
       t12 = t2.length;
-      return new A.FadeTransition(t3, false, A.CustomPaint$(A.Semantics$(_null, new A.ClipRRect(B.BorderRadius_tUf, B.Clip_0, A.Material$(B.Duration_200000, _null, A.ScrollConfiguration$(t9, A.PrimaryScrollController$(A.Scrollbar$(new A.ListView(new A.SliverChildListDelegate(true, true, true, t2, t11), B.EdgeInsets_0_8_0_8, B.Axis_1, false, _null, true, B.AlwaysScrollableScrollPhysics_null, true, _null, t12, B.DragStartBehavior_1, B.ScrollViewKeyboardDismissBehavior_0, _null, B.Clip_1, B.HitTestBehavior_1, _null), _null, true), t10)), B.Clip_0, _null, 0, _null, _null, _null, _null, route.style, B.MaterialType_4), _null), false, _null, _null, false, true, _null, _null, _null, _null, t1, _null, _null, true, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, true, _null, _null, _null, _null, _null, _null), _null, _null, new A._DropdownMenuPainter(t4, t5, route.selectedIndex, t7, t6, new A._DropdownMenuState_build_closure(route), new A._BoxDecorationPainter(new A.BoxDecoration(t4, _null, _null, B.BorderRadius_X2o, t8, _null, B.BoxShape_0), _null), t6), B.Size_0_0), _null);
+      return new A.FadeTransition(t3, false, A.CustomPaint$(A.Semantics$(_null, new A.ClipRRect(B.BorderRadius_tUf, B.Clip_0, A.Material$(B.Duration_200000, _null, A.ScrollConfiguration$(t9, A.PrimaryScrollController$(A.Scrollbar$(new A.ListView(new A.SliverChildListDelegate(true, true, true, t2, t11), B.EdgeInsets_0_8_0_8, B.Axis_1, false, _null, true, B.AlwaysScrollableScrollPhysics_null, true, _null, t12, B.DragStartBehavior_1, B.ScrollViewKeyboardDismissBehavior_0, _null, B.Clip_1, B.HitTestBehavior_1, _null), _null, true), t10)), B.Clip_0, _null, 0, _null, _null, _null, _null, route.style, B.MaterialType_4), _null), false, _null, _null, false, true, _null, _null, _null, _null, t1, _null, _null, true, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, true, _null, _null, _null, _null, _null, _null), _null, _null, new A._DropdownMenuPainter(t5, t6, route.selectedIndex, t4, t7, new A._DropdownMenuState_build_closure(route), new A._BoxDecorationPainter(new A.BoxDecoration(t5, _null, _null, B.BorderRadius_X2o, t8, _null, B.BoxShape_0), _null), t7), B.Size_0_0), _null);
     }
   };
   A._DropdownMenuState_build_closure.prototype = {
@@ -186983,7 +186982,7 @@
       var _null = null,
         t1 = context.dependOnInheritedWidgetOfExactType$1$0(type$._LocalizationsScope).localizationsState._localizations$_locale;
       t1.toString;
-      return new A.DropdownButton(B.List_CQ6, t1, _null, _null, new A.LanguageChooser_build_closure(context), _null, _null, 8, _null, _null, _null, B.Color_wst, 24, false, false, 48, _null, _null, false, _null, _null, _null, _null, B.AlignmentDirectional_m1_0, _null, _null, false, _null, type$.DropdownButton_Locale);
+      return new A.DropdownButton(B.List_CQ6, t1, _null, _null, new A.LanguageChooser_build_closure(context), _null, _null, 8, _null, _null, _null, B.Color_wst, 24, false, false, 48, _null, _null, false, B.Color_Kln, _null, _null, _null, B.AlignmentDirectional_m1_0, _null, _null, false, _null, type$.DropdownButton_Locale);
     }
   };
   A.LanguageChooser_build_closure.prototype = {
