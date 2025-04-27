@@ -48528,7 +48528,7 @@
     },
     _TenSecCountdownState: function _TenSecCountdownState() {
       var _ = this;
-      _._secondsRemaining = 10;
+      _._secondsRemaining = 5;
       _._percent = 1;
       _._framework$_element = _._widget = null;
     },
@@ -48687,7 +48687,7 @@
         t4 = A._setArrayType([], type$.JSArray__Emitter_dynamic);
       $.$get$BlocOverrides__token();
       t5 = $.$get$Bloc_transformer();
-      t1 = new A.LocaleBloc(t1, t2, t3, t4, t5, B.C__DefaultBlocObserver, B.LocaleState_Locale_am_null);
+      t1 = new A.LocaleBloc(t1, t2, t3, t4, t5, B.C__DefaultBlocObserver, B.LocaleState_Locale_en_null);
       t1.LocaleBloc$0();
       return t1;
     },
@@ -104912,16 +104912,17 @@
       t2 = this._widget;
       if (t1) {
         t1 = t2.iconEnabledColor;
-        switch (brightness.index) {
-          case 1:
-            t1 = B.Color_4cJ;
-            break;
-          case 0:
-            t1 = B.Color_mwC;
-            break;
-          default:
-            t1 = null;
-        }
+        if (t1 == null)
+          switch (brightness.index) {
+            case 1:
+              t1 = B.Color_4cJ;
+              break;
+            case 0:
+              t1 = B.Color_mwC;
+              break;
+            default:
+              t1 = null;
+          }
         return t1;
       } else {
         t1 = t2.iconDisabledColor;
@@ -186982,7 +186983,7 @@
       var _null = null,
         t1 = context.dependOnInheritedWidgetOfExactType$1$0(type$._LocalizationsScope).localizationsState._localizations$_locale;
       t1.toString;
-      return new A.DropdownButton(B.List_ZJH, t1, _null, _null, new A.LanguageChooser_build_closure(context), _null, _null, 8, _null, _null, _null, _null, 24, false, false, 48, _null, _null, false, _null, _null, _null, _null, B.AlignmentDirectional_m1_0, _null, _null, false, _null, type$.DropdownButton_Locale);
+      return new A.DropdownButton(B.List_CQ6, t1, _null, _null, new A.LanguageChooser_build_closure(context), _null, _null, 8, _null, _null, _null, B.Color_wst, 24, false, false, 48, _null, _null, false, _null, _null, _null, _null, B.AlignmentDirectional_m1_0, _null, _null, false, _null, type$.DropdownButton_Locale);
     }
   };
   A.LanguageChooser_build_closure.prototype = {
@@ -205293,6 +205294,12 @@
     B.List_C61 = A._setArrayType(makeConstList(["\u043f\u0440.\u043e\u0431.", "\u0441\u043b.\u043e\u0431."]), type$.JSArray_String);
     B.List_C7r = A._setArrayType(makeConstList(["\u0e27\u0e31\u0e19\u0e2d\u0e32\u0e17\u0e34\u0e15\u0e22\u0e4c", "\u0e27\u0e31\u0e19\u0e08\u0e31\u0e19\u0e17\u0e23\u0e4c", "\u0e27\u0e31\u0e19\u0e2d\u0e31\u0e07\u0e04\u0e32\u0e23", "\u0e27\u0e31\u0e19\u0e1e\u0e38\u0e18", "\u0e27\u0e31\u0e19\u0e1e\u0e24\u0e2b\u0e31\u0e2a\u0e1a\u0e14\u0e35", "\u0e27\u0e31\u0e19\u0e28\u0e38\u0e01\u0e23\u0e4c", "\u0e27\u0e31\u0e19\u0e40\u0e2a\u0e32\u0e23\u0e4c"]), type$.JSArray_String);
     B.List_CC_OC = A._setArrayType(makeConstList(["CC", "OC"]), type$.JSArray_String);
+    B.TextStyle_Gna = new A.TextStyle(true, B.Color_wst, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
+    B.Text_FQX = new A.Text("English", null, B.TextStyle_Gna, null, null, null, null, null, null);
+    B.DropdownMenuItem_9AJ = new A.DropdownMenuItem(B.Locale_en_null, B.Text_FQX, B.AlignmentDirectional_m1_0, null, type$.DropdownMenuItem_Locale);
+    B.Text_k0D = new A.Text("\u12a0\u121b\u122d\u129b", null, B.TextStyle_Gna, null, null, null, null, null, null);
+    B.DropdownMenuItem_hTj = new A.DropdownMenuItem(B.Locale_am_null, B.Text_k0D, B.AlignmentDirectional_m1_0, null, type$.DropdownMenuItem_Locale);
+    B.List_CQ6 = A._setArrayType(makeConstList([B.DropdownMenuItem_9AJ, B.DropdownMenuItem_hTj]), A.findType("JSArray<DropdownMenuItem<Locale>>"));
     B.List_CRI = A._setArrayType(makeConstList(["S", "L", "M", "K", "M", "C", "L", "S", "W", "P", "L", "G"]), type$.JSArray_String);
     B.List_CaK = A._setArrayType(makeConstList(["S", "M", "T", "O", "T", "F", "L"]), type$.JSArray_String);
     B.List_Cbg = A._setArrayType(makeConstList(["\u0570\u0578\u0582\u0576\u057e\u0561\u0580\u056b", "\u0583\u0565\u057f\u0580\u057e\u0561\u0580\u056b", "\u0574\u0561\u0580\u057f\u056b", "\u0561\u057a\u0580\u056b\u056c\u056b", "\u0574\u0561\u0575\u056b\u057d\u056b", "\u0570\u0578\u0582\u0576\u056b\u057d\u056b", "\u0570\u0578\u0582\u056c\u056b\u057d\u056b", "\u0585\u0563\u0578\u057d\u057f\u0578\u057d\u056b", "\u057d\u0565\u057a\u057f\u0565\u0574\u0562\u0565\u0580\u056b", "\u0570\u0578\u056f\u057f\u0565\u0574\u0562\u0565\u0580\u056b", "\u0576\u0578\u0575\u0565\u0574\u0562\u0565\u0580\u056b", "\u0564\u0565\u056f\u057f\u0565\u0574\u0562\u0565\u0580\u056b"]), type$.JSArray_String);
@@ -205738,11 +205745,6 @@
     B.List_Z0v = A._setArrayType(makeConstList(["\u0399\u03b1\u03bd\u03bf\u03c5\u03b1\u03c1\u03af\u03bf\u03c5", "\u03a6\u03b5\u03b2\u03c1\u03bf\u03c5\u03b1\u03c1\u03af\u03bf\u03c5", "\u039c\u03b1\u03c1\u03c4\u03af\u03bf\u03c5", "\u0391\u03c0\u03c1\u03b9\u03bb\u03af\u03bf\u03c5", "\u039c\u03b1\u0390\u03bf\u03c5", "\u0399\u03bf\u03c5\u03bd\u03af\u03bf\u03c5", "\u0399\u03bf\u03c5\u03bb\u03af\u03bf\u03c5", "\u0391\u03c5\u03b3\u03bf\u03cd\u03c3\u03c4\u03bf\u03c5", "\u03a3\u03b5\u03c0\u03c4\u03b5\u03bc\u03b2\u03c1\u03af\u03bf\u03c5", "\u039f\u03ba\u03c4\u03c9\u03b2\u03c1\u03af\u03bf\u03c5", "\u039d\u03bf\u03b5\u03bc\u03b2\u03c1\u03af\u03bf\u03c5", "\u0394\u03b5\u03ba\u03b5\u03bc\u03b2\u03c1\u03af\u03bf\u03c5"]), type$.JSArray_String);
     B.List_Z4S = A._setArrayType(makeConstList(["EEEE d MMMM y", "d MMMM y", "d MMM y", "dd/MM/y"]), type$.JSArray_String);
     B.List_ZB7 = A._setArrayType(makeConstList(["J", "F", "M", "\xc1", "M", "J", "J", "A", "Sz", "O", "N", "D"]), type$.JSArray_String);
-    B.Text_Bcw = new A.Text("English", null, null, null, null, null, null, null, null);
-    B.DropdownMenuItem_6g5 = new A.DropdownMenuItem(B.Locale_en_null, B.Text_Bcw, B.AlignmentDirectional_m1_0, null, type$.DropdownMenuItem_Locale);
-    B.Text_gZU = new A.Text("\u12a0\u121b\u122d\u129b", null, null, null, null, null, null, null, null);
-    B.DropdownMenuItem_8UO = new A.DropdownMenuItem(B.Locale_am_null, B.Text_gZU, B.AlignmentDirectional_m1_0, null, type$.DropdownMenuItem_Locale);
-    B.List_ZJH = A._setArrayType(makeConstList([B.DropdownMenuItem_6g5, B.DropdownMenuItem_8UO]), A.findType("JSArray<DropdownMenuItem<Locale>>"));
     B.List_ZYf = A._setArrayType(makeConstList(["\u043d\u0435\u0434\u0435\u043b\u044f", "\u043f\u043e\u043d\u0435\u0434\u0435\u043b\u043d\u0438\u043a", "\u0432\u0442\u043e\u0440\u043d\u0438\u043a", "\u0441\u0440\u044f\u0434\u0430", "\u0447\u0435\u0442\u0432\u044a\u0440\u0442\u044a\u043a", "\u043f\u0435\u0442\u044a\u043a", "\u0441\u044a\u0431\u043e\u0442\u0430"]), type$.JSArray_String);
     B.List_Zb6 = A._setArrayType(makeConstList(["\u0442\u0430\u04a3\u043a\u044b", "\u0442\u04af\u0448\u0442\u04e9\u043d \u043a\u0438\u0439\u0438\u043d\u043a\u0438"]), type$.JSArray_String);
     B.List_Zn9 = A._setArrayType(makeConstList(["\u09a6\u09c7\u0993\u09ac\u09be\u09f0", "\u09b8\u09cb\u09ae\u09ac\u09be\u09f0", "\u09ae\u0999\u09cd\u0997\u09b2\u09ac\u09be\u09f0", "\u09ac\u09c1\u09a7\u09ac\u09be\u09f0", "\u09ac\u09c3\u09b9\u09b8\u09cd\u09aa\u09a4\u09bf\u09ac\u09be\u09f0", "\u09b6\u09c1\u0995\u09cd\u09f0\u09ac\u09be\u09f0", "\u09b6\u09a8\u09bf\u09ac\u09be\u09f0"]), type$.JSArray_String);
@@ -206174,7 +206176,7 @@
     B.List_za4 = A._setArrayType(makeConstList(["januar", "februar", "marec", "april", "maj", "junij", "julij", "avgust", "september", "oktober", "november", "december"]), type$.JSArray_String);
     B.List_zjb = A._setArrayType(makeConstList(["\u092a\u0942\u0930\u094d\u0935\u093e\u0939\u094d\u0928", "\u0905\u092a\u0930\u093e\u0939\u094d\u0928"]), type$.JSArray_String);
     B.List_zss = A._setArrayType(makeConstList(["jan.", "feb.", "mar.", "apr.", "ma\xed", "j\xfan.", "j\xfal.", "\xe1g\xfa.", "sep.", "okt.", "n\xf3v.", "des."]), type$.JSArray_String);
-    B.LocaleState_Locale_am_null = new A.LocaleState(B.Locale_am_null);
+    B.LocaleState_Locale_en_null = new A.LocaleState(B.Locale_en_null);
     B.LockState_0 = new A.LockState(0, "ignored");
     B.LogicalKeyboardKey_4294967304 = new A.LogicalKeyboardKey(4294967304);
     B.LogicalKeyboardKey_4294967323 = new A.LogicalKeyboardKey(4294967323);
@@ -208004,7 +208006,6 @@
     B.Text_4tS = new A.Text("Page Not Found", null, null, null, null, null, null, null, null);
     B.TextStyle_U60 = new A.TextStyle(true, null, null, null, null, null, 16, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
     B.Text_D6P = new A.Text("Try Again", null, B.TextStyle_U60, null, null, null, null, null, null);
-    B.TextStyle_Gna = new A.TextStyle(true, B.Color_wst, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
     B.Text_N1W = new A.Text("Go to home page", null, B.TextStyle_Gna, null, null, null, null, null, null);
     B.Text_huR = new A.Text("Home", null, null, null, null, null, null, null, null);
     B.Text_j7s = new A.Text("Page Not Found", null, B.TextStyle_KXJ, null, null, null, null, null, null);
