@@ -188213,8 +188213,10 @@
         return A.Center$(A.CircularProgressIndicator$(B.Color_wst, _null, _null), _null, _null);
       else if (state instanceof A.PreviousWinnersLoaded)
         return A.Expanded$(A.ListView$separated(new A._LotteryDetailViewState__buildPreviousWinners__closure(this.$this, state), state.previousWinners.length, _null, _null, new A._LotteryDetailViewState__buildPreviousWinners__closure0(), true));
-      else if (state instanceof A.PreviousWinnersError)
+      else if (state instanceof A.PreviousWinnersError) {
+        A.print(">>>>>>>>>>>>>>>>>> " + state.message);
         return A.Center$(A.CircularProgressIndicator$(B.MaterialColor_nI1, _null, _null), _null, _null);
+      }
       return A.SizedBox$(_null, _null, _null);
     },
     $signature: 615
