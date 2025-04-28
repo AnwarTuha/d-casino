@@ -48191,7 +48191,8 @@
     PreviousWinnersLoaded: function PreviousWinnersLoaded(t0) {
       this.previousWinners = t0;
     },
-    PreviousWinnersError: function PreviousWinnersError() {
+    PreviousWinnersError: function PreviousWinnersError(t0) {
+      this.message = t0;
     },
     PurchaseBloc$(lotteryDetailApiServices) {
       var t5,
@@ -187904,7 +187905,7 @@
   };
   A.PreviousWinnersBloc__closure.prototype = {
     call$1(response) {
-      var data, previousWinners, e, s, t1, exception;
+      var data, previousWinners, e, s, t1, exception, t2, t3;
       try {
         data = response.data;
         t1 = J.map$1$1$ax(type$.List_dynamic._as(data), new A.PreviousWinnersBloc___closure(), type$.PreviousWinnerModel);
@@ -187918,9 +187919,10 @@
         A.S(e);
         A.S(s);
         t1 = this.emit;
-        J.toString$0$(e);
+        t2 = A.S(e);
+        t3 = A.S(s);
         if (!t1._isCanceled)
-          t1._emit.call$1(new A.PreviousWinnersError());
+          t1._emit.call$1(new A.PreviousWinnersError(t2 + " - " + t3));
       }
     },
     $signature: 94
@@ -187933,13 +187935,14 @@
   };
   A.PreviousWinnersBloc__closure0.prototype = {
     call$2(error, s) {
-      var t1;
+      var t1, t2, t3;
       A.S(error);
       A.S(s);
       t1 = this.emit;
-      J.toString$0$(error);
+      t2 = A.S(error);
+      t3 = A.S(s);
       if (!t1._isCanceled)
-        t1._emit.call$1(new A.PreviousWinnersError());
+        t1._emit.call$1(new A.PreviousWinnersError(t2 + " - " + t3));
     },
     $signature: 78
   };
@@ -188206,7 +188209,6 @@
   A._LotteryDetailViewState__buildPreviousWinners_closure.prototype = {
     call$2(context, state) {
       var _null = null;
-      A.print(">>>>>>>>>>>>>>> " + state.toString$0(0));
       if (state instanceof A.PreviousWinnersLoading)
         return A.Center$(A.CircularProgressIndicator$(B.Color_wst, _null, _null), _null, _null);
       else if (state instanceof A.PreviousWinnersLoaded)
