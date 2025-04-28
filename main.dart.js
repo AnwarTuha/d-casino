@@ -187908,7 +187908,7 @@
       var data, previousWinners, e, s, t1, exception, t2, t3;
       try {
         data = response.data;
-        t1 = J.map$1$1$ax(type$.List_dynamic._as(data), new A.PreviousWinnersBloc___closure(), type$.PreviousWinnerModel);
+        t1 = J.map$1$1$ax(type$.List_dynamic._as(J.$index$asx(data, "data")), new A.PreviousWinnersBloc___closure(), type$.PreviousWinnerModel);
         previousWinners = A.List_List$of(t1, true, t1.$ti._eval$1("ListIterable.E"));
         t1 = this.emit;
         if (!t1._isCanceled)
