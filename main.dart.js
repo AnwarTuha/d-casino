@@ -187628,7 +187628,7 @@
               queryParameters = A.LinkedHashMap_LinkedHashMap$_literal(["page", 1, "limit", 20, "lotteryTypeId", lotteryTypeId], t1, t2);
               _headers = A.LinkedHashMap_LinkedHashMap$_literal(["Authorization", accessToken], t1, t2);
               _headers.removeWhere$1(_headers, new A._LotteryDetailApiServices_getPreviousWinners_closure());
-              t1 = A.Options$(A.LinkedHashMap_LinkedHashMap$_empty(t1, t2), _headers, "POST");
+              t1 = A.Options$(A.LinkedHashMap_LinkedHashMap$_empty(t1, t2), _headers, "GET");
               t3 = $async$self._lottery_detail_api_services$_dio;
               t4 = t3.DioMixin___DioMixin_options_A;
               t4 === $ && A.throwUnnamedLateFieldNI();
