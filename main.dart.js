@@ -188206,6 +188206,7 @@
   A._LotteryDetailViewState__buildPreviousWinners_closure.prototype = {
     call$2(context, state) {
       var _null = null;
+      A.print(">>>>>>>>>>>>>>> " + state.toString$0(0));
       if (state instanceof A.PreviousWinnersLoading)
         return A.Center$(A.CircularProgressIndicator$(B.Color_wst, _null, _null), _null, _null);
       else if (state instanceof A.PreviousWinnersLoaded)
