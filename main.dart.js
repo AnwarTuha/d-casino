@@ -47966,7 +47966,16 @@
       t1.$index(json, "ticketPrice");
       B.JSArray_methods.firstWhere$1(B.List_F2Y, new A.LotteryModel_LotteryModel$fromJson_closure(json));
       t4 = A.DateTime_parse(t1.$index(json, "drawTime"));
-      t5 = t1.$index(json, "winner") != null ? A.WinnerModel_WinnerModel$fromJson(t1.$index(json, "winner")) : null;
+      if (t1.$index(json, "winner") != null) {
+        t5 = t1.$index(json, "winner");
+        t6 = J.getInterceptor$asx(t5);
+        t7 = A._asInt(t6.$index(t5, "id"));
+        t8 = t6.$index(t5, "prize");
+        if (t8 == null)
+          t8 = "";
+        t5 = new A.WinnerModel(t7, t8, t6.$index(t5, "firstName"));
+      } else
+        t5 = null;
       A.DateTime_parse(t1.$index(json, _s9_));
       t1 = t1.$index(json, "type");
       t6 = J.getInterceptor$asx(t1);
@@ -48516,14 +48525,6 @@
     TicketItem_build_closure: function TicketItem_build_closure(t0, t1) {
       this.$this = t0;
       this.context = t1;
-    },
-    WinnerModel_WinnerModel$fromJson(json) {
-      var t1 = J.getInterceptor$asx(json),
-        t2 = A._asInt(t1.$index(json, "winnerId")),
-        t3 = t1.$index(json, "prize");
-      if (t3 == null)
-        t3 = "";
-      return new A.WinnerModel(t2, t3, t1.$index(json, "winner") != null ? A.S(J.$index$asx(t1.$index(json, "winner"), "firstName")) : "");
     },
     WinnerModel: function WinnerModel(t0, t1, t2) {
       this.winnerId = t0;
@@ -188869,7 +188870,7 @@
     $call$body$WinnerBloc_closure($event, emit) {
       var $async$goto = 0,
         $async$completer = A._makeAsyncAwaitCompleter(type$.void),
-        $async$handler = 1, $async$errorStack = [], $async$self = this, response, winnerModel, e, s, exception, $async$exception;
+        $async$handler = 1, $async$errorStack = [], $async$self = this, response, winnerModel, e, s, t1, t2, t3, t4, exception, $async$exception;
       var $async$call$2 = A._wrapJsFunctionForAsync(function($async$errorCode, $async$result) {
         if ($async$errorCode === 1) {
           $async$errorStack.push($async$result);
@@ -188888,7 +188889,13 @@
               // returning from await.
               response = $async$result;
               if (response.data != null) {
-                winnerModel = A.WinnerModel_WinnerModel$fromJson(response.data);
+                t1 = response.data;
+                t2 = J.getInterceptor$asx(t1);
+                t3 = A._asInt(t2.$index(t1, "winnerId"));
+                t4 = t2.$index(t1, "prize");
+                if (t4 == null)
+                  t4 = "";
+                winnerModel = new A.WinnerModel(t3, t4, t2.$index(t1, "winner") != null ? A.S(J.$index$asx(t2.$index(t1, "winner"), "firstName")) : "");
                 if (!emit._isCanceled)
                   emit._emit.call$1(new A.WinnerLoaded(winnerModel));
               } else if (!emit._isCanceled)
