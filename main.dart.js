@@ -48027,17 +48027,20 @@
       t2 = winner != null;
       if (t2)
         J.$index$asx(t1.$index(json, "winner"), "id");
-      t1.$index(json, "prize");
+      t1 = t1.$index(json, "prize");
+      if (t1 == null)
+        t1 = "";
       if (t2) {
-        t1 = J.getInterceptor$asx(winner);
-        A.S(t1.$index(winner, "firstName"));
-        A.S(t1.$index(winner, "lastName"));
+        t2 = J.getInterceptor$asx(winner);
+        A.S(t2.$index(winner, "firstName"));
+        A.S(t2.$index(winner, "lastName"));
       }
-      t1 = J.$index$asx(winner, "userName");
-      return new A.PreviousWinnerModel(t1 == null ? "" : t1);
+      t2 = J.$index$asx(winner, "userName");
+      return new A.PreviousWinnerModel(t1, t2 == null ? "" : t2);
     },
-    PreviousWinnerModel: function PreviousWinnerModel(t0) {
-      this.telegramUserName = t0;
+    PreviousWinnerModel: function PreviousWinnerModel(t0, t1) {
+      this.prize = t0;
+      this.telegramUserName = t1;
     },
     PreviousWinnerModel_PreviousWinnerModel$fromJson_closure: function PreviousWinnerModel_PreviousWinnerModel$fromJson_closure(t0) {
       this.json = t0;
@@ -188156,8 +188159,9 @@
   };
   A._LotteryDetailViewState__buildPreviousWinners__closure.prototype = {
     call$2(context, index) {
-      var _null = null;
-      return A.Container$(A.Row$(A._setArrayType([A.Text$(this.state.previousWinners[index].telegramUserName, _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_wst, 14 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_3), _null, _null), A.Text$("ETB 100,000", _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_wst, 14 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_3), _null, _null)], type$.JSArray_Widget), B.CrossAxisAlignment_2, B.MainAxisAlignment_3, B.MainAxisSize_1), B.Clip_0, _null, _null, _null, _null, _null, _null, _null);
+      var _null = null,
+        t1 = this.state.previousWinners[index];
+      return A.Container$(A.Row$(A._setArrayType([A.Text$(t1.telegramUserName, _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_wst, 14 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_3), _null, _null), A.Text$(t1.prize + " birr", _null, _null, _null, A.part_r_PartR_roboto$closure().call$3$color$fontSize$fontWeight(B.Color_wst, 14 * ($.SizerUtil___width._readField$0() / 3) / 100, B.FontWeight_3), _null, _null)], type$.JSArray_Widget), B.CrossAxisAlignment_2, B.MainAxisAlignment_3, B.MainAxisSize_1), B.Clip_0, _null, _null, _null, _null, _null, _null, _null);
     },
     $signature: 129
   };
@@ -188892,9 +188896,7 @@
                 t1 = response.data;
                 t2 = J.getInterceptor$asx(t1);
                 t3 = A._asInt(t2.$index(t1, "winnerId"));
-                t4 = t2.$index(t1, "prize");
-                if (t4 == null)
-                  t4 = "";
+                t4 = t2.$index(t1, "prize") != null ? J.toString$0$(t2.$index(t1, "prize")) : "";
                 winnerModel = new A.WinnerModel(t3, t4, t2.$index(t1, "winner") != null ? A.S(J.$index$asx(t2.$index(t1, "winner"), "firstName")) : "");
                 if (!emit._isCanceled)
                   emit._emit.call$1(new A.WinnerLoaded(winnerModel));
